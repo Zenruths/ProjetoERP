@@ -46,58 +46,569 @@
               <i class="fe fe-x"><span class="sr-only"></span></i>
             </a>
             <ul class="navbar-nav mr-auto">
+
+              <!-- 1. Início -->
               <li class="nav-item dropdown">
-                <a href="#" id="dashboardDropdown" class="dropdown-toggle nav-link" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+                <a href="#" id="inicioDropdown" class="dropdown-toggle nav-link" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
                   <span class="ml-lg-2">Início</span><span class="sr-only">(current)</span>
                 </a>
-                <div class="dropdown-menu" aria-labelledby="dashboardDropdown">
+                <div class="dropdown-menu" aria-labelledby="inicioDropdown">
                   <a class="nav-link pl-lg-2" href="#"><span class="ml-1">Análise Geral</span></a>
-                  <a class="nav-link pl-lg-2" href="#"><span class="ml-1">Informativos</span></a>
+                  <a class="nav-link pl-lg-2" href="#"><span class="ml-1">Estatísticas</span></a>
                 </div>
               </li>
+
+              <!-- 2. Financeiro -->
               <li class="nav-item dropdown">
-                <a class="dropdown-toggle nav-link pl-lg-3" href="#" id="FinanceiroDropdown" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false"> Financeiro </a>
-                <ul class="dropdown-menu" aria-labelledby="FinanceiroDropdown">
+                <a class="dropdown-toggle nav-link pl-lg-3" href="#" id="financeiroDropdown" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false"> 
+                  Financeiro </a>
+                <ul class="dropdown-menu" aria-labelledby="financeiroDropdown">
+
+                  <!-- 2.1 Caixa Principal -->
                   <li class="nav-item dropdown">
-                    <a class="dropdown-toggle nav-link pl-lg-2" href="#" id="CaixaPrincipalDropdown" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+                    <a class="dropdown-toggle nav-link pl-lg-2" href="#" id="caixaPrincipalDropdown" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
                       <span class="ml-1">Caixa Principal</span>
                     </a>
-                    <ul class="dropdown-menu" aria-labelledby="CaixaPrincipalDropdown">
+                    <ul class="dropdown-menu" aria-labelledby="caixaPrincipalDropdown">
                       <a class="nav-link pl-lg-2" href="#"><span class="ml-1">Movimentação</span></a>
                       <a class="nav-link pl-lg-2" href="#"><span class="ml-1">Abertura/Fechamento</span></a>
                       <a class="nav-link pl-lg-2" href="#"><span class="ml-1">Conferência</span></a>
                     </ul>
                   </li>
+
+                  <!-- 2.2 Lançamentos -->
                   <li class="nav-item dropdown">
-                    <a class="dropdown-toggle nav-link pl-lg-2" href="#" data-toggle="collapse" id="profileDropdown" aria-expanded="false">
+                    <a class="dropdown-toggle nav-link pl-lg-2" href="#" data-toggle="collapse" id="lancamentosDropdown" aria-expanded="false">
                       <span class="ml-1">Lançamentos</span>
                     </a>
-                    <ul class="dropdown-menu" aria-labelledby="profileDropdown">
+                    <ul class="dropdown-menu" aria-labelledby="lancamentosDropdown">
                       <a class="nav-link pl-lg-2" href="#"><span class="ml-1">Contas a Receber</span></a>
                       <a class="nav-link pl-lg-2" href="#"><span class="ml-1">Contas a Pagar</span></a>
+                      <a class="nav-link pl-lg-2" href="#"><span class="ml-1">Renegociação</span></a>
                       <a class="nav-link pl-lg-2" href="#"><span class="ml-1">Avulso</span></a>
                     </ul>
                   </li>
+                  
+                  <!-- 2.3 Controladoria -->
                   <li class="nav-item dropdown">
-                    <a class="dropdown-toggle nav-link pl-lg-2" href="#" data-toggle="collapse" id="supportDropdown" aria-expanded="false">
+                    <a class="dropdown-toggle nav-link pl-lg-2" href="#" data-toggle="collapse" id="controladoriasDropdown" aria-expanded="false">
                       <span class="ml-1">Controladoria</span>
                     </a>
-                    <ul class="dropdown-menu" aria-labelledby="supportDropdown">
+                    <ul class="dropdown-menu" aria-labelledby="controladoriasDropdown">
                       <a class="nav-link pl-lg-2" href="#"><span class="ml-1">Liberação de Crédito</span></a>
                       <a class="nav-link pl-lg-2" href="#"><span class="ml-1">Liberação de Desconto</span></a>
                     </ul>
                   </li>
+
+                  <!-- 2.3 Comissões -->
+                  <li class="nav-item dropdown">
+                    <a class="dropdown-toggle nav-link pl-lg-2" href="#" data-toggle="collapse" id="comissoesDropdown" aria-expanded="false">
+                      <span class="ml-1">Comissões</span>
+                    </a>
+                    <ul class="dropdown-menu" aria-labelledby="comissoesDropdown">
+                      <a class="nav-link pl-lg-2" href="#"><span class="ml-1">Relação de Comissões</span></a>
+                    </ul>
+                  </li>
+
+                  <!-- 2.3 Central de Cobranças -->
+                  <li class="nav-item dropdown">
+                    <a class="dropdown nav-link pl-lg-2" href="#" id="centralCobrançasDropdown" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+                      <span class="ml-1">Central de Cobranças</span>
+                    </a>
+                  </li>
+
                 </ul>
               </li>
+
+              <!-- 4. Estoque -->
               <li class="nav-item dropdown">
-                <a href="#" id="tablesDropdown" class="dropdown-toggle nav-link" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
-                  <span class="ml-lg-2">Administração</span>
-                </a>
-                <div class="dropdown-menu" aria-labelledby="tablesDropdown">
-                  <a class="nav-link pl-lg-2" href="#"><span class="ml-1">Administração</span></a>
-                  <a class="nav-link pl-lg-2" href="#"><span class="ml-1">Administração</span></a>
-                </div>
+                <a class="dropdown-toggle nav-link pl-lg-3" href="#" id="estoqueDropdown" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false"> 
+                  Estoque </a>
+                <ul class="dropdown-menu" aria-labelledby="estoqueDropdown">
+            
+                  <!-- 2.1 Produtos -->
+                  <li class="nav-item dropdown">
+                    <a class="dropdown nav-link pl-lg-2" href="#" id="estoqueProdutosDropdown" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+                      <span class="ml-1">Produtos</span>
+                    </a>
+                  </li>
+                  
+                  <!-- 2.1 Estoque -->
+                  <li class="nav-item dropdown">
+                    <a class="dropdown-toggle nav-link pl-lg-2" href="#" id="estoqueDetalheDropdown" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+                      <span class="ml-1">Estoque</span>
+                    </a>
+                    <ul class="dropdown-menu" aria-labelledby="estoqueDetalheDropdown">
+                      <a class="nav-link pl-lg-2" href="#"><span class="ml-1">Acerto de Estoque</span></a>
+                      <a class="nav-link pl-lg-2" href="#"><span class="ml-1">Inventário</span></a>
+                    </ul>
+                  </li>
+
+                  <!-- 2.2 Relação -->
+                  <li class="nav-item dropdown">
+                    <a class="dropdown-toggle nav-link pl-lg-2" href="#" data-toggle="collapse" id="relacaoDropdown" aria-expanded="false">
+                      <span class="ml-1">Relação</span>
+                    </a>
+                    <ul class="dropdown-menu" aria-labelledby="relacaoDropdown">
+                      <a class="nav-link pl-lg-2" href="#"><span class="ml-1">Auditoria</span></a>
+                      <a class="nav-link pl-lg-2" href="#"><span class="ml-1">Avisos</span></a>
+                    </ul>
+                  </li>
+                  
+                  <!-- 2.3 Compras -->
+                  <li class="nav-item dropdown">
+                    <a class="dropdown-toggle nav-link pl-lg-2" href="#" data-toggle="collapse" id="comprasDropdown" aria-expanded="false">
+                      <span class="ml-1">Compras</span>
+                    </a>
+                    <ul class="dropdown-menu" aria-labelledby="comprasDropdown">
+                      <a class="nav-link pl-lg-2" href="#"><span class="ml-1">Entradas</span></a>
+                      <a class="nav-link pl-lg-2" href="#"><span class="ml-1">Lista de Compras</span></a>
+                      <a class="nav-link pl-lg-2" href="#"><span class="ml-1">Lista de Faltas</span></a>
+                    </ul>
+                  </li>
+                </ul>
               </li>
+
+              <!-- 3. Comercial -->
+              <li class="nav-item dropdown">
+                <a href="#" id="comercialDropdown" class="dropdown-toggle nav-link" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+                  <span class="ml-lg-2">Comercial</span>
+                </a>
+                <div class="dropdown-menu" aria-labelledby="comercialDropdown">
+                  <a class="nav-link pl-lg-2" href="#"><span class="ml-1">Vendas</span></a>
+                  <a class="nav-link pl-lg-2" href="#"><span class="ml-1">Ordem de Serviço</span></a>
+                  <a class="nav-link pl-lg-2" href="#"><span class="ml-1">Orçamentos</span></a>
+                  <a class="nav-link pl-lg-2" href="#"><span class="ml-1">Condicional</span></a>
+                  <a class="nav-link pl-lg-2" href="#"><span class="ml-1">Vale Compra</span></a>
+                </div>
+
+                <!-- 3.1 Pré-vendas -->
+                <li class="nav-item dropdown">
+                  <a class="dropdown-toggle nav-link pl-lg-2" href="#" id="preVendasDropdown" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+                    <span class="ml-1">Pré-vendas</span>
+                  </a>
+                  <ul class="dropdown-menu" aria-labelledby="preVendasDropdown">
+                    <a class="nav-link pl-lg-2" href="#"><span class="ml-1">Pedidos</span></a>
+                    <a class="nav-link pl-lg-2" href="#"><span class="ml-1">Pedidos Agrupados</span></a>
+                    <a class="nav-link pl-lg-2" href="#"><span class="ml-1">Separação e Conferência</span></a>
+                  </ul>
+                </li>
+
+                <!-- 3.2 Devoluções -->
+                <li class="nav-item dropdown">
+                  <a class="dropdown-toggle nav-link pl-lg-2" href="#" id="devolucoesDropdown" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+                    <span class="ml-1">Devoluções</span>
+                  </a>
+                  <ul class="dropdown-menu" aria-labelledby="devolucoesDropdown">
+                    <a class="nav-link pl-lg-2" href="#"><span class="ml-1">Devolução de Venda</span></a>
+                    <a class="nav-link pl-lg-2" href="#"><span class="ml-1">Devolução de Ordem de Serviço</span></a>
+                    <a class="nav-link pl-lg-2" href="#"><span class="ml-1">Devolução de Condicional</span></a>
+                  </ul>
+                </li>
+              </li>
+
+              <!-- 4. Cadastros -->
+              <li class="nav-item dropdown">
+                <a class="dropdown-toggle nav-link pl-lg-3" href="#" id="cadastrosDropdown" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false"> 
+                  Cadastros </a>
+                <ul class="dropdown-menu" aria-labelledby="cadastrosDropdown">
+                  
+                  <!-- 2.1 Financeiro -->
+                  <li class="nav-item dropdown">
+                    <a class="dropdown-toggle nav-link pl-lg-2" href="#" id="cadastroFinanceiroDropdown" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+                      <span class="ml-1">Financeiro</span>
+                    </a>
+                    <ul class="dropdown-menu" aria-labelledby="cadastroFinanceiroDropdown">
+                      <a class="nav-link pl-lg-2" href="#"><span class="ml-1">Caixas</span></a>
+                      <a class="nav-link pl-lg-2" href="#"><span class="ml-1">Contas Correntes</span></a>
+                      <a class="nav-link pl-lg-2" href="#"><span class="ml-1">Plano de Contas</span></a>
+                    </ul>
+                  </li>
+
+                  <!-- 2.2 Pessoas -->
+                  <li class="nav-item dropdown">
+                    <a class="dropdown-toggle nav-link pl-lg-2" href="#" data-toggle="collapse" id="pessoasDropdown" aria-expanded="false">
+                      <span class="ml-1">Pessoas</span>
+                    </a>
+                    <ul class="dropdown-menu" aria-labelledby="pessoasDropdown">
+                      <a class="nav-link pl-lg-2" href="#"><span class="ml-1">Clientes</span></a>
+                      <a class="nav-link pl-lg-2" href="#"><span class="ml-1">Colaboradores</span></a>
+                      <a class="nav-link pl-lg-2" href="#"><span class="ml-1">Usuários</span></a>
+                    </ul>
+                  </li>
+                  
+                  <!-- 2.3 Produtos -->
+                  <li class="nav-item dropdown">
+                    <a class="dropdown-toggle nav-link pl-lg-2" href="#" data-toggle="collapse" id="produtosDropdown" aria-expanded="false">
+                      <span class="ml-1">Produtos</span>
+                    </a>
+                    <ul class="dropdown-menu" aria-labelledby="produtosDropdown">
+                      <a class="nav-link pl-lg-2" href="#"><span class="ml-1">Seção/Grupo/SubGrupo</span></a>
+                      <a class="nav-link pl-lg-2" href="#"><span class="ml-1">Prateleira/Gôndola/Gaveta</span></a>
+                      <a class="nav-link pl-lg-2" href="#"><span class="ml-1">Fabricantes/Marcas</span></a>
+                      <a class="nav-link pl-lg-2" href="#"><span class="ml-1">Grades</span></a>
+                    </ul>
+                  </li>
+
+                  <!-- 2.3 Serviços -->
+                  <li class="nav-item dropdown">
+                    <a class="dropdown-toggle nav-link pl-lg-2" href="#" data-toggle="collapse" id="servicosDropdown" aria-expanded="false">
+                      <span class="ml-1">Serviços</span>
+                    </a>
+                    <ul class="dropdown-menu" aria-labelledby="servicosDropdown">
+                      <a class="nav-link pl-lg-2" href="#"><span class="ml-1">Detalhes</span></a>
+                      <a class="nav-link pl-lg-2" href="#"><span class="ml-1">Fisco</span></a>
+                    </ul>
+                  </li>
+
+                </ul>
+              </li>
+
+              <!-- 6. Consultas -->
+              <li class="nav-item dropdown">
+                <a class="dropdown-toggle nav-link pl-lg-3" href="#" id="consultasDropdown" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+                  Consultas
+                </a>
+                <ul class="dropdown-menu" aria-labelledby="consultasDropdown">
+
+                  <!-- 6.1 Financeiro -->
+                  <li class="nav-item dropdown">
+                    <a class="dropdown-toggle nav-link pl-lg-2" href="#" id="consultaFinanceiroDropdown" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+                      <span class="ml-1">Financeiro</span>
+                    </a>
+                    <ul class="dropdown-menu" aria-labelledby="consultaFinanceiroDropdown">
+                      <a class="nav-link pl-lg-2" href="#"><span class="ml-1">Contas a Receber</span></a>
+                      <a class="nav-link pl-lg-2" href="#"><span class="ml-1">Contas a Pagar</span></a>
+                    </ul>
+                  </li>
+
+                  <!-- 6.2 Controladoria -->
+                  <li class="nav-item dropdown">
+                    <a class="dropdown-toggle nav-link pl-lg-2" href="#" id="consultaControladoriaDropdown" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+                      <span class="ml-1">Controladoria</span>
+                    </a>
+                    <ul class="dropdown-menu" aria-labelledby="consultaControladoriaDropdown">
+                      <a class="nav-link pl-lg-2" href="#"><span class="ml-1">Liberação de Crédito</span></a>
+                      <a class="nav-link pl-lg-2" href="#"><span class="ml-1">Liberação de Desconto</span></a>
+                    </ul>
+                  </li>
+
+                  <!-- 6.3 Comercial -->
+                  <li class="nav-item dropdown">
+                    <a class="dropdown-toggle nav-link pl-lg-2" href="#" id="consultaComercialDropdown" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+                      <span class="ml-1">Comercial</span>
+                    </a>
+                    <ul class="dropdown-menu" aria-labelledby="consultaComercialDropdown">
+                      <a class="nav-link pl-lg-2" href="#"><span class="ml-1">Vendas</span></a>
+                      <a class="nav-link pl-lg-2" href="#"><span class="ml-1">Ordem de Serviço</span></a>
+                      <a class="nav-link pl-lg-2" href="#"><span class="ml-1">Orçamentos</span></a>
+                      <a class="nav-link pl-lg-2" href="#"><span class="ml-1">Pré-vendas</span></a>
+                      <a class="nav-link pl-lg-2" href="#"><span class="ml-1">Devoluções</span></a>
+                      <a class="nav-link pl-lg-2" href="#"><span class="ml-1">Vale Compras</span></a>
+                    </ul>
+                  </li>
+
+                  <!-- 6.4 Estoque -->
+                  <li class="nav-item dropdown">
+                    <a class="dropdown-toggle nav-link pl-lg-2" href="#" id="consultaEstoqueDropdown" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+                      <span class="ml-1">Estoque</span>
+                    </a>
+                    <ul class="dropdown-menu" aria-labelledby="consultaEstoqueDropdown">
+                      <a class="nav-link pl-lg-2" href="#"><span class="ml-1">Histórico de Movimentação</span></a>
+                      <a class="nav-link pl-lg-2" href="#"><span class="ml-1">Produtos Excluídos</span></a>
+                    </ul>
+                  </li>
+
+                  <!-- 6.5 Cadastros -->
+                  <li class="nav-item dropdown">
+                    <a class="dropdown-toggle nav-link pl-lg-2" href="#" id="consultaCadastrosDropdown" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+                      <span class="ml-1">Cadastros</span>
+                    </a>
+                    <ul class="dropdown-menu" aria-labelledby="consultaCadastrosDropdown">
+                      <a class="nav-link pl-lg-2" href="#"><span class="ml-1">Estatísticas de Clientes</span></a>
+                      <a class="nav-link pl-lg-2" href="#"><span class="ml-1">Estatísticas de Colaboradores</span></a>
+                    </ul>
+                  </li>
+
+                  <!-- 6.6 Calendários -->
+                  <li class="nav-item dropdown">
+                    <a class="dropdown-toggle nav-link pl-lg-2" href="#" id="calendariosDropdown" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+                      <span class="ml-1">Calendários</span>
+                    </a>
+                    <ul class="dropdown-menu" aria-labelledby="calendariosDropdown">
+                      <a class="nav-link pl-lg-2" href="#"><span class="ml-1">Aniversariantes</span></a>
+                      <a class="nav-link pl-lg-2" href="#"><span class="ml-1">Ausência</span></a>
+                      <a class="nav-link pl-lg-2" href="#"><span class="ml-1">Feriados</span></a>
+                    </ul>
+                  </li>
+
+                  <!-- 6.7 Gráficos -->
+                  <li class="nav-item dropdown">
+                    <a class="dropdown-toggle nav-link pl-lg-2" href="#" id="graficosDropdown" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+                      <span class="ml-1">Gráficos</span>
+                    </a>
+                    <ul class="dropdown-menu" aria-labelledby="graficosDropdown">
+                      <a class="nav-link pl-lg-2" href="#"><span class="ml-1">Resultados - Dashboard</span></a>
+                      <a class="nav-link pl-lg-2" href="#"><span class="ml-1">Metas</span></a>
+                      <a class="nav-link pl-lg-2" href="#"><span class="ml-1">Comparações</span></a>
+                    </ul>
+                  </li>
+
+                </ul>
+              </li>
+
+              <!-- 7. Faturamento -->
+              <li class="nav-item dropdown">
+                <a class="dropdown-toggle nav-link pl-lg-3" href="#" id="faturamentoDropdown" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+                  Faturamento
+                </a>
+                <ul class="dropdown-menu" aria-labelledby="faturamentoDropdown">
+                  <a class="nav-link pl-lg-2" href="#"><span class="ml-1">Vendas Agrupadas</span></a>
+
+                  <!-- 7.2 Emissão Manual -->
+                  <li class="nav-item dropdown">
+                    <a class="dropdown-toggle nav-link pl-lg-2" href="#" id="emissaoManualDropdown" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+                      <span class="ml-1">Emissão Manual</span>
+                    </a>
+                    <ul class="dropdown-menu" aria-labelledby="emissaoManualDropdown">
+                      <a class="nav-link pl-lg-2" href="#"><span class="ml-1">Saídas</span></a>
+                      <a class="nav-link pl-lg-2" href="#"><span class="ml-1">Entradas</span></a>
+                    </ul>
+                  </li>
+
+                  <a class="nav-link pl-lg-2" href="#"><span class="ml-1">Emissão de NFe</span></a>
+                  <a class="nav-link pl-lg-2" href="#"><span class="ml-1">Emissão de NFCe</span></a>
+                  <a class="nav-link pl-lg-2" href="#"><span class="ml-1">Relação de Notas Fiscais</span></a>
+                </ul>
+              </li>
+
+              <!-- 8. Emissão -->
+              <li class="nav-item dropdown">
+                <a class="dropdown-toggle nav-link pl-lg-3" href="#" id="emissaoDropdown" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+                  Emissão
+                </a>
+                <ul class="dropdown-menu" aria-labelledby="emissaoDropdown">
+                  <a class="nav-link pl-lg-2" href="#"><span class="ml-1">Carnê</span></a>
+                  <a class="nav-link pl-lg-2" href="#"><span class="ml-1">Recibo</span></a>
+                  <a class="nav-link pl-lg-2" href="#"><span class="ml-1">Duplicatas</span></a>
+                  <a class="nav-link pl-lg-2" href="#"><span class="ml-1">Contratos</span></a>
+                  <a class="nav-link pl-lg-2" href="#"><span class="ml-1">Etiquetas</span></a>
+                </ul>
+              </li>
+
+              <!-- 9. Relatórios -->
+              <li class="nav-item dropdown">
+                <a class="dropdown-toggle nav-link pl-lg-3" href="#" id="relatoriosDropdown" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+                  Relatórios
+                </a>
+                <ul class="dropdown-menu" aria-labelledby="relatoriosDropdown">
+                  <!-- 9.1 Produtos -->
+                  <li class="nav-item dropdown">
+                    <a class="dropdown-toggle nav-link pl-lg-2" href="#" id="relatorioProdutoDropdown" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+                      <span class="ml-1">Produtos</span>
+                    </a>
+                    <ul class="dropdown-menu" aria-labelledby="relatorioProdutoDropdown">
+                      <li><a class="nav-link pl-lg-2" href="#"><span class="ml-1">Relação de Produtos</span></a></li>
+                      <li><a class="nav-link pl-lg-2" href="#"><span class="ml-1">Relação do Estoque</span></a></li>
+                      <li><a class="nav-link pl-lg-2" href="#"><span class="ml-1">Relação de Entradas X Saídas</span></a></li>
+                      <li><a class="nav-link pl-lg-2" href="#"><span class="ml-1">Relação de Custo X Venda</span></a></li>
+                      <li><a class="nav-link pl-lg-2" href="#"><span class="ml-1">Mais Vendidos</span></a></li>
+                      <li><a class="nav-link pl-lg-2" href="#"><span class="ml-1">Excluídos/Inativados</span></a></li>
+                    </ul>
+                  </li>
+
+                  <!-- 9.2 Clientes -->
+                  <li class="nav-item dropdown">
+                    <a class="dropdown-toggle nav-link pl-lg-2" href="#" id="relatorioClienteDropdown" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+                      <span class="ml-1">Clientes</span>
+                    </a>
+                    <ul class="dropdown-menu" aria-labelledby="relatorioClienteDropdown">
+                      <li><a class="nav-link pl-lg-2" href="#"><span class="ml-1">Relação de Clientes</span></a></li>
+                      <li><a class="nav-link pl-lg-2" href="#"><span class="ml-1">Fidelidade de Clientes</span></a></li>
+                      <li><a class="nav-link pl-lg-2" href="#"><span class="ml-1">Estatísticas de Clientes</span></a></li>
+                      <li><a class="nav-link pl-lg-2" href="#"><span class="ml-1">Excluídos/Inativados</span></a></li>
+                    </ul>
+                  </li>
+
+                  <!-- 9.3 Financeiro -->
+                  <li class="nav-item dropdown">
+                    <a class="dropdown-toggle nav-link pl-lg-2" href="#" id="relatorioFinanceiroDropdown" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+                      <span class="ml-1">Financeiro</span>
+                    </a>
+                    <ul class="dropdown-menu" aria-labelledby="relatorioFinanceiroDropdown">
+                      <li><a class="nav-link pl-lg-2" href="#"><span class="ml-1">Caixas</span></a></li>
+                      <li><a class="nav-link pl-lg-2" href="#"><span class="ml-1">Contas a Receber</span></a></li>
+                      <li><a class="nav-link pl-lg-2" href="#"><span class="ml-1">Contas a Pagar</span></a></li>
+                      <li><a class="nav-link pl-lg-2" href="#"><span class="ml-1">Renegociações</span></a></li>
+                      <li><a class="nav-link pl-lg-2" href="#"><span class="ml-1">Contas Excluídas</span></a></li>
+                      <li><a class="nav-link pl-lg-2" href="#"><span class="ml-1">Liberação de Crédito</span></a></li>
+                      <li><a class="nav-link pl-lg-2" href="#"><span class="ml-1">Liberação de Desconto</span></a></li>
+                      <li><a class="nav-link pl-lg-2" href="#"><span class="ml-1">DRE</span></a></li>
+                    </ul>
+                  </li>
+
+                  <!-- 9.4 Vendas -->
+                  <li class="nav-item dropdown">
+                    <a class="dropdown-toggle nav-link pl-lg-2" href="#" id="relatorioVendasDropdown" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+                      <span class="ml-1">Vendas</span>
+                    </a>
+                    <ul class="dropdown-menu" aria-labelledby="relatorioVendasDropdown">
+                      <li><a class="nav-link pl-lg-2" href="#"><span class="ml-1">Análise de Venda</span></a></li>
+                      <li><a class="nav-link pl-lg-2" href="#"><span class="ml-1">Vendas Excluídas</span></a></li>
+                      <li class="nav-item dropdown">
+                        <a class="dropdown-toggle nav-link pl-lg-2" href="#" id="relatorioResumoDropdown" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+                          <span class="ml-1">Resumos</span>
+                        </a>
+                        <ul class="dropdown-menu" aria-labelledby="relatorioResumoDropdown">
+                          <li><a class="nav-link pl-lg-2" href="#"><span class="ml-1">Vendedor</span></a></li>
+                          <li><a class="nav-link pl-lg-2" href="#"><span class="ml-1">Cidades</span></a></li>
+                          <li><a class="nav-link pl-lg-2" href="#"><span class="ml-1">Clientes</span></a></li>
+                          <li><a class="nav-link pl-lg-2" href="#"><span class="ml-1">Produtos</span></a></li>
+                        </ul>
+                      </li>
+                    </ul>
+                  </li>
+
+                  <!-- 9.5 Ordens de Serviços -->
+                  <li class="nav-item dropdown">
+                    <a class="dropdown-toggle nav-link pl-lg-2" href="#" id="relatorioOsDropdown" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+                      <span class="ml-1">Ordens de Serviços</span>
+                    </a>
+                    <ul class="dropdown-menu" aria-labelledby="relatorioOsDropdown">
+                      <li><a class="nav-link pl-lg-2" href="#"><span class="ml-1">Análise de OS</span></a></li>
+                      <li><a class="nav-link pl-lg-2" href="#"><span class="ml-1">Execução de Serviços</span></a></li>
+                      <li><a class="nav-link pl-lg-2" href="#"><span class="ml-1">OS Excluídas</span></a></li>
+                      <li><a class="nav-link pl-lg-2" href="#"><span class="ml-1">Insumos Utilizados</span></a></li>
+                    </ul>
+                  </li>
+
+                  <!-- 9.6 Orçamentos -->
+                  <li class="nav-item dropdown">
+                    <a class="dropdown-toggle nav-link pl-lg-2" href="#" id="relatorioOrcamentoDropdown" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+                      <span class="ml-1">Orçamentos</span>
+                    </a>
+                    <ul class="dropdown-menu" aria-labelledby="relatorioOrcamentoDropdown">
+                      <li><a class="nav-link pl-lg-2" href="#"><span class="ml-1">Análise de Orçamentos</span></a></li>
+                      <li><a class="nav-link pl-lg-2" href="#"><span class="ml-1">Orçamentos Excluídos</span></a></li>
+                    </ul>
+                  </li>
+
+                  <!-- 9.7 Pré-vendas -->
+                  <li class="nav-item dropdown">
+                    <a class="dropdown-toggle nav-link pl-lg-2" href="#" id="relatorioPreVendasDropdown" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+                      <span class="ml-1">Pré-vendas</span>
+                    </a>
+                    <ul class="dropdown-menu" aria-labelledby="relatorioPreVendasDropdown">
+                      <li><a class="nav-link pl-lg-2" href="#"><span class="ml-1">Análise de Pré-vendas</span></a></li>
+                      <li><a class="nav-link pl-lg-2" href="#"><span class="ml-1">Pré-vendas Excluídas</span></a></li>
+                    </ul>
+                  </li>
+
+                  <!-- 9.8 Condicionais -->
+                  <li class="nav-item dropdown">
+                    <a class="dropdown-toggle nav-link pl-lg-2" href="#" id="relatorioCondicionaisDropdown" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+                      <span class="ml-1">Condicionais</span>
+                    </a>
+                    <ul class="dropdown-menu" aria-labelledby="relatorioCondicionaisDropdown">
+                      <li><a class="nav-link pl-lg-2" href="#"><span class="ml-1">Análise de Condicionais</span></a></li>
+                      <li><a class="nav-link pl-lg-2" href="#"><span class="ml-1">Condicionais Excluídas</span></a></li>
+                    </ul>
+                  </li>
+
+                  <!-- 9.9 Devoluções -->
+                  <li class="nav-item dropdown">
+                    <a class="dropdown-toggle nav-link pl-lg-2" href="#" id="relatorioDevolucoesDropdown" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+                      <span class="ml-1">Devoluções</span>
+                    </a>
+                    <ul class="dropdown-menu" aria-labelledby="relatorioDevolucoesDropdown">
+                      <li><a class="nav-link pl-lg-2" href="#"><span class="ml-1">Análise de Devoluções</span></a></li>
+                      <li><a class="nav-link pl-lg-2" href="#"><span class="ml-1">Devoluções Excluídas</span></a></li>
+                    </ul>
+                  </li>
+
+                  <!-- 9.10 Compras -->
+                  <li class="nav-item dropdown">
+                    <a class="dropdown-toggle nav-link pl-lg-2" href="#" id="relatorioComprasDropdown" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+                      <span class="ml-1">Compras</span>
+                    </a>
+                    <ul class="dropdown-menu" aria-labelledby="relatorioComprasDropdown">
+                      <li><a class="nav-link pl-lg-2" href="#"><span class="ml-1">Análise de Entradas</span></a></li>
+                      <li><a class="nav-link pl-lg-2" href="#"><span class="ml-1">Entradas Excluídas</span></a></li>
+                    </ul>
+                  </li>
+
+                  <!-- 9.11 Faturamento -->
+                  <li class="nav-item dropdown">
+                    <a class="dropdown-toggle nav-link pl-lg-2" href="#" id="relatorioFaturamentoDropdown" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+                      <span class="ml-1">Faturamento</span>
+                    </a>
+                    <ul class="dropdown-menu" aria-labelledby="relatorioFaturamentoDropdown">
+                      <li><a class="nav-link pl-lg-2" href="#"><span class="ml-1">Análise de Notas Fiscais</span></a></li>
+                      <li><a class="nav-link pl-lg-2" href="#"><span class="ml-1">Notas Canceladas</span></a></li>
+                      <li><a class="nav-link pl-lg-2" href="#"><span class="ml-1">Relação de NFe</span></a></li>
+                      <li><a class="nav-link pl-lg-2" href="#"><span class="ml-1">Relação de NFCe</span></a></li>
+                    </ul>
+                  </li>
+
+                  <!-- 9.12 Comissões -->
+                  <li class="nav-item dropdown">
+                    <a class="dropdown-toggle nav-link pl-lg-2" href="#" id="relatorioComissoesDropdown" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+                      <span class="ml-1">Comissões</span>
+                    </a>
+                    <ul class="dropdown-menu" aria-labelledby="relatorioComissoesDropdown">
+                      <li><a class="nav-link pl-lg-2" href="#"><span class="ml-1">Relação de Comissões</span></a></li>
+                      <li><a class="nav-link pl-lg-2" href="#"><span class="ml-1">Comissões Avulsas</span></a></li>
+                    </ul>
+                  </li>
+
+                  <!-- 9.13 Vendedores -->
+                  <li class="nav-item dropdown">
+                    <a class="dropdown-toggle nav-link pl-lg-2" href="#" id="relatorioVendedoresDropdown" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+                      <span class="ml-1">Vendedores</span>
+                    </a>
+                    <ul class="dropdown-menu" aria-labelledby="relatorioVendedoresDropdown">
+                      <li><a class="nav-link pl-lg-2" href="#"><span class="ml-1">Relação de Vendedores</span></a></li>
+                      <li><a class="nav-link pl-lg-2" href="#"><span class="ml-1">Relação de Férias</span></a></li>
+                      <li><a class="nav-link pl-lg-2" href="#"><span class="ml-1">Vendedores Excluídos/Inativos</span></a></li>
+                    </ul>
+                  </li>
+                </ul>
+              </li>
+
+              <!-- 2. Sistema -->
+              <li class="nav-item dropdown">
+                <a class="dropdown-toggle nav-link pl-lg-3" href="#" id="sistemaDropdown" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false"> 
+                  Sistema </a>
+                <ul class="dropdown-menu" aria-labelledby="sistemaDropdown">
+
+                  <!-- 2.1 Configurações -->
+                  <li class="nav-item dropdown">
+                    <a class="dropdown-toggle nav-link pl-lg-2" href="#" id="configuracoesDropdown" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+                      <span class="ml-1">Configurações</span>
+                    </a>
+                    <ul class="dropdown-menu" aria-labelledby="configuracoesDropdown">
+                      <a class="nav-link pl-lg-2" href="#"><span class="ml-1">Administração do Sistema</span></a>
+                      <a class="nav-link pl-lg-2" href="#"><span class="ml-1">Configurações de Impressão</span></a>
+                      <a class="nav-link pl-lg-2" href="#"><span class="ml-1">Configuração de Etiquetas</span></a>
+                      <a class="nav-link pl-lg-2" href="#"><span class="ml-1">Sair do Sistema</span></a>
+                    </ul>
+                  </li>
+
+                  <!-- 2.1 Utilitários -->
+                  <li class="nav-item dropdown">
+                    <a class="dropdown-toggle nav-link pl-lg-2" href="#" id="utilitariosDropdown" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+                      <span class="ml-1">Utilitários</span>
+                    </a>
+                    <ul class="dropdown-menu" aria-labelledby="utilitariosDropdown">
+                      <a class="nav-link pl-lg-2" href="#"><span class="ml-1">Calculadora</span></a>
+                      <a class="nav-link pl-lg-2" href="#"><span class="ml-1">Recados</span></a>
+                      <a class="nav-link pl-lg-2" href="#"><span class="ml-1">Wallpapers</span></a>
+                    </ul>
+                  </li>
+                </ul>
+              </li>
+
+              <!-- Mais -->
               <li class="nav-item dropdown more">
                 <a class="dropdown-toggle more-horizontal nav-link" href="#" id="moreDropdown" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
                   <span class="ml-2 sr-only">Mais</span>
@@ -160,6 +671,9 @@
                 </li>
                 <li class="nav-item">
                   <a class="nav-link pl-3" href="#">Atividades</a>
+                </li>
+                <li class="nav-item">
+                  <a class="nav-link pl-3" href="#">Sair</a>
                 </li>
               </ul>
             </li>

@@ -1,0 +1,850 @@
+<!doctype html>
+<html lang="pt-BR">
+  <head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+    <meta name="description" content="">
+    <meta name="author" content="">
+    <link rel="icon" href="favicon.ico">
+    <title>Faccho Dashboard - Análise Geral</title>
+    <!-- Simple bar CSS -->
+    <link rel="stylesheet" href="css/simplebar.css">
+    <!-- Fonts CSS -->
+    <link href="https://fonts.googleapis.com/css2?family=Overpass:ital,wght@0,100;0,200;0,300;0,400;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,600;1,700;1,800;1,900&display=swap" rel="stylesheet">
+    <!-- Icons CSS -->
+    <link rel="stylesheet" href="css/feather.css">
+    <link rel="stylesheet" href="css/select2.css">
+    <link rel="stylesheet" href="css/dropzone.css">
+    <link rel="stylesheet" href="css/uppy.min.css">
+    <link rel="stylesheet" href="css/jquery.steps.css">
+    <link rel="stylesheet" href="css/jquery.timepicker.css">
+    <link rel="stylesheet" href="css/quill.snow.css">
+    <!-- Date Range Picker CSS -->
+    <link rel="stylesheet" href="css/daterangepicker.css">
+    <!-- App CSS -->
+    <link rel="stylesheet" href="css/app-light.css" id="lightTheme">
+    <link rel="stylesheet" href="css/app-dark.css" id="darkTheme" disabled>
+  </head>
+  <body class="horizontal light  ">
+    <div class="wrapper">
+      <nav class="navbar navbar-expand-lg navbar-light bg-white flex-row border-bottom shadow">
+        <div class="container-fluid">
+          <a class="navbar-brand mx-lg-1 mr-0" href="./index.html">
+            <svg version="1.1" id="logo" class="navbar-brand-img brand-sm" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" x="0px" y="0px" viewBox="0 0 120 120" xml:space="preserve">
+              <g>
+                <polygon class="st0" points="78,105 15,105 24,87 87,87 	" />
+                <polygon class="st0" points="96,69 33,69 42,51 105,51 	" />
+                <polygon class="st0" points="78,33 15,33 24,15 87,15 	" />
+              </g>
+            </svg>
+          </a>
+          <button class="navbar-toggler mt-2 mr-auto toggle-sidebar text-muted">
+            <i class="fe fe-menu navbar-toggler-icon"></i>
+          </button>
+          <div class="navbar-slide bg-white ml-lg-4" id="navbarSupportedContent">
+            <a href="#" class="btn toggle-sidebar d-lg-none text-muted ml-2 mt-3" data-toggle="toggle">
+              <i class="fe fe-x"><span class="sr-only"></span></i>
+            </a>
+            <ul class="navbar-nav mr-auto">
+              <!-- 1. Início -->
+              <li class="nav-item dropdown">
+                <a href="#" id="inicioDropdown" class="dropdown-toggle nav-link" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+                  <span class="ml-lg-2">Início</span>
+                </a>
+                <div class="dropdown-menu" aria-labelledby="inicioDropdown">
+                  <a class="dropdown-item" href="#"><span class="ml-1">Análise Geral</span></a>
+                  <a class="dropdown-item" href="#"><span class="ml-1">Estatísticas</span></a>
+                </div>
+              </li>
+          
+              <!-- 2. Financeiro -->
+              <li class="nav-item dropdown">
+                <a href="#" id="financeiroDropdown" class="dropdown-toggle nav-link" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+                  <span class="ml-lg-2">Financeiro</span>
+                </a>
+                <div class="dropdown-menu" aria-labelledby="financeiroDropdown">
+                  <!-- 2.1 Caixa Principal -->
+                  <div class="dropdown-submenu">
+                    <a class="dropdown-item dropdown-toggle" href="#" id="caixaPrincipalDropdown">Caixa Principal</a>
+                    <div class="dropdown-menu" aria-labelledby="caixaPrincipalDropdown">
+                      <a class="dropdown-item" href="#"><span class="ml-1">Movimentação</span></a>
+                      <a class="dropdown-item" href="#"><span class="ml-1">Abertura/Fechamento</span></a>
+                      <a class="dropdown-item" href="#"><span class="ml-1">Conferência</span></a>
+                    </div>
+                  </div>
+          
+                  <!-- 2.2 Lançamentos -->
+                  <div class="dropdown-submenu">
+                    <a class="dropdown-item dropdown-toggle" href="#" id="lancamentosDropdown">Lançamentos</a>
+                    <div class="dropdown-menu" aria-labelledby="lancamentosDropdown">
+                      <a class="dropdown-item" href="#"><span class="ml-1">Contas a Receber</span></a>
+                      <a class="dropdown-item" href="#"><span class="ml-1">Contas a Pagar</span></a>
+                      <a class="dropdown-item" href="#"><span class="ml-1">Avulso</span></a>
+                    </div>
+                  </div>
+          
+                  <!-- 2.3 Controladoria -->
+                  <div class="dropdown-submenu">
+                    <a class="dropdown-item dropdown-toggle" href="#" id="controladoriasDropdown">Controladoria</a>
+                    <div class="dropdown-menu" aria-labelledby="controladoriasDropdown">
+                      <a class="dropdown-item" href="#"><span class="ml-1">Liberação de Crédito</span></a>
+                      <a class="dropdown-item" href="#"><span class="ml-1">Liberação de Desconto</span></a>
+                    </div>
+                  </div>
+                </div>
+              </li>
+          
+              <!-- 3. Comercial -->
+              <li class="nav-item dropdown">
+                <a href="#" id="comercialDropdown" class="dropdown-toggle nav-link" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+                  <span class="ml-lg-2">Comercial</span>
+                </a>
+                <div class="dropdown-menu" aria-labelledby="comercialDropdown">
+                  <a class="dropdown-item" href="#"><span class="ml-1">Vendas</span></a>
+                  <a class="dropdown-item" href="#"><span class="ml-1">Ordem de Serviço</span></a>
+                  <a class="dropdown-item" href="#"><span class="ml-1">Orçamentos</span></a>
+                  
+                  <!-- 3.4 Pré-vendas -->
+                  <div class="dropdown-submenu">
+                    <a class="dropdown-item dropdown-toggle" href="#" id="preVendasDropdown">Pré-vendas</a>
+                    <div class="dropdown-menu" aria-labelledby="preVendasDropdown">
+                      <a class="dropdown-item" href="#"><span class="ml-1">Pedidos</span></a>
+                      <a class="dropdown-item" href="#"><span class="ml-1">Pedidos Agrupados</span></a>
+                      <a class="dropdown-item" href="#"><span class="ml-1">Separação e Conferência</span></a>
+                    </div>
+                  </div>
+          
+                  <!-- 3.5 Devoluções -->
+                  <div class="dropdown-submenu">
+                    <a class="dropdown-item dropdown-toggle" href="#" id="devolucoesDropdown">Devoluções</a>
+                    <div class="dropdown-menu" aria-labelledby="devolucoesDropdown">
+                      <a class="dropdown-item" href="#"><span class="ml-1">Devolução de Venda</span></a>
+                      <a class="dropdown-item" href="#"><span class="ml-1">Devolução de Ordem de Serviço</span></a>
+                    </div>
+                  </div>
+          
+                  <a class="dropdown-item" href="#"><span class="ml-1">Vale Compras</span></a>
+                </div>
+              </li>
+          
+              <!-- 4. Estoque -->
+              <li class="nav-item dropdown">
+                <a href="#" id="estoqueDropdown" class="dropdown-toggle nav-link" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+                  <span class="ml-lg-2">Estoque</span>
+                </a>
+                <div class="dropdown-menu" aria-labelledby="estoqueDropdown">
+                  <a class="dropdown-item" href="#"><span class="ml-1">Produtos</span></a>
+                  
+                  <!-- 4.2 Estoque -->
+                  <div class="dropdown-submenu">
+                    <a class="dropdown-item dropdown-toggle" href="#" id="estoqueDetalheDropdown">Estoque</a>
+                    <div class="dropdown-menu" aria-labelledby="estoqueDetalheDropdown">
+                      <a class="dropdown-item" href="#"><span class="ml-1">Acerto de Estoque</span></a>
+                      <a class="dropdown-item" href="#"><span class="ml-1">Inventário</span></a>
+                    </div>
+                  </div>
+          
+                  <!-- 4.3 Relação -->
+                  <div class="dropdown-submenu">
+                    <a class="dropdown-item dropdown-toggle" href="#" id="relacaoDropdown">Relação</a>
+                    <div class="dropdown-menu" aria-labelledby="relacaoDropdown">
+                      <a class="dropdown-item" href="#"><span class="ml-1">Auditoria</span></a>
+                      <a class="dropdown-item" href="#"><span class="ml-1">Avisos</span></a>
+                    </div>
+                  </div>
+          
+                  <!-- 4.4 Compras -->
+                  <div class="dropdown-submenu">
+                    <a class="dropdown-item dropdown-toggle" href="#" id="comprasDropdown">Compras</a>
+                    <div class="dropdown-menu" aria-labelledby="comprasDropdown">
+                      <a class="dropdown-item" href="#"><span class="ml-1">Entradas</span></a>
+                      <a class="dropdown-item" href="#"><span class="ml-1">Lista de Compras</span></a>
+                    </div>
+                  </div>
+                </div>
+              </li>
+          
+              <!-- 5. Cadastros -->
+              <li class="nav-item dropdown">
+                <a href="#" id="cadastrosDropdown" class="dropdown-toggle nav-link" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+                  <span class="ml-lg-2">Cadastros</span>
+                </a>
+                <div class="dropdown-menu" aria-labelledby="cadastrosDropdown">
+                  <!-- 5.1 Financeiro -->
+                  <div class="dropdown-submenu">
+                    <a class="dropdown-item dropdown-toggle" href="#" id="cadastroFinanceiroDropdown">Financeiro</a>
+                    <div class="dropdown-menu" aria-labelledby="cadastroFinanceiroDropdown">
+                      <a class="dropdown-item" href="#"><span class="ml-1">Caixas</span></a>
+                      <a class="dropdown-item" href="#"><span class="ml-1">Contas Correntes</span></a>
+                      <a class="dropdown-item" href="#"><span class="ml-1">Plano de Contas</span></a>
+                    </div>
+                  </div>
+          
+                  <!-- 5.2 Pessoas -->
+                  <div class="dropdown-submenu">
+                    <a class="dropdown-item dropdown-toggle" href="#" id="pessoasDropdown">Pessoas</a>
+                    <div class="dropdown-menu" aria-labelledby="pessoasDropdown">
+                      <a class="dropdown-item" href="#"><span class="ml-1">Clientes</span></a>
+                      <a class="dropdown-item" href="#"><span class="ml-1">Colaboradores</span></a>
+                      <a class="dropdown-item" href="#"><span class="ml-1">Usuários</span></a>
+                    </div>
+                  </div>
+          
+                  <!-- 5.3 Produtos -->
+                  <div class="dropdown-submenu">
+                    <a class="dropdown-item dropdown-toggle" href="#" id="produtosDropdown">Produtos</a>
+                    <div class="dropdown-menu" aria-labelledby="produtosDropdown">
+                      <a class="dropdown-item" href="#"><span class="ml-1">Seção/Grupo/SubGrupo</span></a>
+                      <a class="dropdown-item" href="#"><span class="ml-1">Prateleira/Gôndola/Gaveta</span></a>
+                      <a class="dropdown-item" href="#"><span class="ml-1">Fabricantes/Marcas</span></a>
+                      <a class="dropdown-item" href="#"><span class="ml-1">Grades</span></a>
+                    </div>
+                  </div>
+          
+                  <!-- 5.4 Serviços -->
+                  <div class="dropdown-submenu">
+                    <a class="dropdown-item dropdown-toggle" href="#" id="servicosDropdown">Serviços</a>
+                    <div class="dropdown-menu" aria-labelledby="servicosDropdown">
+                      <a class="dropdown-item" href="#"><span class="ml-1">Detalhes</span></a>
+                      <a class="dropdown-item" href="#"><span class="ml-1">Fisco</span></a>
+                    </div>
+                  </div>
+                </div>
+              </li>
+          
+              <!-- 6. Consultas -->
+              <li class="nav-item dropdown">
+                <a href="#" id="consultasDropdown" class="dropdown-toggle nav-link" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+                  <span class="ml-lg-2">Consultas</span>
+                </a>
+                <div class="dropdown-menu" aria-labelledby="consultasDropdown">
+                  <!-- 6.1 Financeiro -->
+                  <div class="dropdown-submenu">
+                    <a class="dropdown-item dropdown-toggle" href="#" id="consultaFinanceiroDropdown">Financeiro</a>
+                    <div class="dropdown-menu" aria-labelledby="consultaFinanceiroDropdown">
+                      <a class="dropdown-item" href="#"><span class="ml-1">Contas a Receber</span></a>
+                      <a class="dropdown-item" href="#"><span class="ml-1">Contas a Pagar</span></a>
+                    </div>
+                  </div>
+          
+                  <!-- 6.2 Controladoria -->
+                  <div class="dropdown-submenu">
+                    <a class="dropdown-item dropdown-toggle" href="#" id="consultaControladoriasDropdown">Controladoria</a>
+                    <div class="dropdown-menu" aria-labelledby="consultaControladoriasDropdown">
+                      <a class="dropdown-item" href="#"><span class="ml-1">Liberação de Crédito</span></a>
+                      <a class="dropdown-item" href="#"><span class="ml-1">Liberação de Desconto</span></a>
+                    </div>
+                  </div>
+          
+                  <!-- 6.3 Comercial -->
+                  <div class="dropdown-submenu">
+                    <a class="dropdown-item dropdown-toggle" href="#" id="consultaComercialDropdown">Comercial</a>
+                    <div class="dropdown-menu" aria-labelledby="consultaComercialDropdown">
+                      <a class="dropdown-item" href="#"><span class="ml-1">Vendas</span></a>
+                      <a class="dropdown-item" href="#"><span class="ml-1">Ordem de Serviço</span></a>
+                      <a class="dropdown-item" href="#"><span class="ml-1">Orçamentos</span></a>
+                      <a class="dropdown-item" href="#"><span class="ml-1">Pré-vendas</span></a>
+                      <a class="dropdown-item" href="#"><span class="ml-1">Devoluções</span></a>
+                      <a class="dropdown-item" href="#"><span class="ml-1">Vale Compras</span></a>
+                    </div>
+                  </div>
+          
+                  <!-- 6.4 Estoque -->
+                  <div class="dropdown-submenu">
+                    <a class="dropdown-item dropdown-toggle" href="#" id="consultaEstoqueDropdown">Estoque</a>
+                    <div class="dropdown-menu" aria-labelledby="consultaEstoqueDropdown">
+                      <a class="dropdown-item" href="#"><span class="ml-1">Histórico de Movimentação</span></a>
+                      <a class="dropdown-item" href="#"><span class="ml-1">Produtos Excluídos</span></a>
+                    </div>
+                  </div>
+          
+                  <!-- 6.5 Cadastros -->
+                  <div class="dropdown-submenu">
+                    <a class="dropdown-item dropdown-toggle" href="#" id="consultaCadastrosDropdown">Cadastros</a>
+                    <div class="dropdown-menu" aria-labelledby="consultaCadastrosDropdown">
+                      <a class="dropdown-item" href="#"><span class="ml-1">Estatísticas de Clientes</span></a>
+                      <a class="dropdown-item" href="#"><span class="ml-1">Estatísticas de Colaboradores</span></a>
+                    </div>
+                  </div>
+          
+                  <!-- 6.6 Calendários -->
+                  <div class="dropdown-submenu">
+                    <a class="dropdown-item dropdown-toggle" href="#" id="calendarioDropdown">Calendários</a>
+                    <div class="dropdown-menu" aria-labelledby="calendarioDropdown">
+                      <a class="dropdown-item" href="#"><span class="ml-1">Aniversariantes</span></a>
+                      <a class="dropdown-item" href="#"><span class="ml-1">Ausência</span></a>
+                      <a class="dropdown-item" href="#"><span class="ml-1">Feriados</span></a>
+                    </div>
+                  </div>
+          
+                  <!-- 6.7 Gráficos -->
+                  <div class="dropdown-submenu">
+                    <a class="dropdown-item dropdown-toggle" href="#" id="graficosDropdown">Gráficos</a>
+                    <div class="dropdown-menu" aria-labelledby="graficosDropdown">
+                      <a class="dropdown-item" href="#"><span class="ml-1">Resultados - Dashboard</span></a>
+                      <a class="dropdown-item" href="#"><span class="ml-1">Metas</span></a>
+                      <a class="dropdown-item" href="#"><span class="ml-1">Comparações</span></a>
+                    </div>
+                  </div>
+                </div>
+              </li>
+          
+              <!-- 7. Faturamento -->
+              <li class="nav-item dropdown">
+                <a href="#" id="faturamentoDropdown" class="dropdown-toggle nav-link" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+                  <span class="ml-lg-2">Faturamento</span>
+                </a>
+                <div class="dropdown-menu" aria-labelledby="faturamentoDropdown">
+                  <a class="dropdown-item" href="#"><span class="ml-1">Vendas Agrupadas</span></a>
+                  
+                  <!-- 7.2 Emissão Manual -->
+                  <div class="dropdown-submenu">
+                    <a class="dropdown-item dropdown-toggle" href="#" id="emissaoManualDropdown">Emissão Manual</a>
+                    <div class="dropdown-menu" aria-labelledby="emissaoManualDropdown">
+                      <a class="dropdown-item" href="#"><span class="ml-1">Saídas</span></a>
+                      <a class="dropdown-item" href="#"><span class="ml-1">Entradas</span></a>
+                    </div>
+                  </div>
+          
+                  <a class="dropdown-item" href="#"><span class="ml-1">Emissão de NFe</span></a>
+                  <a class="dropdown-item" href="#"><span class="ml-1">Emissão de NFCe</span></a>
+                  <a class="dropdown-item" href="#"><span class="ml-1">Relação de Notas Fiscais</span></a>
+                </div>
+              </li>
+          
+              <!-- 8. Emissão -->
+              <li class="nav-item dropdown">
+                <a href="#" id="emissaoDropdown" class="dropdown-toggle nav-link" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+                  <span class="ml-lg-2">Emissão</span>
+                </a>
+                <div class="dropdown-menu" aria-labelledby="emissaoDropdown">
+                  <a class="dropdown-item" href="#"><span class="ml-1">Carnê</span></a>
+                  <a class="dropdown-item" href="#"><span class="ml-1">Recibo</span></a>
+                  <a class="dropdown-item" href="#"><span class="ml-1">Duplicatas</span></a>
+                  <a class="dropdown-item" href="#"><span class="ml-1">Contratos</span></a>
+                  <a class="dropdown-item" href="#"><span class="ml-1">Etiquetas</span></a>
+                </div>
+              </li>
+
+              <!-- 9. Relatórios -->
+              <li class="nav-item dropdown">
+                <a href="#" id="relatoriosDropdown" class="dropdown-toggle nav-link" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+                  <span class="ml-lg-2">Relatórios</span>
+                </a>
+                <div class="dropdown-menu" aria-labelledby="relatoriosDropdown">
+                  <!-- 9.1 Teste -->
+                  <div class="dropdown-submenu">
+                    <a class="dropdown-item dropdown-toggle" href="#" id="relatorioTesteDropdown">Teste</a>
+                    <div class="dropdown-menu" aria-labelledby="relatorioTesteDropdown">
+                      <a class="dropdown-item" href="#"><span class="ml-1">Manter Teste</span></a>
+                    </div>
+                  </div>
+          
+                  <!-- 9.2 Teste -->
+                  <div class="dropdown-submenu">
+                    <a class="dropdown-item dropdown-toggle" href="#" id="relatorioTeste2Dropdown">Teste</a>
+                    <div class="dropdown-menu" aria-labelledby="relatorioTeste2Dropdown">
+                      <a class="dropdown-item" href="#"><span class="ml-1">Manter Teste</span></a>
+                    </div>
+                  </div>
+                </div>
+              </li>
+          
+              <!-- 10. Administração -->
+              <li class="nav-item dropdown">
+                <a href="#" id="administracaoDropdown" class="dropdown-toggle nav-link" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+                  <span class="ml-lg-2">Administração</span>
+                </a>
+                <div class="dropdown-menu" aria-labelledby="administracaoDropdown">
+                  <!-- 10.1 Teste -->
+                  <div class="dropdown-submenu">
+                    <a class="dropdown-item dropdown-toggle" href="#" id="administracaoTesteDropdown">Teste</a>
+                    <div class="dropdown-menu" aria-labelledby="administracaoTesteDropdown">
+                      <a class="dropdown-item" href="#"><span class="ml-1">Manter Teste</span></a>
+                    </div>
+                  </div>
+          
+                  <!-- 10.2 Teste -->
+                  <div class="dropdown-submenu">
+                    <a class="dropdown-item dropdown-toggle" href="#" id="administracaoTeste2Dropdown">Teste</a>
+                    <div class="dropdown-menu" aria-labelledby="administracaoTeste2Dropdown">
+                      <a class="dropdown-item" href="#"><span class="ml-1">Manter Teste</span></a>
+                    </div>
+                  </div>
+                </div>
+              </li>
+          
+              <!-- 11. Mais -->
+              <li class="nav-item dropdown">
+                <a href="#" id="maisDropdown" class="dropdown-toggle nav-link" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+                  <span class="ml-lg-2">Mais</span>
+                </a>
+                <div class="dropdown-menu" aria-labelledby="maisDropdown">
+                  <!-- 11.1 Teste -->
+                  <div class="dropdown-submenu">
+                    <a class="dropdown-item dropdown-toggle" href="#" id="maisTesteDropdown">Teste</a>
+                    <div class="dropdown-menu" aria-labelledby="maisTesteDropdown">
+                      <a class="dropdown-item" href="#"><span class="ml-1">Manter Teste</span></a>
+                    </div>
+                  </div>
+                </div>
+              </li>
+            </ul>
+          </div>
+          
+          <!-- CSS ADICIONAL PARA SUBMENUS DROPDOWN -->
+          <style>
+          .dropdown-submenu {
+            position: relative;
+          }
+          
+          .dropdown-submenu .dropdown-menu {
+            top: 0;
+            left: 100%;
+            margin-top: -1px;
+          }
+          
+          .dropdown-item:focus, .dropdown-item:hover {
+            background-color: #f1f3f4;
+          }
+          </style>
+          
+          <!-- JAVASCRIPT ADICIONAL PARA DROPDOWN -->
+          <script>
+          $(document).ready(function(){
+            $('.dropdown-menu a.dropdown-toggle').on('click', function(e) {
+              if (!$(this).next().hasClass('show')) {
+                $(this).parents('.dropdown-menu').first().find('.show').removeClass('show');
+              }
+              var $subMenu = $(this).next('.dropdown-menu');
+              $subMenu.toggleClass('show');
+              $(this).parents('li.nav-item.dropdown.show').on('hidden.bs.dropdown', function(e) {
+                $('.dropdown-submenu .show').removeClass('show');
+              });
+              return false;
+            });
+          });</script>
+          <form class="form-inline ml-md-auto d-none d-lg-flex searchform text-muted">
+            <input class="form-control mr-sm-2 bg-transparent border-0 pl-4 text-muted" type="search" placeholder="Pesquisar..." aria-label="Search">
+          </form>
+          <ul class="navbar-nav d-flex flex-row">
+            <li class="nav-item">
+              <a class="nav-link text-muted my-2" href="./#" id="modeSwitcher" data-mode="light">
+                <i class="fe fe-sun fe-16"></i>
+              </a>
+            </li>
+            <li class="nav-item">
+              <a class="nav-link text-muted my-2" href="./#" data-toggle="modal" data-target=".modal-shortcut">
+                <i class="fe fe-grid fe-16"></i>
+              </a>
+            </li>
+            <li class="nav-item nav-notif">
+              <a class="nav-link text-muted my-2" href="./#" data-toggle="modal" data-target=".modal-notif">
+                <i class="fe fe-bell fe-16"></i>
+                <span class="dot dot-md bg-success"></span>
+              </a>
+            </li>
+            <li class="nav-item dropdown ml-lg-0">
+              <a class="nav-link dropdown-toggle text-muted" href="#" id="navbarDropdownMenuLink" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+                <span class="avatar avatar-sm mt-2">
+                  <img src="./assets/avatars/face-1.jpg" alt="..." class="avatar-img rounded-circle">
+                </span>
+              </a>
+              <ul class="dropdown-menu dropdown-menu-right" aria-labelledby="navbarDropdownMenuLink">
+                <li class="nav-item">
+                  <a class="nav-link pl-3" href="#">Perfil</a>
+                </li>
+                <li class="nav-item">
+                  <a class="nav-link pl-3" href="#">Configurações</a>
+                </li>
+                <li class="nav-item">
+                  <a class="nav-link pl-3" href="#">Atividades</a>
+                </li>
+              </ul>
+            </li>
+          </ul>
+        </div>
+      </nav>
+      <main role="main" class="main-content">
+        <div class="container-fluid">
+          <div class="row justify-content-center">
+            <div class="col-12">
+              <h1 class="page-title">Vamos começar...</h1>
+            </div> <!-- .col-12 -->
+          </div> <!-- .row -->
+        </div> <!-- .container-fluid -->
+        <div class="modal fade modal-notif modal-slide" tabindex="-1" role="dialog" aria-labelledby="defaultModalLabel" aria-hidden="true">
+          <div class="modal-dialog modal-sm" role="document">
+            <div class="modal-content">
+              <div class="modal-header">
+                <h5 class="modal-title" id="defaultModalLabel">Notifications</h5>
+                <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                  <span aria-hidden="true">&times;</span>
+                </button>
+              </div>
+              <div class="modal-body">
+                <div class="list-group list-group-flush my-n3">
+                  <div class="list-group-item bg-transparent">
+                    <div class="row align-items-center">
+                      <div class="col-auto">
+                        <span class="fe fe-box fe-24"></span>
+                      </div>
+                      <div class="col">
+                        <small><strong>Package has uploaded successfull</strong></small>
+                        <div class="my-0 text-muted small">Package is zipped and uploaded</div>
+                        <small class="badge badge-pill badge-light text-muted">1m ago</small>
+                      </div>
+                    </div>
+                  </div>
+                  <div class="list-group-item bg-transparent">
+                    <div class="row align-items-center">
+                      <div class="col-auto">
+                        <span class="fe fe-download fe-24"></span>
+                      </div>
+                      <div class="col">
+                        <small><strong>Widgets are updated successfull</strong></small>
+                        <div class="my-0 text-muted small">Just create new layout Index, form, table</div>
+                        <small class="badge badge-pill badge-light text-muted">2m ago</small>
+                      </div>
+                    </div>
+                  </div>
+                  <div class="list-group-item bg-transparent">
+                    <div class="row align-items-center">
+                      <div class="col-auto">
+                        <span class="fe fe-inbox fe-24"></span>
+                      </div>
+                      <div class="col">
+                        <small><strong>Notifications have been sent</strong></small>
+                        <div class="my-0 text-muted small">Fusce dapibus, tellus ac cursus commodo</div>
+                        <small class="badge badge-pill badge-light text-muted">30m ago</small>
+                      </div>
+                    </div> <!-- / .row -->
+                  </div>
+                  <div class="list-group-item bg-transparent">
+                    <div class="row align-items-center">
+                      <div class="col-auto">
+                        <span class="fe fe-link fe-24"></span>
+                      </div>
+                      <div class="col">
+                        <small><strong>Link was attached to menu</strong></small>
+                        <div class="my-0 text-muted small">New layout has been attached to the menu</div>
+                        <small class="badge badge-pill badge-light text-muted">1h ago</small>
+                      </div>
+                    </div>
+                  </div> <!-- / .row -->
+                </div> <!-- / .list-group -->
+              </div>
+              <div class="modal-footer">
+                <button type="button" class="btn btn-secondary btn-block" data-dismiss="modal">Clear All</button>
+              </div>
+            </div>
+          </div>
+        </div>
+        <div class="modal fade modal-shortcut modal-slide" tabindex="-1" role="dialog" aria-labelledby="defaultModalLabel" aria-hidden="true">
+          <div class="modal-dialog" role="document">
+            <div class="modal-content">
+              <div class="modal-header">
+                <h5 class="modal-title" id="defaultModalLabel">Shortcuts</h5>
+                <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                  <span aria-hidden="true">&times;</span>
+                </button>
+              </div>
+              <div class="modal-body px-5">
+                <div class="row align-items-center">
+                  <div class="col-6 text-center">
+                    <div class="squircle bg-success justify-content-center">
+                      <i class="fe fe-cpu fe-32 align-self-center text-white"></i>
+                    </div>
+                    <p>Control area</p>
+                  </div>
+                  <div class="col-6 text-center">
+                    <div class="squircle bg-primary justify-content-center">
+                      <i class="fe fe-activity fe-32 align-self-center text-white"></i>
+                    </div>
+                    <p>Activity</p>
+                  </div>
+                </div>
+                <div class="row align-items-center">
+                  <div class="col-6 text-center">
+                    <div class="squircle bg-primary justify-content-center">
+                      <i class="fe fe-droplet fe-32 align-self-center text-white"></i>
+                    </div>
+                    <p>Droplet</p>
+                  </div>
+                  <div class="col-6 text-center">
+                    <div class="squircle bg-primary justify-content-center">
+                      <i class="fe fe-upload-cloud fe-32 align-self-center text-white"></i>
+                    </div>
+                    <p>Upload</p>
+                  </div>
+                </div>
+                <div class="row align-items-center">
+                  <div class="col-6 text-center">
+                    <div class="squircle bg-primary justify-content-center">
+                      <i class="fe fe-users fe-32 align-self-center text-white"></i>
+                    </div>
+                    <p>Users</p>
+                  </div>
+                  <div class="col-6 text-center">
+                    <div class="squircle bg-primary justify-content-center">
+                      <i class="fe fe-settings fe-32 align-self-center text-white"></i>
+                    </div>
+                    <p>Settings</p>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </main> <!-- main -->
+    </div> <!-- .wrapper -->
+    <script src="js/jquery.min.js"></script>
+    <script src="js/popper.min.js"></script>
+    <script src="js/moment.min.js"></script>
+    <script src="js/bootstrap.min.js"></script>
+    <script src="js/simplebar.min.js"></script>
+    <script src='js/daterangepicker.js'></script>
+    <script src='js/jquery.stickOnScroll.js'></script>
+    <script src="js/tinycolor-min.js"></script>
+    <script src="js/config.js"></script>
+    <script src="js/d3.min.js"></script>
+    <script src="js/topojson.min.js"></script>
+    <script src="js/datamaps.all.min.js"></script>
+    <script src="js/datamaps-zoomto.js"></script>
+    <script src="js/datamaps.custom.js"></script>
+    <script src="js/Chart.min.js"></script>
+    <script>
+      /* defind global options */
+      Chart.defaults.global.defaultFontFamily = base.defaultFontFamily;
+      Chart.defaults.global.defaultFontColor = colors.mutedColor;
+    </script>
+    <script src="js/gauge.min.js"></script>
+    <script src="js/jquery.sparkline.min.js"></script>
+    <script src="js/apexcharts.min.js"></script>
+    <script src="js/apexcharts.custom.js"></script>
+    <script src='js/jquery.mask.min.js'></script>
+    <script src='js/select2.min.js'></script>
+    <script src='js/jquery.steps.min.js'></script>
+    <script src='js/jquery.validate.min.js'></script>
+    <script src='js/jquery.timepicker.js'></script>
+    <script src='js/dropzone.min.js'></script>
+    <script src='js/uppy.min.js'></script>
+    <script src='js/quill.min.js'></script>
+    <script>
+      $('.select2').select2(
+      {
+        theme: 'bootstrap4',
+      });
+      $('.select2-multi').select2(
+      {
+        multiple: true,
+        theme: 'bootstrap4',
+      });
+      $('.drgpicker').daterangepicker(
+      {
+        singleDatePicker: true,
+        timePicker: false,
+        showDropdowns: true,
+        locale:
+        {
+          format: 'MM/DD/YYYY'
+        }
+      });
+      $('.time-input').timepicker(
+      {
+        'scrollDefault': 'now',
+        'zindex': '9999' /* fix modal open */
+      });
+      /** date range picker */
+      if ($('.datetimes').length)
+      {
+        $('.datetimes').daterangepicker(
+        {
+          timePicker: true,
+          startDate: moment().startOf('hour'),
+          endDate: moment().startOf('hour').add(32, 'hour'),
+          locale:
+          {
+            format: 'M/DD hh:mm A'
+          }
+        });
+      }
+      var start = moment().subtract(29, 'days');
+      var end = moment();
+
+      function cb(start, end)
+      {
+        $('#reportrange span').html(start.format('MMMM D, YYYY') + ' - ' + end.format('MMMM D, YYYY'));
+      }
+      $('#reportrange').daterangepicker(
+      {
+        startDate: start,
+        endDate: end,
+        ranges:
+        {
+          'Today': [moment(), moment()],
+          'Yesterday': [moment().subtract(1, 'days'), moment().subtract(1, 'days')],
+          'Last 7 Days': [moment().subtract(6, 'days'), moment()],
+          'Last 30 Days': [moment().subtract(29, 'days'), moment()],
+          'This Month': [moment().startOf('month'), moment().endOf('month')],
+          'Last Month': [moment().subtract(1, 'month').startOf('month'), moment().subtract(1, 'month').endOf('month')]
+        }
+      }, cb);
+      cb(start, end);
+      $('.input-placeholder').mask("00/00/0000",
+      {
+        placeholder: "__/__/____"
+      });
+      $('.input-zip').mask('00000-000',
+      {
+        placeholder: "____-___"
+      });
+      $('.input-money').mask("#.##0,00",
+      {
+        reverse: true
+      });
+      $('.input-phoneus').mask('(000) 000-0000');
+      $('.input-mixed').mask('AAA 000-S0S');
+      $('.input-ip').mask('0ZZ.0ZZ.0ZZ.0ZZ',
+      {
+        translation:
+        {
+          'Z':
+          {
+            pattern: /[0-9]/,
+            optional: true
+          }
+        },
+        placeholder: "___.___.___.___"
+      });
+      // editor
+      var editor = document.getElementById('editor');
+      if (editor)
+      {
+        var toolbarOptions = [
+          [
+          {
+            'font': []
+          }],
+          [
+          {
+            'header': [1, 2, 3, 4, 5, 6, false]
+          }],
+          ['bold', 'italic', 'underline', 'strike'],
+          ['blockquote', 'code-block'],
+          [
+          {
+            'header': 1
+          },
+          {
+            'header': 2
+          }],
+          [
+          {
+            'list': 'ordered'
+          },
+          {
+            'list': 'bullet'
+          }],
+          [
+          {
+            'script': 'sub'
+          },
+          {
+            'script': 'super'
+          }],
+          [
+          {
+            'indent': '-1'
+          },
+          {
+            'indent': '+1'
+          }], // outdent/indent
+          [
+          {
+            'direction': 'rtl'
+          }], // text direction
+          [
+          {
+            'color': []
+          },
+          {
+            'background': []
+          }], // dropdown with defaults from theme
+          [
+          {
+            'align': []
+          }],
+          ['clean'] // remove formatting button
+        ];
+        var quill = new Quill(editor,
+        {
+          modules:
+          {
+            toolbar: toolbarOptions
+          },
+          theme: 'snow'
+        });
+      }
+      // Example starter JavaScript for disabling form submissions if there are invalid fields
+      (function()
+      {
+        'use strict';
+        window.addEventListener('load', function()
+        {
+          // Fetch all the forms we want to apply custom Bootstrap validation styles to
+          var forms = document.getElementsByClassName('needs-validation');
+          // Loop over them and prevent submission
+          var validation = Array.prototype.filter.call(forms, function(form)
+          {
+            form.addEventListener('submit', function(event)
+            {
+              if (form.checkValidity() === false)
+              {
+                event.preventDefault();
+                event.stopPropagation();
+              }
+              form.classList.add('was-validated');
+            }, false);
+          });
+        }, false);
+      })();
+    </script>
+    <script>
+      var uptarg = document.getElementById('drag-drop-area');
+      if (uptarg)
+      {
+        var uppy = Uppy.Core().use(Uppy.Dashboard,
+        {
+          inline: true,
+          target: uptarg,
+          proudlyDisplayPoweredByUppy: false,
+          theme: 'dark',
+          width: 770,
+          height: 210,
+          plugins: ['Webcam']
+        }).use(Uppy.Tus,
+        {
+          endpoint: 'https://master.tus.io/files/'
+        });
+        uppy.on('complete', (result) =>
+        {
+          console.log('Carregamento concluído! Carregamos esses arquivos:', result.successful)
+        });
+      }
+    </script>
+    <script src="js/apps.js"></script>
+    <!-- Global site tag (gtag.js) - Google Analytics -->
+    <script async src="https://www.googletagmanager.com/gtag/js?id=UA-56159088-1"></script>
+    <script>
+      window.dataLayer = window.dataLayer || [];
+
+      function gtag()
+      {
+        dataLayer.push(arguments);
+      }
+      gtag('js', new Date());
+      gtag('config', 'UA-56159088-1');
+    </script>
+  </body>
+</html>
