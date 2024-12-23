@@ -19,6 +19,8 @@
     <!-- App CSS -->
     <link rel="stylesheet" href="css/app-light.css" id="lightTheme">
     <link rel="stylesheet" href="css/app-dark.css" id="darkTheme" disabled>
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap-icons/font/bootstrap-icons.css" rel="stylesheet">
+    <!-- Bootstrap CSS -->
   </head>
   <body class="horizontal light  ">
     <div class="wrapper">
@@ -226,7 +228,7 @@
                       <span class="ml-1">Pessoas</span>
                     </a>
                     <ul class="dropdown-menu" aria-labelledby="pessoasDropdown">
-                      <a class="nav-link pl-lg-2" href="#"><span class="ml-1">Clientes</span></a>
+                      <a class="nav-link pl-lg-2" href="clientes.html"><span class="ml-1">Clientes</span></a>
                       <a class="nav-link pl-lg-2" href="#"><span class="ml-1">Colaboradores</span></a>
                       <a class="nav-link pl-lg-2" href="#"><span class="ml-1">Usuários</span></a>
                     </ul>
@@ -676,10 +678,9 @@
         <div class="container-fluid">
           <div class="row justify-content-center">
             <div class="col-12">
-              <h2 class="mb-2 page-title">Listagem de Clientes</h2>
-              <p class="card-text">Bem-vindo à tela de Cadastro de Clientes! Aqui você poderá registrar todos os clientes disponíveis para realizar as venda ou gestão no sistema. Preencha as informações de forma clara e detalhada para garantir que o cliente seja corretamente registrado, gerenciado e que esteja disponível para realizar venda ou controle de clientes.</p>
-              <!-- Botão para adicionar -->
-              <button type="button" class="btn btn-primary" data-toggle="modal" data-target="#addClienteModal" data-whatever="@mdo">Adicionar Cliente</button><div class="row my-4">
+              <h2 class="mb-2 page-title">Listagem de Produtos</h2>
+              <p class="card-text">DataTables é um plug-in para a biblioteca jQuery Javascript. É uma ferramenta altamente flexível, construída sobre as fundações de aprimoramento progressivo, que adiciona todos esses recursos avançados a qualquer tabela HTML. </p>
+              <div class="row my-4">
                 <!-- Small table -->
                 <div class="col-md-12">
                   <div class="card shadow">
@@ -687,198 +688,393 @@
                       <!-- table -->
                       <table class="table datatables" id="dataTable-1">
                         <thead>
-                            <tr>
-                                <th>Código</th>
-                                <th>Nome</th>
-                                <th>CPF</th>
-                                <th>Data de Nascimento</th>
-                                <th>Telefone</th>
-                                <th>Email</th>
-                                <th>Endereço</th>
-                                <th>CEP</th>
-                                <th>Cidade/Estado</th>
-                                <th>Status</th>
-                                <th>Ações</th>
-                            </tr>
+                          <tr>
+                            <!-- <th></th> -->
+                            <th>Código</th>
+                            <th>Referência</th>
+                            <th>Código de Barras</th>
+                            <th>Descrição</th>
+                            <th>Unidade</th>
+                            <th>Estoque</th>
+                            <th>Custo</th>
+                            <th>Venda</th>
+                            <th>Fabricante</th>
+                            <th>Status</th>
+                            <th>Ações</th>
+                          </tr>
                         </thead>
                         <tbody>
-                            <tr>
-                                <td>368</td>
-                                <td>João</td>
-                                <td class="cpf">23767813025</td>
-                                <td class="date">01022000</td>
-                                <td class="phone">46999335511</td>
-                                <td>joao@mail.com</td>
-                                <td>Rua, Número - Bairro</td>
-                                <td class="cep">85460000</td>
-                                <td>Quedas do Iguaçu - PR</td>
-                                <td>Ativo</td>
-                                <td>
-                                    <button class="btn btn-sm dropdown-toggle more-horizontal" type="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
-                                        <span class="text-muted sr-only">Action</span>
-                                    </button>
-                                    <div class="dropdown-menu dropdown-menu-right">
-                                        <a class="dropdown-item" href="#">Editar</a>
-                                        <a class="dropdown-item" href="#">Remover</a>
-                                    </div>
-                                </td>
-                            </tr>
-                            <tr>
-                                <td>427</td>
-                                <td>Beatriz</td>
-                                <td class="cpf">40191103012</td>
-                                <td class="date">03082002</td>
-                                <td class="phone">46999112233</td>
-                                <td>beatriz@mail.com</td>
-                                <td>Rua, Número - Bairro</td>
-                                <td class="cep">85460000</td>
-                                <td>Quedas do Iguaçu - PR</td>
-                                <td>Ativo</td>
-                                <td>
-                                    <button class="btn btn-sm dropdown-toggle more-horizontal" type="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
-                                        <span class="text-muted sr-only">Action</span>
-                                    </button>
-                                    <div class="dropdown-menu dropdown-menu-right">
-                                        <a class="dropdown-item" href="#">Editar</a>
-                                        <a class="dropdown-item" href="#">Remover</a>
-                                    </div>
-                                </td>
-                            </tr>
+                          <tr>
+                            <!-- <td>
+                              <div class="custom-control custom-checkbox">
+                                <input type="checkbox" class="custom-control-input">
+                                <label class="custom-control-label"></label>
+                              </div>
+                            </td> -->
+                            <td>368</td>
+                            <td>1</td>
+                            <td>8949461894984</td>
+                            <td>Produto Teste 1</td>
+                            <td>UN</td>
+                            <td>0</td>
+                            <td>R$ 12,99</td>
+                            <td>R$ 29,99</td>
+                            <td>Fabricante Teste 1</td>
+                            <td>Ativo</td>
+                            <td><button class="btn btn-sm dropdown-toggle more-horizontal" type="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+                                <span class="text-muted sr-only">Action</span>
+                              </button>
+                              <div class="dropdown-menu dropdown-menu-right">
+                                <a class="dropdown-item" href="#">Editar</a>
+                                <a class="dropdown-item" href="#">Remover</a>
+                                <a class="dropdown-item" href="#">Atribuir</a>
+                              </div>
+                            </td>
+                          </tr>
+                          <tr>
+                            <!-- <td>
+                              <div class="custom-control custom-checkbox">
+                                <input type="checkbox" class="custom-control-input">
+                                <label class="custom-control-label"></label>
+                              </div>
+                            </td> -->
+                            <td>427</td>
+                            <td>1</td>
+                            <td>6548964631668</td>
+                            <td>Produto Teste 1</td>
+                            <td>UN</td>
+                            <td>1</td>
+                            <td>R$ 49,99</td>
+                            <td>R$ 99,99</td>
+                            <td>Fabricante Teste 2</td>
+                            <td>Ativo</td>
+                            <td><button class="btn btn-sm dropdown-toggle more-horizontal" type="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+                                <span class="text-muted sr-only">Action</span>
+                              </button>
+                              <div class="dropdown-menu dropdown-menu-right">
+                                <a class="dropdown-item" href="#">Editar</a>
+                                <a class="dropdown-item" href="#">Remover</a>
+                                <a class="dropdown-item" href="#">Atribuir</a>
+                              </div>
+                            </td>
+                          </tr>
                         </tbody>
-                    </table>
+                      </table>
 
-                      <!-- Modal Adicionar Cliente-->
-                      <div class="modal fade" id="addClienteModal" tabindex="-1" role="dialog" aria-labelledby="addClienteModalLabel" aria-hidden="true">
-                        <div class="modal-dialog modal-lg" role="document">
+                      <!-- Botão para adicionar -->
+                      <button type="button" class="btn btn-primary" data-toggle="modal" data-target="#varyModal" data-whatever="@mdo">Adicionar Produto</button>
+
+                      <!-- Modal para adicionar -->
+                      <div class="modal fade" id="varyModal" tabindex="-1" role="dialog" aria-labelledby="varyModalLabel" aria-hidden="true">
+                        <div class="modal-dialog modal-lg" role="document"> <!-- Modal maior -->
                           <div class="modal-content">
                             <div class="modal-header">
-                              <h5 class="modal-title" id="addClienteModalLabel">Adicionar Novo Cliente</h5>
+                              <h5 class="modal-title" id="varyModalLabel">Cadastro de Produto</h5>
                               <button type="button" class="close" data-dismiss="modal" aria-label="Close">
                                 <span aria-hidden="true">&times;</span>
                               </button>
                             </div>
                             <div class="modal-body">
-                              <p class="text-muted">Preencha as informações do cliente nos campos abaixo</p>
-                              <!-- Nav Tabs -->
-                              <ul class="nav nav-tabs" id="clienteTabs" role="tablist">
-                                <li class="nav-item">
-                                  <a class="nav-link active" id="basic-tab" data-toggle="tab" href="#basic" role="tab" aria-controls="basic" aria-selected="true">Informações Básicas</a>
+                              <!-- Abas -->
+                              <ul class="nav nav-tabs" id="myTab" role="tablist">
+                                <li class="nav-item" role="presentation">
+                                  <a class="nav-link active" id="tab1-tab" data-toggle="tab" href="#tab1" role="tab" aria-controls="tab1" aria-selected="true">Principal</a>
                                 </li>
-                                <li class="nav-item">
-                                  <a class="nav-link" id="contact-tab" data-toggle="tab" href="#contact" role="tab" aria-controls="contact" aria-selected="false">Contato</a>
+                                <li class="nav-item" role="presentation">
+                                  <a class="nav-link" id="tab2-tab" data-toggle="tab" href="#tab2" role="tab" aria-controls="tab2" aria-selected="false">Adicionais</a>
                                 </li>
-                                <li class="nav-item">
-                                  <a class="nav-link" id="address-tab" data-toggle="tab" href="#address" role="tab" aria-controls="address" aria-selected="false">Endereço</a>
+                                <li class="nav-item" role="presentation">
+                                  <a class="nav-link" id="tab3-tab" data-toggle="tab" href="#tab3" role="tab" aria-controls="tab3" aria-selected="false">Fiscal</a>
                                 </li>
                               </ul>
-                              <!-- Tab Content -->
-                              <div class="tab-content mt-3" id="clienteTabsContent">
-                                <!-- Informações Básicas -->
-                                <div class="tab-pane fade show active" id="basic" role="tabpanel" aria-labelledby="basic-tab">
-                                  <h6>Informações Básicas</h6>
-                                  <div class="form-row">
-                                    <div class="form-group col-md-6">
-                                      <label for="clientName">Nome</label>
-                                      <input type="text" class="form-control" id="clientName" placeholder="Nome do Cliente">
+                              <div class="tab-content" id="myTabContent">
+                                <!-- Aba 1: Dados do Produto -->
+                                <div class="tab-pane fade show active" id="tab1" role="tabpanel" aria-labelledby="tab1-tab">
+                                  <form>
+                                    <!-- Grupo Dados do Produto -->
+                                    <div class="form-group">
+                                      <h5>Dados dos Produtos:</h5>
+                                      <!-- Grupo Principal -->
+                                      <div class="row">
+                                        <div class="col-md-3">
+                                          <div class="form-group">
+                                            <label for="codigo" class="col-form-label">Código:</label>
+                                            <input type="text" class="form-control" id="codigo">
+                                          </div>
+                                        </div>
+                                        <div class="col-md-3">
+                                          <div class="form-group">
+                                            <label for="codigo-barras" class="col-form-label">Código de Barras:</label>
+                                            <input type="text" class="form-control" id="codigo-barras">
+                                          </div>
+                                        </div>
+                                        <div class="col-md-3">
+                                          <div class="form-group">
+                                            <label for="status" class="col-form-label">Status:</label>
+                                            <select class="form-control" id="status">
+                                              <option>Ativo</option>
+                                              <option>Inativo</option>
+                                            </select>
+                                          </div>
+                                        </div>
+                                        <div class="col-md-3">
+                                          <div class="form-group">
+                                            <label for="data-cadastro" class="col-form-label">Data Cadastro:</label>
+                                            <input type="text" class="form-control" id="data-cadastro" value="" disabled>
+                                          </div>
+                                        </div>
+                                      </div>
+                                      <!-- Segunda linha: Descrição -->
+                                      <div class="row">
+                                        <div class="col-md-12">
+                                          <div class="form-group">
+                                            <label for="descricao" class="col-form-label">Descrição:</label>
+                                            <input type="text" class="form-control" id="descricao">
+                                          </div>
+                                        </div>
+                                      </div>
+                                      <!-- Terceira linha: Detalhamento -->
+                                      <div class="row">
+                                        <div class="col-md-12">
+                                          <div class="form-group">
+                                            <label for="detalhamento" class="col-form-label">Detalhamento:</label>
+                                            <textarea class="form-control" id="detalhamento" rows="3"></textarea>
+                                          </div>
+                                        </div>
+                                      </div>
                                     </div>
-                                    <div class="form-group col-md-6">
-                                      <label for="clientCPF">CPF</label>
-                                      <input type="text" class="form-control" id="clientCPF" placeholder="CPF">
+                                    
+                                    <!-- Grupo Estoque -->
+                                    <div class="form-group">
+                                      <h5>Grupo Estoque:</h5>
+                                      <div class="row">
+                                        <div class="col-md-4">
+                                          <div class="form-group">
+                                            <label for="unidade" class="col-form-label">Unidade:</label>
+                                            <input type="text" class="form-control" id="unidade">
+                                          </div>
+                                        </div>
+                                        <div class="col-md-4">
+                                          <div class="form-group">
+                                            <label for="estoque-minimo" class="col-form-label">Estoque Mínimo:</label>
+                                            <input type="number" class="form-control" id="estoque-minimo">
+                                          </div>
+                                        </div>
+                                        <div class="col-md-4">
+                                          <div class="form-group">
+                                            <label for="estoque-atual" class="col-form-label">Estoque Atual:</label>
+                                            <input type="number" class="form-control" id="estoque-atual">
+                                          </div>
+                                        </div>
+                                      </div>
                                     </div>
-                                  </div>
-                                  <div class="form-group">
-                                    <label for="clientDOB">Data de Nascimento</label>
-                                    <input type="date" class="form-control" id="clientDOB">
-                                  </div>
+
+                                    <!-- Grupo Financeiro -->
+                                    <div class="form-group">
+                                      <h5>Grupo Financeiro:</h5>
+                                      <div class="row">
+                                        <div class="col-md-4">
+                                          <div class="form-group">
+                                            <label for="valor-custo" class="col-form-label">Valor de Custo:</label>
+                                            <input type="text" class="form-control" id="valor-custo">
+                                          </div>
+                                        </div>
+                                        <div class="col-md-4">
+                                          <div class="form-group">
+                                            <label for="outros-custos" class="col-form-label">Outros Custos:</label>
+                                            <input type="text" class="form-control" id="outros-custos">
+                                          </div>
+                                        </div>
+                                        <div class="col-md-4">
+                                          <div class="form-group">
+                                            <label for="custo-final" class="col-form-label">Custo Final:</label>
+                                            <input type="text" class="form-control" id="custo-final">
+                                          </div>
+                                        </div>
+                                      </div>
+                                      <div class="row">
+                                        <div class="col-md-4">
+                                          <div class="form-group">
+                                            <label for="margem-bruta" class="col-form-label">Margem Bruta %:</label>
+                                            <input type="text" class="form-control" id="margem-bruta">
+                                          </div>
+                                        </div>
+                                        <div class="col-md-4">
+                                          <div class="form-group">
+                                            <label for="margem-liquida" class="col-form-label">Margem Líquida %:</label>
+                                            <input type="text" class="form-control" id="margem-liquida">
+                                          </div>
+                                        </div>
+                                        <div class="col-md-4">
+                                          <div class="form-group">
+                                            <label for="valor-venda" class="col-form-label">Valor de Venda:</label>
+                                            <input type="text" class="form-control" id="valor-venda">
+                                          </div>
+                                        </div>
+                                      </div>
+                                    </div>
+                                  </form>
                                 </div>
-                                <!-- Contato -->
-                                <div class="tab-pane fade" id="contact" role="tabpanel" aria-labelledby="contact-tab">
-                                  <h6>Contato</h6>
-                                  <div class="form-row">
-                                    <div class="form-group col-md-6">
-                                      <label for="clientPhone">Telefone</label>
-                                      <input type="text" class="form-control" id="clientPhone" placeholder="Telefone">
+
+                                <!-- Aba 2: Informações Adicionais -->
+                                <div class="tab-pane fade" id="tab2" role="tabpanel" aria-labelledby="tab2-tab">
+                                  <form>
+                                    <!-- Adicionais -->
+                                    <div class="form-group">
+                                      <h5>Adicionais:</h5>
+                                      <div class="row">
+                                        <div class="col-md-4">
+                                          <div class="form-group">
+                                            <label for="fabricante" class="col-form-label">Fabricante:</label>
+                                            <input type="text" class="form-control" id="fabricante">
+                                          </div>
+                                        </div>
+                                        <div class="col-md-4">
+                                          <div class="form-group">
+                                            <label for="marca" class="col-form-label">Marca:</label>
+                                            <input type="text" class="form-control" id="marca">
+                                          </div>
+                                        </div>
+                                        <div class="col-md-4">
+                                          <div class="form-group">
+                                            <label for="colecao" class="col-form-label">Coleção:</label>
+                                            <input type="text" class="form-control" id="colecao">
+                                          </div>
+                                        </div>
+                                      </div>
+                                      <div class="row">
+                                        <div class="col-md-4">
+                                          <div class="form-group">
+                                            <label for="secao" class="col-form-label">Seção:</label>
+                                            <input type="text" class="form-control" id="secao">
+                                          </div>
+                                        </div>
+                                        <div class="col-md-4">
+                                          <div class="form-group">
+                                            <label for="grupo" class="col-form-label">Grupo:</label>
+                                            <input type="text" class="form-control" id="grupo">
+                                          </div>
+                                        </div>
+                                        <div class="col-md-4">
+                                          <div class="form-group">
+                                            <label for="subgrupo" class="col-form-label">Subgrupo:</label>
+                                            <input type="text" class="form-control" id="subgrupo">
+                                          </div>
+                                        </div>
+                                      </div>
                                     </div>
-                                    <div class="form-group col-md-6">
-                                      <label for="clientEmail">E-mail</label>
-                                      <input type="email" class="form-control" id="clientEmail" placeholder="E-mail">
+
+                                    <!-- Medidas -->
+                                    <div class="form-group">
+                                      <h5>Medidas:</h5>
+                                      <div class="row">
+                                        <div class="col-md-4">
+                                          <div class="form-group">
+                                            <label for="peso-bruto" class="col-form-label">Peso Bruto:</label>
+                                            <input type="text" class="form-control" id="peso-bruto">
+                                          </div>
+                                        </div>
+                                        <div class="col-md-4">
+                                          <div class="form-group">
+                                            <label for="peso-liquido" class="col-form-label">Peso Líquido:</label>
+                                            <input type="text" class="form-control" id="peso-liquido">
+                                          </div>
+                                        </div>
+                                        <div class="col-md-4">
+                                          <div class="form-group">
+                                            <label for="volume" class="col-form-label">Volume:</label>
+                                            <input type="text" class="form-control" id="volume">
+                                          </div>
+                                        </div>
+                                      </div>
+                                      <div class="row">
+                                        <div class="col-md-4">
+                                          <div class="form-group">
+                                            <label for="altura" class="col-form-label">Altura:</label>
+                                            <input type="text" class="form-control" id="altura">
+                                          </div>
+                                        </div>
+                                        <div class="col-md-4">
+                                          <div class="form-group">
+                                            <label for="largura" class="col-form-label">Largura:</label>
+                                            <input type="text" class="form-control" id="largura">
+                                          </div>
+                                        </div>
+                                        <div class="col-md-4">
+                                          <div class="form-group">
+                                            <label for="comprimento" class="col-form-label">Comprimento:</label>
+                                            <input type="text" class="form-control" id="comprimento">
+                                          </div>
+                                        </div>
+                                      </div>
                                     </div>
-                                  </div>
+                                  </form>
                                 </div>
-                                <!-- Endereço -->
-                                <div class="tab-pane fade" id="address" role="tabpanel" aria-labelledby="address-tab">
-                                  <h6>Endereço</h6>
-                                  <div class="form-row">
-                                    <!-- Campo de Logradouro -->
-                                    <div class="form-group col-md-4">
-                                      <label for="clientAddress">Logradouro</label>
-                                      <input type="text" class="form-control" id="clientAddress" placeholder="Rua, Avenida, etc.">
+
+                                <!-- Aba 3: Fiscal -->
+                                <div class="tab-pane fade" id="tab3" role="tabpanel" aria-labelledby="tab3-tab">
+                                  <form>
+                                    <!-- Informações Tributárias -->
+                                    <div class="form-group">
+                                      <h5>Informações Tributárias</h5>
+                                      <div class="row">
+                                        <div class="col-md-4">
+                                          <div class="form-group">
+                                            <label for="codigo-cst" class="col-form-label">Código CST:</label>
+                                            <input type="text" class="form-control" id="codigo-cst">
+                                          </div>
+                                        </div>
+                                        <div class="col-md-4">
+                                          <div class="form-group">
+                                            <label for="nome-cst" class="col-form-label">Nome CST:</label>
+                                            <input type="text" class="form-control" id="nome-cst" disabled>
+                                          </div>
+                                        </div>
+                                        <div class="col-md-4">
+                                          <div class="form-group">
+                                            <label for="ncm" class="col-form-label">NCM:</label>
+                                            <input type="text" class="form-control" id="ncm">
+                                          </div>
+                                        </div>
+                                      </div>
+                                      <div class="row">
+                                        <div class="col-md-4">
+                                          <div class="form-group">
+                                            <label for="cest" class="col-form-label">CEST:</label>
+                                            <input type="text" class="form-control" id="cest">
+                                          </div>
+                                        </div>
+                                      </div>
                                     </div>
 
-                                    <!-- Campo de Bairro -->
-                                    <div class="form-group col-md-4">
-                                      <label for="clientNeighborhood">Bairro</label>
-                                      <input type="text" class="form-control" id="clientNeighborhood" placeholder="Bairro">
+                                    <!-- Tipo do Produto -->
+                                    <div class="form-group">
+                                      <h5>Tipo do Produto:</h5>
+                                      <div class="row">
+                                        <div class="col-md-4">
+                                          <div class="form-group">
+                                            <label for="tipo-produto" class="col-form-label">Tipo de Produto:</label>
+                                            <select class="form-control" id="tipo-produto">
+                                              <option value="revenda">Revenda</option>
+                                              <option value="uso">Uso</option>
+                                              <option value="consumo">Consumo</option>
+                                            </select>
+                                          </div>
+                                        </div>
+                                      </div>
                                     </div>
-
-                                    <!-- Campo de Número -->
-                                    <div class="form-group col-md-4">
-                                      <label for="clientNumber">Número</label>
-                                      <input type="text" class="form-control" id="clientNumber" placeholder="Número">
-                                    </div>
-                                  </div>
-
-                                  <div class="form-row">
-                                    <!-- Campo de CEP -->
-                                    <div class="form-group col-md-4">
-                                      <label for="clientZIP">CEP</label>
-                                      <input type="text" class="form-control" id="clientZIP" placeholder="CEP" data-toggle="tooltip" title="Ao inserir o CEP, será preenchido automaticamente os campos Cidade e Estado">
-                                    </div>
-
-                                    <!-- Campo de Cidade -->
-                                    <div class="form-group col-md-4">
-                                      <label for="clientCity">Cidade</label>
-                                      <input type="text" class="form-control" id="clientCity" placeholder="Cidade"> <!-- Utilizar readonly caso deseje que não seja possível inserir manualmente a Cidade -->
-                                    </div>
-
-                                    <!-- Campo de Estado -->
-                                    <div class="form-group col-md-4">
-                                      <label for="clientState">Estado</label>
-                                      <input type="text" class="form-control" id="clientState" placeholder="Estado"> <!-- Utilizar readonly caso deseje que não seja possível inserir manualmente o Estado -->
-                                    </div>
-                                  </div>
-                                </div>                         
+                                  </form>
+                                </div>
                               </div>
                             </div>
                             <div class="modal-footer">
-                              <button type="button" class="btn btn-secondary" data-dismiss="modal">Cancelar</button>
-                              <button type="button" class="btn btn-primary">Salvar</button>
+                              <button type="button" class="btn mb-2 btn-secondary" data-dismiss="modal">Fechar</button>
+                              <button type="button" class="btn mb-2 btn-primary">Salvar</button>
                             </div>
                           </div>
                         </div>
                       </div>
-                      <!-- Fim Modal Adicionar Cliente -->
-                      
-                      <!-- Modal de Alerta CEP não encontrado -->
-                      <div class="modal fade" id="alertModal" tabindex="-1" role="dialog" aria-labelledby="alertModalLabel" aria-hidden="true">
-                        <div class="modal-dialog" role="document">
-                          <div class="modal-content">
-                            <div class="modal-header bg-danger text-white">
-                              <h5 class="modal-title" id="alertModalLabel">Atenção</h5>
-                              <button type="button" class="close" data-dismiss="modal" aria-label="Close">
-                                <span aria-hidden="true">&times;</span>
-                              </button>
-                            </div>
-                            <div class="modal-body" id="alertModalMessage">
-                              <!-- Mensagem do erro será injetada aqui -->
-                            </div>
-                            <div class="modal-footer">
-                              <button type="button" class="btn btn-secondary" data-dismiss="modal">Fechar</button>
-                            </div>
-                          </div>
-                        </div>
-                      </div>
-                      <!-- Fim Modal de Alerta CEP não encontrado-->
+                      <!-- Fim Modal para adicionar -->
                     </div>
                   </div>
                 </div> <!-- simple table -->
@@ -886,6 +1082,7 @@
             </div> <!-- .col-12 -->
           </div> <!-- .row -->
         </div> <!-- .container-fluid -->
+
         <div class="modal fade modal-notif modal-slide" tabindex="-1" role="dialog" aria-labelledby="defaultModalLabel" aria-hidden="true">
             <div class="modal-dialog modal-sm" role="document">
               <div class="modal-content">
@@ -1022,39 +1219,40 @@
     <script src="js/config.js"></script>
     <script src='js/jquery.dataTables.min.js'></script>
     <script src='js/dataTables.bootstrap4.min.js'></script>
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha3/dist/js/bootstrap.bundle.min.js"></script>
     <script>
-      $('#dataTable-1').DataTable({
-        autoWidth: true,
-        "lengthMenu": [
-          [16, 32, 64, -1],
-          [16, 32, 64, "Todos"]
-        ],
-        "language": {
-          "decimal": "",
-          "emptyTable": "Nenhum dado disponível na tabela",
-          "info": "Mostrando _START_ até _END_ de _TOTAL_ registros",
-          "infoEmpty": "Mostrando 0 até 0 de 0 registros",
-          "infoFiltered": "(filtrado de _MAX_ registros no total)",
-          "infoPostFix": "",
-          "thousands": ",",
-          "lengthMenu": "Mostrar _MENU_ registros",
-          "loadingRecords": "Carregando...",
-          "processing": "Processando...",
-          "search": "Pesquisar:",
-          "zeroRecords": "Nenhum registro correspondente encontrado",
-          "paginate": {
-            "first": "Primeiro",
-            "last": "Último",
-            "next": "Próximo",
-            "previous": "Anterior"
-          },
-          "aria": {
-            "sortAscending": ": ativar para ordenar a coluna de forma ascendente",
-            "sortDescending": ": ativar para ordenar a coluna de forma descendente"
+        $('#dataTable-1').DataTable({
+          autoWidth: true,
+          "lengthMenu": [
+            [16, 32, 64, -1],
+            [16, 32, 64, "Todos"]
+          ],
+          "language": {
+            "decimal": "",
+            "emptyTable": "Nenhum dado disponível na tabela",
+            "info": "Mostrando _START_ até _END_ de _TOTAL_ registros",
+            "infoEmpty": "Mostrando 0 até 0 de 0 registros",
+            "infoFiltered": "(filtrado de _MAX_ registros no total)",
+            "infoPostFix": "",
+            "thousands": ",",
+            "lengthMenu": "Mostrar _MENU_ registros",
+            "loadingRecords": "Carregando...",
+            "processing": "Processando...",
+            "search": "Pesquisar:",
+            "zeroRecords": "Nenhum registro correspondente encontrado",
+            "paginate": {
+              "first": "Primeiro",
+              "last": "Último",
+              "next": "Próximo",
+              "previous": "Anterior"
+            },
+            "aria": {
+              "sortAscending": ": ativar para ordenar a coluna de forma ascendente",
+              "sortDescending": ": ativar para ordenar a coluna de forma descendente"
+            }
           }
-        }
-      });
-    </script>
+        });
+      </script>
       
     <script src="js/apps.js"></script>
     <!-- Global site tag (gtag.js) - Google Analytics -->
@@ -1069,151 +1267,5 @@
       gtag('js', new Date());
       gtag('config', 'UA-56159088-1');
     </script>
-
-
-    <!-- A IMask.js é uma biblioteca leve e fácil de usar para adicionar máscaras a campos de entrada -->
-    <script src="https://unpkg.com/imask"></script>
-
-    <script>
-      // Aplica a máscara no campo de CEP, CPF e Telefone
-      const cepInput = document.getElementById("clientZIP");
-      IMask(cepInput, { mask: "00.000-000" });
-  
-      const cpfInput = document.getElementById("clientCPF");
-      IMask(cpfInput, { mask: "000.000.000-00" });
-  
-      const phoneInput = document.getElementById("clientPhone");
-      IMask(phoneInput, { mask: "(00) 00000-0000" });
-  
-      // Validação do CEP
-      cepInput.addEventListener("blur", function () {
-          const cep = this.value.replace(/\D/g, ""); // Remove caracteres não numéricos
-  
-          if (cep.length === 8) { // Verifica se o CEP tem 8 dígitos
-              fetch(`https://viacep.com.br/ws/${cep}/json/`)
-                  .then(response => response.json())
-                  .then(data => {
-                      if (!data.erro) {
-                          document.getElementById("clientCity").value = data.localidade;
-                          document.getElementById("clientState").value = data.uf;
-                      } else {
-                          showAlertModal("CEP não encontrado.");
-                      }
-                  })
-                  .catch(() => showAlertModal("Erro ao consultar o CEP. Tente novamente."));
-          } else {
-              showAlertModal("Digite um CEP válido com 8 dígitos.");
-          }
-      });
-  
-      // Função para validar o CPF
-      function validarCPF(cpf) {
-          cpf = cpf.replace(/\D/g, ""); // Remove caracteres não numéricos
-  
-          if (cpf.length !== 11 || /^(\d)\1{10}$/.test(cpf)) {
-              // Verifica se o CPF tem 11 dígitos e se não é uma sequência de números repetidos (exemplo: 111.111.111-11)
-              return false;
-          }
-  
-          let soma = 0;
-          let resto;
-  
-          // Validação do primeiro dígito verificador
-          for (let i = 0; i < 9; i++) {
-              soma += parseInt(cpf.charAt(i)) * (10 - i);
-          }
-          resto = (soma * 10) % 11;
-          if (resto === 10 || resto === 11) {
-              resto = 0;
-          }
-          if (resto !== parseInt(cpf.charAt(9))) {
-              return false;
-          }
-  
-          soma = 0;
-          // Validação do segundo dígito verificador
-          for (let i = 0; i < 10; i++) {
-              soma += parseInt(cpf.charAt(i)) * (11 - i);
-          }
-          resto = (soma * 10) % 11;
-          if (resto === 10 || resto === 11) {
-              resto = 0;
-          }
-          if (resto !== parseInt(cpf.charAt(10))) {
-              return false;
-          }
-  
-          return true;
-      }
-  
-      // Validação do CPF no campo de entrada
-      cpfInput.addEventListener("blur", function () {
-          const cpf = this.value;
-  
-          if (validarCPF(cpf)) {
-              console.log("CPF válido.");
-          } else {
-              showAlertModal("CPF inválido.");
-          }
-      });
-  
-      // Validação do Telefone
-      phoneInput.addEventListener("blur", function () {
-          const phone = this.value.replace(/\D/g, ""); // Remove caracteres não numéricos
-  
-          if (phone.length === 11 || phone.length === 10) {
-              // Telefone válido
-          } else {
-              showAlertModal("Digite um telefone válido.");
-          }
-      });
-  
-      // Função para exibir o modal de alerta
-      function showAlertModal(message) {
-          const alertModalMessage = document.getElementById("alertModalMessage");
-          alertModalMessage.textContent = message; // Insere a mensagem no modal
-          $('#alertModal').modal('show'); // Exibe o modal
-      }
-  
-      // Ativar tooltip quando o documento for carregado, ou seja, exibe a mensagem ao passar com o mouse em cima do campo CEP
-      $(document).ready(function () {
-          $('[data-toggle="tooltip"]').tooltip();
-      });
-
-      // Funções de formatação na apresentação de dados na tabela
-      function formatCPF(cpf) {
-          return cpf.replace(/(\d{3})(\d{3})(\d{3})(\d{2})/, "$1.$2.$3-$4");
-      }
-
-      function formatDate(date) {
-          return date.replace(/(\d{2})(\d{2})(\d{4})/, "$1/$2/$3");
-      }
-
-      function formatPhone(phone) {
-          return phone.replace(/(\d{2})(\d{5})(\d{4})/, "($1) $2-$3");
-      }
-
-      function formatCEP(cep) {
-          return cep.replace(/(\d{2})(\d{3})(\d{3})/, "$1.$2-$3");
-      }
-
-      // Aplicando as formatações
-      document.querySelectorAll(".cpf").forEach(cell => {
-          cell.textContent = formatCPF(cell.textContent);
-      });
-
-      document.querySelectorAll(".date").forEach(cell => {
-          cell.textContent = formatDate(cell.textContent);
-      });
-
-      document.querySelectorAll(".phone").forEach(cell => {
-          cell.textContent = formatPhone(cell.textContent);
-      });
-
-      document.querySelectorAll(".cep").forEach(cell => {
-          cell.textContent = formatCEP(cell.textContent);
-      });
-  </script>
-
   </body>
 </html>

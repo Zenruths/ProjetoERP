@@ -679,8 +679,9 @@
           <div class="row justify-content-center">
             <div class="col-12">
               <h2 class="mb-2 page-title">Listagem de Produtos</h2>
-              <p class="card-text">DataTables é um plug-in para a biblioteca jQuery Javascript. É uma ferramenta altamente flexível, construída sobre as fundações de aprimoramento progressivo, que adiciona todos esses recursos avançados a qualquer tabela HTML. </p>
-              <div class="row my-4">
+              <p class="card-text">Bem-vindo à tela de Cadastro de Produto! Aqui você poderá registrar todos os itens disponíveis para venda ou gestão no sistema. Preencha as informações de forma clara e detalhada para garantir que o produto seja corretamente registrado, gerenciado e que esteja disponível para venda ou controle de estoque.</p>
+              <!-- Botão para adicionar -->
+              <button type="button" class="btn btn-primary" data-toggle="modal" data-target="#addProductModal" data-whatever="@mdo">Adicionar Produto</button><div class="row my-4">
                 <!-- Small table -->
                 <div class="col-md-12">
                   <div class="card shadow">
@@ -727,7 +728,6 @@
                               <div class="dropdown-menu dropdown-menu-right">
                                 <a class="dropdown-item" href="#">Editar</a>
                                 <a class="dropdown-item" href="#">Remover</a>
-                                <a class="dropdown-item" href="#">Atribuir</a>
                               </div>
                             </td>
                           </tr>
@@ -754,90 +754,104 @@
                               <div class="dropdown-menu dropdown-menu-right">
                                 <a class="dropdown-item" href="#">Editar</a>
                                 <a class="dropdown-item" href="#">Remover</a>
-                                <a class="dropdown-item" href="#">Atribuir</a>
                               </div>
                             </td>
                           </tr>
                         </tbody>
                       </table>
 
-                      <!-- Botão para adicionar -->
-                      <button type="button" class="btn btn-primary" data-toggle="modal" data-target="#varyModal" data-whatever="@mdo">Adicionar Produto</button>
-
-                      <!-- Modal para adicionar -->
-                      <div class="modal fade" id="varyModal" tabindex="-1" role="dialog" aria-labelledby="varyModalLabel" aria-hidden="true">
-                        <div class="modal-dialog" role="document">
+                      <!-- Modal Adicionar Produto-->
+                      <div class="modal fade" id="addProductModal" tabindex="-1" role="dialog" aria-labelledby="addProductModalLabel" aria-hidden="true">
+                        <div class="modal-dialog modal-lg" role="document">
                           <div class="modal-content">
                             <div class="modal-header">
-                              <h5 class="modal-title" id="varyModalLabel">Cadastro de Produto</h5>
+                              <h5 class="modal-title" id="addProductModalLabel">Adicionar Novo Produto</h5>
                               <button type="button" class="close" data-dismiss="modal" aria-label="Close">
                                 <span aria-hidden="true">&times;</span>
                               </button>
                             </div>
                             <div class="modal-body">
-                              <!-- Abas -->
-                              <ul class="nav nav-tabs" id="myTab" role="tablist">
-                                <li class="nav-item" role="presentation">
-                                  <a class="nav-link active" id="tab1-tab" data-toggle="tab" href="#tab1" role="tab" aria-controls="tab1" aria-selected="true">Principal</a>
+                              <p class="text-muted">Preencha as informações do produto nos campos abaixo</p>
+                              <!-- Nav Tabs -->
+                              <ul class="nav nav-tabs" id="productTabs" role="tablist">
+                                <li class="nav-item">
+                                  <a class="nav-link active" id="basic-tab" data-toggle="tab" href="#basic" role="tab" aria-controls="basic" aria-selected="true">Informações Básicas</a>
                                 </li>
-                                <li class="nav-item" role="presentation">
-                                  <a class="nav-link" id="tab2-tab" data-toggle="tab" href="#tab2" role="tab" aria-controls="tab2" aria-selected="false">Detalhes</a>
+                                <li class="nav-item">
+                                  <a class="nav-link" id="pricing-tab" data-toggle="tab" href="#pricing" role="tab" aria-controls="pricing" aria-selected="false">Preços</a>
                                 </li>
-                                <li class="nav-item" role="presentation">
-                                  <a class="nav-link" id="tab3-tab" data-toggle="tab" href="#tab3" role="tab" aria-controls="tab3" aria-selected="false">Fiscal</a>
+                                <li class="nav-item">
+                                  <a class="nav-link" id="stock-tab" data-toggle="tab" href="#stock" role="tab" aria-controls="stock" aria-selected="false">Estoque</a>
+                                </li>
+                                <li class="nav-item">
+                                  <a class="nav-link" id="additional-tab" data-toggle="tab" href="#additional" role="tab" aria-controls="additional" aria-selected="false">Informações Adicionais</a>
                                 </li>
                               </ul>
-                              <div class="tab-content" id="myTabContent">
-                                <!-- Conteúdo da Aba 1 -->
-                                <div class="tab-pane fade show active" id="tab1" role="tabpanel" aria-labelledby="tab1-tab">
-                                  <form>
-                                    <div class="form-group">
-                                      <label for="recipient-name" class="col-form-label">Recipient:</label>
-                                      <input type="text" class="form-control" id="recipient-name">
+                              <!-- Tab Content -->
+                              <div class="tab-content mt-3" id="productTabsContent">
+                                <!-- Informações Básicas -->
+                                <div class="tab-pane fade show active" id="basic" role="tabpanel" aria-labelledby="basic-tab">
+                                  <h6>Informações Básicas</h6>
+                                  <p class="text-muted">Dados principais do produto</p>
+                                  <div class="form-row">
+                                    <div class="form-group col-md-6">
+                                      <label for="productCode">Código</label>
+                                      <input type="text" class="form-control" id="productCode" placeholder="Código do Produto">
                                     </div>
-                                    <div class="form-group">
-                                      <label for="message-text" class="col-form-label">Message:</label>
-                                      <textarea class="form-control" id="message-text"></textarea>
+                                    <div class="form-group col-md-6">
+                                      <label for="productReference">Referência</label>
+                                      <input type="text" class="form-control" id="productReference" placeholder="Referência">
                                     </div>
-                                  </form>
+                                  </div>
+                                  <div class="form-group">
+                                    <label for="productDescription">Descrição</label>
+                                    <textarea class="form-control" id="productDescription" rows="2" placeholder="Descrição do Produto"></textarea>
+                                  </div>
+                                  <div class="form-group">
+                                    <label for="productBarcode">Código de Barras</label>
+                                    <input type="text" class="form-control" id="productBarcode" placeholder="Código de Barras">
+                                  </div>
                                 </div>
-                                <!-- Conteúdo da Aba 2 -->
-                                <div class="tab-pane fade" id="tab2" role="tabpanel" aria-labelledby="tab2-tab">
-                                  <form>
-                                    <div class="form-group">
-                                      <label for="recipient-name" class="col-form-label">Recipient:</label>
-                                      <input type="text" class="form-control" id="recipient-name">
+                                <!-- Preços -->
+                                <div class="tab-pane fade" id="pricing" role="tabpanel" aria-labelledby="pricing-tab">
+                                  <h6>Preços</h6>
+                                  <div class="form-row">
+                                    <div class="form-group col-md-6">
+                                      <label for="productCost">Custo</label>
+                                      <input type="number" class="form-control" id="productCost" placeholder="Digite o custo">
                                     </div>
-                                    <div class="form-group">
-                                      <label for="message-text" class="col-form-label">Message:</label>
-                                      <textarea class="form-control" id="message-text"></textarea>
+                                    <div class="form-group col-md-6">
+                                      <label for="productPrice">Preço de Venda</label>
+                                      <input type="number" class="form-control" id="productPrice" placeholder="Digite o preço">
                                     </div>
-                                  </form>
+                                  </div>
                                 </div>
-                                <!-- Conteúdo da Aba 3 -->
-                                <div class="tab-pane fade" id="tab3" role="tabpanel" aria-labelledby="tab3-tab">
-                                  <form>
-                                    <div class="form-group">
-                                      <label for="recipient-name" class="col-form-label">Recipient:</label>
-                                      <input type="text" class="form-control" id="recipient-name">
-                                    </div>
-                                    <div class="form-group">
-                                      <label for="message-text" class="col-form-label">Message:</label>
-                                      <textarea class="form-control" id="message-text"></textarea>
-                                    </div>
-                                  </form>
+                                <!-- Estoque -->
+                                <div class="tab-pane fade" id="stock" role="tabpanel" aria-labelledby="stock-tab">
+                                  <h6>Estoque</h6>
+                                  <div class="form-group">
+                                    <label for="productStock">Quantidade em Estoque</label>
+                                    <input type="number" class="form-control" id="productStock" placeholder="Digite a quantidade">
+                                  </div>
+                                </div>
+                                <!-- Informações Adicionais -->
+                                <div class="tab-pane fade" id="additional" role="tabpanel" aria-labelledby="additional-tab">
+                                  <h6>Informações Adicionais</h6>
+                                  <div class="form-group">
+                                    <label for="additionalInfo">Detalhes Adicionais</label>
+                                    <textarea class="form-control" id="additionalInfo" rows="3" placeholder="Adicione informações adicionais sobre o produto"></textarea>
+                                  </div>
                                 </div>
                               </div>
                             </div>
                             <div class="modal-footer">
-                              <button type="button" class="btn mb-2 btn-secondary" data-dismiss="modal">Fechar</button>
-                              <button type="button" class="btn mb-2 btn-primary">Adicionar</button>
+                              <button type="button" class="btn btn-secondary" data-dismiss="modal">Cancelar</button>
+                              <button type="button" class="btn btn-primary">Salvar</button>
                             </div>
                           </div>
                         </div>
                       </div>
-                      <!-- Fim Modal para adicionar -->
-
+                      <!-- Fim Modal Adicionar Produto -->
                     </div>
                   </div>
                 </div> <!-- simple table -->

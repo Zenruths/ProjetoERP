@@ -1,0 +1,119 @@
+Aba: Informações Básicas
+
+Grupo:
+
+Informações Básicas
+Dados principais do produto
+
+Codigo
+Referencia
+CodigoBarras
+Descricao
+Detalhamento
+
+==========================================
+
+Aba: Preços
+
+Grupo:
+
+Preços
+
+Valor de Custo
+Valor de Venda
+
+==========================================
+
+Aba: Estoque
+
+Grupo:
+
+Estoque
+Dados de Estoque do Produto
+
+Quantidade em Estoque
+Quantidade de Estoque Mínimo
+Unidade do Produto
+
+==========================================
+
+Aba: Informações Adicionais
+
+Grupo:
+
+Informações Adicionais
+Dados Adicionais do Produto
+
+Detalhes Adicionais
+Fabricante
+
+
+======================================
+
+para o banco:
+
+DataCadastro
+
+
+
+
+
+
+Cadastro de Produtos
+1. Identificação do Produto
+Código do Produto (campo obrigatório): Um código único para identificar o produto (pode ser gerado automaticamente ou manual).
+Nome do Produto (campo obrigatório): Nome do produto de forma clara e objetiva.
+Descrição do Produto: Descrição detalhada do produto (informações adicionais, características, etc.).
+Categoria (campo obrigatório): Uma lista suspensa para selecionar a categoria do produto (Ex: Eletrônicos, Alimentos, Vestuário, etc.).
+Subcategoria (campo opcional): Se aplicável, um campo para especificar a subcategoria.
+2. Informações de Preço
+Preço de Venda (campo obrigatório): Valor de venda do produto.
+Preço de Custo (campo obrigatório): Valor pago pelo produto, importante para cálculo de margem de lucro.
+Margem de Lucro (campo calculado): Valor que representa a margem de lucro, calculada automaticamente com base no preço de custo e preço de venda.
+Preço Promocional (campo opcional): Caso haja promoção, o preço promocional pode ser informado aqui.
+Data de Início da Promoção (campo opcional): Se o preço promocional estiver em vigor, registrar a data de início.
+Data de Fim da Promoção (campo opcional): Se aplicável, a data de término da promoção.
+3. Estoque
+Quantidade em Estoque (campo obrigatório): Quantidade atual disponível no estoque.
+Estoque Mínimo (campo obrigatório): Quantidade mínima no estoque que, ao ser atingida, pode gerar alertas para reabastecimento.
+Estoque Máximo (campo opcional): Quantidade máxima que o estoque pode comportar.
+Localização no Estoque (campo opcional): Identificação da área ou prateleira onde o produto está armazenado (caso o sistema tenha controle de localizações).
+Fornecedor (campo obrigatório): Seleção de fornecedor para o produto, podendo ser uma lista de fornecedores cadastrados no sistema.
+4. Informações Fiscais
+Código NCM (Nomenclatura Comum do Mercosul) (campo obrigatório): Código de classificação fiscal do produto.
+CST (Código de Situação Tributária) (campo obrigatório): Seleção do CST, conforme a tributação do produto.
+CFOP (Código Fiscal de Operações e Prestações) (campo obrigatório): Código que identifica a operação fiscal do produto.
+Tributação de ICMS: Seleção para informar a tributação do ICMS, se aplicável.
+IPI (campo opcional): Alíquota de IPI, se aplicável.
+Outros Impostos (campo opcional): Campos para adicionar outros impostos relacionados ao produto (PIS, COFINS, etc.).
+5. Características Adicionais
+Imagem do Produto (campo opcional): Upload de imagem ou foto do produto.
+Peso (campo opcional): Peso do produto, importante para logística e cálculo de frete.
+Dimensões (campo opcional): Tamanho (largura, altura, profundidade) para facilitar o controle de armazenamento ou cálculo de frete.
+Marca (campo opcional): Marca do produto.
+Modelo (campo opcional): Número ou nome do modelo, caso o produto tenha variações.
+Garantia (campo opcional): Período de garantia oferecido para o produto.
+6. Variações de Produto
+Adicionar Variações (campo opcional): Caso o produto tenha variações (ex: cores, tamanhos), permitir a criação de variações com seus respectivos preços, códigos, estoques e características.
+Tabela de Preços por Variação (campo opcional): Definir preços diferentes para variações (ex: preço de uma cor ou tamanho específico).
+7. Controle e Outras Informações
+Status do Produto (campo obrigatório): Se o produto está "Ativo", "Inativo" ou "Em desenvolvimento".
+Data de Cadastro: Data de quando o produto foi cadastrado no sistema (geralmente preenchido automaticamente).
+Última Atualização: Data da última atualização dos dados do produto (geralmente preenchido automaticamente).
+Responsável pelo Cadastro: Usuário ou administrador responsável por cadastrar o produto (preenchido automaticamente ou manual).
+8. Ações
+Salvar: Botão para salvar as informações cadastradas.
+Salvar e Adicionar Novo: Botão para salvar e já permitir o cadastro de outro produto.
+Cancelar: Botão para cancelar o cadastro sem salvar as alterações.
+Dicas adicionais:
+Validações de Campos: Assegure que campos obrigatórios não sejam deixados em branco. Para campos numéricos, como preço e quantidade, implemente validações para garantir que o valor seja positivo e adequado.
+
+Pesquisa de Produtos: Inclua uma funcionalidade de pesquisa na tela de cadastro, caso o usuário queira verificar se o produto já existe ou precisa ser atualizado. Pode ser uma busca por nome, código, categoria, etc.
+
+Autocompletar e Sugestões: Para campos como "Fornecedor" e "Categoria", implemente autocompletar para melhorar a usabilidade e evitar erros.
+
+Interface Intuitiva: Organize os campos em abas ou seções para não sobrecarregar a tela, como por exemplo: "Informações Básicas", "Preço e Estoque", "Impostos e Tributação", etc.
+
+Controle de Permissões: Dependendo do perfil de usuário, adicione permissões para editar ou visualizar certos campos (ex: campo de preço de custo pode ser restrito a administradores ou gestores).
+
+Notificações e Alertas: Inclua alertas visuais para campos que exigem atenção, como estoque abaixo do mínimo ou produtos sem preço de venda.
