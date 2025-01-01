@@ -1,0 +1,4 @@
+.modal-dialog {
+    max-width: 80%; /* Aumenta a largura do modal */
+    height: 80%;    /* Aumenta a altura do modal */
+  }

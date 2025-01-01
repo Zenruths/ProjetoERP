@@ -6,7 +6,7 @@
     <meta name="description" content="">
     <meta name="author" content="">
     <link rel="icon" href="favicon.ico">
-    <title>Tiny Dashboard - A Bootstrap Dashboard Template</title>
+    <title>LinkAI - Cadastro de Clientes | Delfin Sistemas</title>
     <!-- Simple bar CSS -->
     <link rel="stylesheet" href="css/simplebar.css">
     <!-- Fonts CSS -->
@@ -19,6 +19,7 @@
     <!-- App CSS -->
     <link rel="stylesheet" href="css/app-light.css" id="lightTheme">
     <link rel="stylesheet" href="css/app-dark.css" id="darkTheme" disabled>
+    <link rel="stylesheet" href="css/modal.css">
   </head>
   <body class="horizontal light  ">
     <div class="wrapper">
@@ -689,8 +690,15 @@
                         <thead>
                             <tr>
                                 <th>Código</th>
+                                <th>Tipo Cliente</th>
                                 <th>Nome</th>
+                                <th>Razão Social</th>
+                                <th>Nome Fantasia</th>
                                 <th>CPF</th>
+                                <th>RG</th>
+                                <th>CNPJ</th>
+                                <th>IE</th>
+                                <th>Gênero</th>
                                 <th>Data de Nascimento</th>
                                 <th>Telefone</th>
                                 <th>Email</th>
@@ -704,8 +712,15 @@
                         <tbody>
                             <tr>
                                 <td>368</td>
+                                <td>Pessoa Física</td>
                                 <td>João</td>
+                                <td></td>
+                                <td></td>
                                 <td class="cpf">23767813025</td>
+                                <td class="rg">489736130</td>
+                                <td class="cnpj"></td>
+                                <td class="ie"></td>
+                                <td>Masculino</td>
                                 <td class="date">01022000</td>
                                 <td class="phone">46999335511</td>
                                 <td>joao@mail.com</td>
@@ -725,8 +740,15 @@
                             </tr>
                             <tr>
                                 <td>427</td>
+                                <td>Pessoa Física</td>
                                 <td>Beatriz</td>
+                                <td></td>
+                                <td></td>
                                 <td class="cpf">40191103012</td>
+                                <td class="rg">162835826</td>
+                                <td class="cnpj"></td>
+                                <td class="ie"></td>
+                                <td>Feminino</td>
                                 <td class="date">03082002</td>
                                 <td class="phone">46999112233</td>
                                 <td>beatriz@mail.com</td>
@@ -770,60 +792,164 @@
                                 <li class="nav-item">
                                   <a class="nav-link" id="address-tab" data-toggle="tab" href="#address" role="tab" aria-controls="address" aria-selected="false">Endereço</a>
                                 </li>
+                                <li class="nav-item">
+                                  <a class="nav-link" id="personal-tab" data-toggle="tab" href="#personal" role="tab" aria-controls="personal" aria-selected="false">Pessoal</a>
+                                </li>
+                                <li class="nav-item">
+                                  <a class="nav-link" id="authorized-tab" data-toggle="tab" href="#authorized" role="tab" aria-controls="authorized" aria-selected="false">Autorizados</a>
+                                </li>
+                                <li class="nav-item">
+                                  <a class="nav-link" id="credits-tab" data-toggle="tab" href="#credits" role="tab" aria-controls="credits" aria-selected="false">Créditos</a>
+                                </li>
                               </ul>
                               <!-- Tab Content -->
                               <div class="tab-content mt-3" id="clienteTabsContent">
                                 <!-- Informações Básicas -->
                                 <div class="tab-pane fade show active" id="basic" role="tabpanel" aria-labelledby="basic-tab">
                                   <h6>Informações Básicas</h6>
-                                  <div class="form-row">
-                                    <div class="form-group col-md-6">
-                                      <label for="clientName">Nome</label>
-                                      <input type="text" class="form-control" id="clientName" placeholder="Nome do Cliente">
-                                    </div>
-                                    <div class="form-group col-md-6">
-                                      <label for="clientCPF">CPF</label>
-                                      <input type="text" class="form-control" id="clientCPF" placeholder="CPF">
+                                  <!-- Tipo de Cliente -->
+                                  <div class="form-group">
+                                    <label for="tipoCliente">Tipo de Cliente *</label>
+                                    <select id="tipoCliente" class="form-control col-md-6" onchange="handleTipoClienteChange()">
+                                      <option value="">Selecione...</option>
+                                      <option value="fisica">Pessoa Física</option>
+                                      <option value="juridica">Pessoa Jurídica</option>
+                                      <option value="estrangeiro">Estrangeiro</option>
+                                      <!-- <option value="produtor_rural">Produtor Rural</option> -->
+                                    </select>
+                                  </div>
+
+                                  <!-- Estrangeiro -->
+                                  <div id="estrangeiroFields" style="display: none;">
+                                    <h6>Estrangeiro</h6>
+                                    <div class="form-row">
+                                      <div class="form-group col-md-6">
+                                        <label for="clientNameEstrangeiro">Nome Completo *</label>
+                                        <input type="text" class="form-control" id="clientNameEstrangeiro" placeholder="Nome do Cliente">
+                                      </div>
+                                      <div class="form-group col-md-6">
+                                        <label for="clientRNE">Registro Nacional de Estrangeiros (RNE) *</label>
+                                        <input type="text" class="form-control" id="clientRNE" placeholder="RNE">
+                                      </div>
+                                      <div class="form-group col-md-6">
+                                        <label for="clientDOBEstrangeiro">Data de Nascimento *</label>
+                                        <input type="date" class="form-control" id="clientDOBEstrangeiro" oninput="calculateAge('Estrangeiro')">
+                                      </div>
+                                      <div class="form-group col-md-6">
+                                        <label for="clientAgeEstrangeiro">Idade</label>
+                                        <input type="text" class="form-control" id="clientAgeEstrangeiro" readonly>
+                                      </div>
                                     </div>
                                   </div>
-                                  <div class="form-group">
-                                    <label for="clientDOB">Data de Nascimento</label>
-                                    <input type="date" class="form-control" id="clientDOB">
+                                  
+                                  <!-- Pessoa Física -->
+                                  <div id="pessoaFisicaFields" style="display: none;">
+                                    <h6>Pessoa Física</h6>
+                                    <div class="form-row">
+                                      <div class="form-group col-md-6">
+                                        <label for="clientName">Nome Completo *</label>
+                                        <input type="text" class="form-control" id="clientName" placeholder="Nome do Cliente">
+                                      </div>
+                                      <div class="form-group col-md-6">
+                                        <label for="clientCPF">CPF *</label>
+                                        <input type="text" class="form-control" id="clientCPF" placeholder="CPF">
+                                        <small id="cpfError" class="form-text text-danger" style="display: none;"></small>
+                                      </div>
+                                    </div>
+                                    <div class="form-row">
+                                      <div class="form-group col-md-6">
+                                        <label for="clientRG">RG *</label>
+                                        <input type="text" class="form-control" id="clientRG" placeholder="RG">
+                                        <small id="rgError" class="form-text text-danger" style="display: none;"></small>
+                                      </div>
+                                      <div class="form-group col-md-6">
+                                        <label for="clienteGenero">Genêro *</label>
+                                        <select id="clienteGenero" class="form-control">
+                                          <option value="">Selecione...</option>
+                                          <option value="feminino">Feminino</option>
+                                          <option value="masculino">Masculino</option>
+                                          <option value="outros">Outros</option>
+                                          <option value="prefironaodizer">Prefiro não dizer</option>
+                                        </select>
+                                      </div>
+                                      <div class="form-group col-md-6">
+                                        <label for="clientDOB">Data de Nascimento *</label>
+                                        <input type="date" class="form-control" id="clientDOB" oninput="calculateAge('Fisica')">
+                                      </div>
+                                      <div class="form-group col-md-6">
+                                        <label for="clientAge">Idade</label>
+                                        <input type="text" class="form-control" id="clientAge" readonly>
+                                      </div>
+                                    </div>
+                                  </div>
+                                  <!-- Pessoa Jurídica -->
+                                  <div id="pessoaJuridicaFields" style="display: none;">
+                                    <h6>Pessoa Jurídica</h6>
+                                    <div class="form-row">
+                                      <div class="form-group col-md-6">
+                                        <label for="razaoSocial">Razão Social *</label>
+                                        <input type="text" class="form-control" id="razaoSocial" placeholder="Razão Social">
+                                      </div>
+                                      <div class="form-group col-md-6">
+                                        <label for="nomeFantasia">Nome Fantasia *</label>
+                                        <input type="text" class="form-control" id="nomeFantasia" placeholder="Nome Fantasia">
+                                      </div>
+                                    </div>
+                                    <div class="form-row">
+                                      <div class="form-group col-md-6">
+                                          <label for="cnpj">CNPJ *</label>
+                                          <input type="text" class="form-control" id="cnpj" placeholder="CNPJ">
+                                          <small id="cnpjError" class="form-text text-danger" style="display: none;"></small>
+                                      </div>
+                                      <div class="form-group col-md-6">
+                                          <label for="ie">Inscrição Estadual (IE) *</label>
+                                          <input type="text" class="form-control" id="ie" placeholder="Inscrição Estadual">
+                                      </div>
+                                  </div>
                                   </div>
                                 </div>
+
                                 <!-- Contato -->
                                 <div class="tab-pane fade" id="contact" role="tabpanel" aria-labelledby="contact-tab">
                                   <h6>Contato</h6>
                                   <div class="form-row">
                                     <div class="form-group col-md-6">
-                                      <label for="clientPhone">Telefone</label>
+                                      <label for="clientPhone">Telefone *</label>
                                       <input type="text" class="form-control" id="clientPhone" placeholder="Telefone">
-                                    </div>
+                                      <small id="phoneError" class="form-text text-danger" style="display: none;">Digite um telefone válido.</small>
+                                    </div>    
                                     <div class="form-group col-md-6">
-                                      <label for="clientEmail">E-mail</label>
+                                      <label for="clientPhoneCelular">Telefone Celular *</label>
+                                      <input type="text" class="form-control" id="clientPhoneCelular" placeholder="Telefone Celular">
+                                      <small id="phoneCelularError" class="form-text text-danger" style="display: none;">Digite um telefone válido.</small>
+                                    </div>                             
+                                    <div class="form-group col-md-12">
+                                      <label for="clientEmail">E-mail *</label>
                                       <input type="email" class="form-control" id="clientEmail" placeholder="E-mail">
+                                      <small id="emailError" class="form-text text-danger" style="display: none;"></small>
                                     </div>
                                   </div>
                                 </div>
+
                                 <!-- Endereço -->
                                 <div class="tab-pane fade" id="address" role="tabpanel" aria-labelledby="address-tab">
                                   <h6>Endereço</h6>
                                   <div class="form-row">
                                     <!-- Campo de Logradouro -->
                                     <div class="form-group col-md-4">
-                                      <label for="clientAddress">Logradouro</label>
+                                      <label for="clientAddress">Logradouro *</label>
                                       <input type="text" class="form-control" id="clientAddress" placeholder="Rua, Avenida, etc.">
                                     </div>
 
                                     <!-- Campo de Bairro -->
                                     <div class="form-group col-md-4">
-                                      <label for="clientNeighborhood">Bairro</label>
+                                      <label for="clientNeighborhood">Bairro *</label>
                                       <input type="text" class="form-control" id="clientNeighborhood" placeholder="Bairro">
                                     </div>
 
                                     <!-- Campo de Número -->
                                     <div class="form-group col-md-4">
-                                      <label for="clientNumber">Número</label>
+                                      <label for="clientNumber">Número *</label>
                                       <input type="text" class="form-control" id="clientNumber" placeholder="Número">
                                     </div>
                                   </div>
@@ -831,23 +957,198 @@
                                   <div class="form-row">
                                     <!-- Campo de CEP -->
                                     <div class="form-group col-md-4">
-                                      <label for="clientZIP">CEP</label>
+                                      <label for="clientZIP">CEP *</label>
                                       <input type="text" class="form-control" id="clientZIP" placeholder="CEP" data-toggle="tooltip" title="Ao inserir o CEP, será preenchido automaticamente os campos Cidade e Estado">
+                                      <small id="cepError" class="form-text text-danger" style="display: none;"></small>
                                     </div>
 
                                     <!-- Campo de Cidade -->
                                     <div class="form-group col-md-4">
                                       <label for="clientCity">Cidade</label>
-                                      <input type="text" class="form-control" id="clientCity" placeholder="Cidade"> <!-- Utilizar readonly caso deseje que não seja possível inserir manualmente a Cidade -->
+                                      <input type="text" class="form-control" id="clientCity" placeholder="Cidade" readonly> <!-- Utilizar readonly caso deseje que não seja possível inserir manualmente a Cidade -->
                                     </div>
 
                                     <!-- Campo de Estado -->
                                     <div class="form-group col-md-4">
                                       <label for="clientState">Estado</label>
-                                      <input type="text" class="form-control" id="clientState" placeholder="Estado"> <!-- Utilizar readonly caso deseje que não seja possível inserir manualmente o Estado -->
+                                      <input type="text" class="form-control" id="clientState" placeholder="Estado" readonly> <!-- Utilizar readonly caso deseje que não seja possível inserir manualmente o Estado -->
                                     </div>
                                   </div>
-                                </div>                         
+                                </div>   
+                                
+                                <!-- Pessoal -->
+                                <div class="tab-pane fade" id="personal" role="tabpanel" aria-labelledby="personal-tab">
+                                <h6>Dados Profissionais</h6>
+                                <div class="form-row">
+                                  <div class="form-group col-md-6">
+                                    <label for="clientProfissao">Dados da Profissão *</label>
+                                    <input type="text" class="form-control" id="clientProfissao" placeholder="Profissão">
+                                  </div>
+                                  <div class="form-group col-md-6">
+                                    <label for="clientEmpresa">Empresa *</label>
+                                    <input type="text" class="form-control" id="clientEmpresa" placeholder="Empresa">
+                                  </div>
+                                </div>
+                                <div class="form-row">
+                                  <div class="form-group col-md-6">
+                                    <label for="clientTelefoneEmpresa">Telefone da Empresa *</label>
+                                    <input type="text" class="form-control" id="clientTelefoneEmpresa" placeholder="Telefone da Empresa">
+                                  </div>
+                                  <div class="form-group col-md-6">
+                                    <label for="clientDataAdmissao">Data de Admissão *</label>
+                                    <input type="date" class="form-control" id="clientDataAdmissao">
+                                  </div>
+                                </div>
+                                <div class="form-row">
+                                  <div class="form-group col-md-6">
+                                    <label for="clientSalario">Salário *</label>
+                                    <input type="text" class="form-control" id="clientSalario" placeholder="Salário">
+                                  </div>
+                                  <div class="form-group col-md-6">
+                                    <label for="clientTipoRenda">Tipo de Renda *</label>
+                                    <select id="clientTipoRenda" class="form-control">
+                                      <option value="">Selecione...</option>
+                                      <option value="salario">Salário</option>
+                                      <option value="autonomo">Autônomo</option>
+                                      <option value="outros">Outros</option>
+                                    </select>
+                                  </div>
+                                </div>
+
+                                <h6>Dados do Cônjuge</h6>
+                                <div class="form-row">
+                                  <div class="form-group col-md-6">
+                                    <label for="estadoCivil">Estado Civil *</label>
+                                    <select id="estadoCivil" class="form-control" onchange="handleEstadoCivilChange()">
+                                      <option value="solteiro">Solteiro</option>
+                                      <option value="casado">Casado</option>
+                                      <option value="viuvo">Viúvo</option>
+                                    </select>
+                                  </div>
+                                </div>
+                                <div id="dadosConjugue" style="display: none;">
+                                  <div class="form-row">
+                                    <div class="form-group col-md-6">
+                                      <label for="nomeConjugue">Nome do Cônjuge *</label>
+                                      <input type="text" class="form-control" id="nomeConjugue" placeholder="Nome do Cônjuge">
+                                    </div>
+                                    <div class="form-group col-md-6">
+                                      <label for="telefoneConjugue">Telefone do Cônjuge *</label>
+                                      <input type="text" class="form-control" id="telefoneConjugue" placeholder="Telefone do Cônjuge">
+                                    </div>
+                                  </div>
+                                  <div class="form-row">
+                                    <div class="form-group col-md-6">
+                                      <label for="cpfConjugue">CPF do Cônjuge *</label>
+                                      <input type="text" class="form-control" id="cpfConjugue" placeholder="CPF do Cônjuge">
+                                    </div>
+                                    <div class="form-group col-md-6">
+                                      <label for="rgConjugue">RG do Cônjuge *</label>
+                                      <input type="text" class="form-control" id="rgConjugue" placeholder="RG do Cônjuge">
+                                    </div>
+                                  </div>
+                                  <div class="form-row">
+                                    <div class="form-group col-md-6">
+                                      <label for="dataNascimentoConjugue">Data de Nascimento *</label>
+                                      <input type="date" class="form-control" id="dataNascimentoConjugue">
+                                    </div>
+                                  </div>
+                                </div>
+
+                                <h6>Imagem do Cliente</h6>
+                                <div class="form-group">
+                                  <label for="clientImage">Selecionar Imagem</label>
+                                  
+                                  <!-- Estilo personalizado para o input de imagem -->
+                                  <div class="custom-file">
+                                    <input type="file" class="custom-file-input" id="clientImage" accept="image/*">
+                                    <label class="custom-file-label" for="clientImage">Escolha uma imagem</label>
+                                  </div>
+                                  
+                                  <div id="imagePreview" class="mt-3" style="display:none;">
+                                    <h6>Pré-visualização:</h6>
+                                    <img id="previewImage" src="" alt="Pré-visualização da imagem" class="img-fluid" style="max-width: 200px; border-radius: 8px; box-shadow: 0 4px 6px rgba(0,0,0,0.1);">
+                                  </div>
+                                  
+                                  <small id="imageHelp" class="form-text text-muted">Escolha uma imagem para o cliente</small>
+                                </div>
+                              </div>
+
+                              <!-- Autorizados -->
+                              <div class="tab-pane fade" id="authorized" role="tabpanel" aria-labelledby="authorized-tab">
+                              <h6>Pessoas Autorizadas</h6>
+                                <!-- Alerta de erro (inicialmente escondido) -->
+                                <div id="alertaAutorizado" class="alert alert-danger" style="display:none; font-size: 14px;"></div>
+                                <div class="form-row">
+                                  <div class="form-group col-md-4">
+                                    <label for="nomeAutorizado">Nome</label>
+                                    <input type="text" class="form-control" id="nomeAutorizado" placeholder="Nome da Pessoa Autorizada">
+                                  </div>
+                                  
+                                  <div class="form-group col-md-4">
+                                    <label for="cpfAutorizado">CPF</label>
+                                    <input type="text" class="form-control" id="cpfAutorizado" placeholder="CPF da Pessoa Autorizada">
+                                  </div>
+                                  
+                                  <div class="form-group col-md-4">
+                                    <label for="rgAutorizado">RG</label>
+                                    <input type="text" class="form-control" id="rgAutorizado" placeholder="RG da Pessoa Autorizada">
+                                  </div>
+                                  
+                                  <div class="form-group col-md-4">
+                                    <label for="telefoneAutorizado">Telefone</label>
+                                    <input type="text" class="form-control" id="telefoneAutorizado" placeholder="Telefone da Pessoa Autorizada">
+                                  </div>
+                                  
+                                  <div class="form-group col-md-4">
+                                    <label for="emailAutorizado">Email</label>
+                                    <input type="email" class="form-control" id="emailAutorizado" placeholder="Email da Pessoa Autorizada">
+                                  </div>
+                                  
+                                  <div class="form-group col-md-4">
+                                    <label for="datanascimentoAutorizado">Data Nascimento</label>
+                                    <input type="date" class="form-control" id="datanascimentoAutorizado">
+                                  </div>
+                                </div>
+                                <button type="button" class="btn btn-primary" onclick="adicionarAutorizado()">Adicionar</button>
+
+                                <h6 class="mt-3">Pessoas Autorizadas Adicionadas</h6>
+                                <div class="table-responsive" style="max-height: 300px; overflow-y: auto;">
+                                  <table class="table table-striped">
+                                    <thead class="thead-light">
+                                      <tr>
+                                        <th>Nome</th>
+                                        <th>CPF</th>
+                                        <th>RG</th>
+                                        <th>Telefone</th>
+                                        <th>Email</th>
+                                        <th>Data Nascimento</th>
+                                      </tr>
+                                    </thead>
+                                    <tbody id="tabelaAutorizados">
+                                      <!-- Dados adicionados aparecerão aqui -->
+                                    </tbody>
+                                  </table>
+                                </div>
+                              </div>
+
+                                <!-- Créditos -->
+                                <div class="tab-pane fade" id="credits" role="tabpanel" aria-labelledby="credits-tab">
+                                  <h6>Informações de Créditos</h6>
+                                  <div class="form-row">
+                                    <div class="form-group col-md-6">
+                                      <label for="creditValue">Valor do Crédito</label>
+                                      <input type="number" class="form-control" id="creditValue" placeholder="Valor do Crédito">
+                                    </div>
+                                    <div class="form-group col-md-6">
+                                      <label for="creditCut">Crédito Cortado</label>
+                                      <select id="creditCut" class="form-control">
+                                        <option value="nao">Não</option>
+                                        <option value="sim">Sim</option>
+                                      </select>
+                                    </div>
+                                  </div>
+                                </div>
                               </div>
                             </div>
                             <div class="modal-footer">
@@ -858,27 +1159,6 @@
                         </div>
                       </div>
                       <!-- Fim Modal Adicionar Cliente -->
-                      
-                      <!-- Modal de Alerta CEP não encontrado -->
-                      <div class="modal fade" id="alertModal" tabindex="-1" role="dialog" aria-labelledby="alertModalLabel" aria-hidden="true">
-                        <div class="modal-dialog" role="document">
-                          <div class="modal-content">
-                            <div class="modal-header bg-danger text-white">
-                              <h5 class="modal-title" id="alertModalLabel">Atenção</h5>
-                              <button type="button" class="close" data-dismiss="modal" aria-label="Close">
-                                <span aria-hidden="true">&times;</span>
-                              </button>
-                            </div>
-                            <div class="modal-body" id="alertModalMessage">
-                              <!-- Mensagem do erro será injetada aqui -->
-                            </div>
-                            <div class="modal-footer">
-                              <button type="button" class="btn btn-secondary" data-dismiss="modal">Fechar</button>
-                            </div>
-                          </div>
-                        </div>
-                      </div>
-                      <!-- Fim Modal de Alerta CEP não encontrado-->
                     </div>
                   </div>
                 </div> <!-- simple table -->
@@ -1084,25 +1364,35 @@
   
       const phoneInput = document.getElementById("clientPhone");
       IMask(phoneInput, { mask: "(00) 00000-0000" });
+
+      const phoneCelularInput = document.getElementById("clientPhoneCelular");
+      IMask(phoneInput, { mask: "(00) 00000-0000" });
   
       // Validação do CEP
       cepInput.addEventListener("blur", function () {
           const cep = this.value.replace(/\D/g, ""); // Remove caracteres não numéricos
-  
-          if (cep.length === 8) { // Verifica se o CEP tem 8 dígitos
+          const cepError = document.getElementById("cepError");
+
+          if (cep.length === 8) {
               fetch(`https://viacep.com.br/ws/${cep}/json/`)
                   .then(response => response.json())
                   .then(data => {
                       if (!data.erro) {
                           document.getElementById("clientCity").value = data.localidade;
                           document.getElementById("clientState").value = data.uf;
+                          cepError.style.display = "none"; // Oculta a mensagem de erro
                       } else {
-                          showAlertModal("CEP não encontrado.");
+                          cepError.textContent = "CEP não encontrado."; // Exibe a mensagem de erro
+                          cepError.style.display = "block";
                       }
                   })
-                  .catch(() => showAlertModal("Erro ao consultar o CEP. Tente novamente."));
+                  .catch(() => {
+                      cepError.textContent = "Erro ao consultar o CEP. Tente novamente."; // Exibe a mensagem de erro
+                      cepError.style.display = "block";
+                  });
           } else {
-              showAlertModal("Digite um CEP válido com 8 dígitos.");
+              cepError.textContent = "Digite um CEP válido com 8 dígitos."; // Exibe a mensagem de erro
+              cepError.style.display = "block";
           }
       });
   
@@ -1149,31 +1439,45 @@
       // Validação do CPF no campo de entrada
       cpfInput.addEventListener("blur", function () {
           const cpf = this.value;
-  
+          const cpfError = document.getElementById("cpfError");
+
           if (validarCPF(cpf)) {
-              console.log("CPF válido.");
+              cpfError.style.display = "none"; // Oculta a mensagem de erro
           } else {
-              showAlertModal("CPF inválido.");
+              cpfError.textContent = "CPF inválido."; // Exibe a mensagem de erro
+              cpfError.style.display = "block";
           }
       });
   
-      // Validação do Telefone
+      // Aplica a máscara no campo de telefone
+      IMask(phoneInput, { mask: "(00) 00000-0000" });
+
+      // Validação do telefone no evento 'blur'
       phoneInput.addEventListener("blur", function () {
-          const phone = this.value.replace(/\D/g, ""); // Remove caracteres não numéricos
-  
-          if (phone.length === 11 || phone.length === 10) {
-              // Telefone válido
-          } else {
-              showAlertModal("Digite um telefone válido.");
-          }
+        const phone = this.value.replace(/\D/g, ""); // Remove caracteres não numéricos
+        
+        if (phone.length === 11) {
+          phoneError.style.display = "none"; // Oculta a mensagem de erro
+        } else {
+          phoneError.textContent = "Digite um telefone válido."; // Define o texto de erro
+          phoneError.style.display = "block"; // Exibe a mensagem de erro
+        }
       });
-  
-      // Função para exibir o modal de alerta
-      function showAlertModal(message) {
-          const alertModalMessage = document.getElementById("alertModalMessage");
-          alertModalMessage.textContent = message; // Insere a mensagem no modal
-          $('#alertModal').modal('show'); // Exibe o modal
-      }
+
+      // Aplica a máscara no campo de telefone celular
+      IMask(phoneCelularInput, { mask: "(00) 00000-0000" });
+
+      // Validação do telefone no evento 'blur'
+      phoneCelularInput.addEventListener("blur", function () {
+        const phoneCelular = this.value.replace(/\D/g, ""); // Remove caracteres não numéricos
+        
+        if (phoneCelular.length === 11) {
+          phoneCelularError.style.display = "none"; // Oculta a mensagem de erro
+        } else {
+          phoneCelularError.textContent = "Digite um telefone válido."; // Define o texto de erro
+          phoneCelularError.style.display = "block"; // Exibe a mensagem de erro
+        }
+      });
   
       // Ativar tooltip quando o documento for carregado, ou seja, exibe a mensagem ao passar com o mouse em cima do campo CEP
       $(document).ready(function () {
@@ -1213,6 +1517,229 @@
       document.querySelectorAll(".cep").forEach(cell => {
           cell.textContent = formatCEP(cell.textContent);
       });
+
+      // Função para calcular idade do cliente
+      function calculateAge(section) {
+      let dobInput, ageInput;
+
+      // Selecionar os elementos com base na seção (Estrangeiro ou Fisica)
+      if (section === 'Estrangeiro') {
+        dobInput = document.getElementById("clientDOBEstrangeiro");
+        ageInput = document.getElementById("clientAgeEstrangeiro");
+      } else if (section === 'Fisica') {
+        dobInput = document.getElementById("clientDOB");
+        ageInput = document.getElementById("clientAge");
+      }
+
+      if (!dobInput || !dobInput.value) {
+        ageInput.value = "";
+        return;
+      }
+
+      const dob = new Date(dobInput.value); // Data de nascimento
+      const today = new Date(); // Data atual
+
+      let years = today.getFullYear() - dob.getFullYear();
+      let months = today.getMonth() - dob.getMonth();
+      let days = today.getDate() - dob.getDate();
+
+      // Ajuste de meses se o mês atual ainda não chegou no ano
+      if (months < 0) {
+        years--;
+        months += 12;
+      }
+
+      // Ajuste de dias se o dia atual ainda não chegou no mês
+      if (days < 0) {
+        months--;
+        const lastMonth = new Date(today.getFullYear(), today.getMonth(), 0);
+        days += lastMonth.getDate();
+      }
+
+      // Atualiza o campo de idade
+      ageInput.value = `${years} anos, ${months} meses e ${days} dias`;
+    }
+
+    // Função selecionar tipo do cliente
+    function handleTipoClienteChange() {
+    const tipoCliente = document.getElementById("tipoCliente").value;
+    const pessoaFisicaFields = document.getElementById("pessoaFisicaFields");
+    const pessoaJuridicaFields = document.getElementById("pessoaJuridicaFields");
+    const estrangeiroFields = document.getElementById("estrangeiroFields");
+
+    // Esconder todos os campos inicialmente
+    pessoaFisicaFields.style.display = "none";
+    pessoaJuridicaFields.style.display = "none";
+    estrangeiroFields.style.display = "none";
+
+    // Exibir campos com base no tipo de cliente selecionado
+    if (tipoCliente === "fisica") {
+      pessoaFisicaFields.style.display = "block";
+    } else if (tipoCliente === "juridica") {
+      pessoaJuridicaFields.style.display = "block";
+    } else if (tipoCliente === "estrangeiro") {
+      estrangeiroFields.style.display = "block";
+    } 
+  }
+
+    // Adicionando a máscara para o campo RG
+    const rgInput = document.getElementById("clientRG");
+    IMask(rgInput, { mask: "00.000.000-0" });
+
+    // Função para validar o RG
+    function validarRG(rg) {
+        rg = rg.replace(/\D/g, ""); // Remove caracteres não numéricos
+
+        if (rg.length !== 9) {
+            return false;
+        }
+
+        // RG é composto por 8 números e um dígito verificador (verificação simples)
+        let soma = 0;
+        for (let i = 0; i < 8; i++) {
+            soma += parseInt(rg.charAt(i)) * (9 - i);
+        }
+
+        let resto = soma % 11;
+        let digito = rg.charAt(8);
+
+        if (resto === 10 || resto === 11) {
+            resto = 0;
+        }
+
+        return resto === parseInt(digito);
+    }
+
+    // Validação do RG no campo de entrada
+    rgInput.addEventListener("blur", function () {
+        const rg = this.value;
+        const rgError = document.getElementById("rgError");
+
+        if (validarRG(rg)) {
+            rgError.style.display = "none"; // Oculta a mensagem de erro
+        } else {
+            rgError.textContent = "RG inválido."; // Exibe a mensagem de erro
+            rgError.style.display = "block";
+        }
+    });
+
+    // Função de formatação de RG
+    function formatRG(rg) {
+        return rg.replace(/(\d{2})(\d{3})(\d{3})(\d{1})/, "$1.$2.$3-$4");
+    }
+
+    // Aplicando a formatação na tabela
+    document.querySelectorAll(".rg").forEach(cell => {
+        cell.textContent = formatRG(cell.textContent);
+    });
+
+    // Adicionando a máscara para o campo CNPJ
+    const cnpjInput = document.getElementById("cnpj");
+    IMask(cnpjInput, { mask: "00.000.000/0000-00" });
+
+    // Função para validar se o CNPJ foi preenchido corretamente
+    function validarCNPJ(cnpj) {
+        cnpj = cnpj.replace(/\D/g, ""); // Remove caracteres não numéricos
+
+        // Verifica se o CNPJ tem 14 dígitos
+        return cnpj.length === 14;
+    }
+
+    // Validação do CNPJ no campo de entrada
+    cnpjInput.addEventListener("blur", function () {
+        const cnpj = this.value;
+        const cnpjError = document.getElementById("cnpjError");
+
+        if (validarCNPJ(cnpj)) {
+            cnpjError.style.display = "none"; // Oculta a mensagem de erro
+        } else {
+            cnpjError.textContent = "CNPJ inválido."; // Exibe a mensagem de erro
+            cnpjError.style.display = "block";
+        }
+    });
+
+    // Função de formatação de CNPJ
+    function formatCNPJ(cnpj) {
+        return cnpj.replace(/(\d{2})(\d{3})(\d{3})(\d{4})(\d{2})/, "$1.$2.$3/$4-$5");
+    }
+
+    // Aplicando a formatação na tabela
+    document.querySelectorAll(".cnpj").forEach(cell => {
+        cell.textContent = formatCNPJ(cell.textContent);
+    });
+
+    // Adicionar validação de e-mail
+    const emailInput = document.getElementById('clientEmail');
+    emailInput.addEventListener('blur', function() {
+        const emailRegex = /^[^\s@]+@[^\s@]+\.[^\s@]+$/;
+        const emailError = document.getElementById('emailError');
+        if (!emailRegex.test(this.value)) {
+            emailError.textContent = 'E-mail inválido';
+            emailError.style.display = 'block';
+        } else {
+            emailError.style.display = 'none';
+        }
+    });
+
+    // Função para abrir estado civil
+    function handleEstadoCivilChange() {
+    const estadoCivil = document.getElementById("estadoCivil").value;
+    const dadosConjugue = document.getElementById("dadosConjugue");
+
+    if (estadoCivil === "casado") {
+      dadosConjugue.style.display = "block";
+    } else {
+      dadosConjugue.style.display = "none";
+    }
+  }
+
+  // Função ppra adicionar autorizados
+  function adicionarAutorizado() {
+  const nome = document.getElementById("nomeAutorizado").value;
+  const cpf = document.getElementById("cpfAutorizado").value;
+  const rg = document.getElementById("rgAutorizado").value;
+  const telefone = document.getElementById("telefoneAutorizado").value;
+  const email = document.getElementById("emailAutorizado").value;
+  const dataNascimento = document.getElementById("datanascimentoAutorizado").value;
+
+  if (nome && cpf && rg && telefone && email && dataNascimento) {
+    const tabela = document.getElementById("tabelaAutorizados");
+    const row = tabela.insertRow();
+
+    row.insertCell(0).textContent = nome;
+    row.insertCell(1).textContent = cpf;
+    row.insertCell(2).textContent = rg;
+    row.insertCell(3).textContent = telefone;
+    row.insertCell(4).textContent = email;
+    row.insertCell(5).textContent = dataNascimento;
+
+    // Limpa os campos após adicionar
+    document.getElementById("nomeAutorizado").value = '';
+    document.getElementById("cpfAutorizado").value = '';
+    document.getElementById("rgAutorizado").value = '';
+    document.getElementById("telefoneAutorizado").value = '';
+    document.getElementById("emailAutorizado").value = '';
+    document.getElementById("datanascimentoAutorizado").value = '';
+  } else {
+    document.getElementById("alertaAutorizado").style.display = 'block';
+    document.getElementById("alertaAutorizado").textContent = "Por favor, preencha todos os campos.";
+  }
+}
+
+  // Exibe a pré-visualização da imagem quando selecionada
+  document.getElementById("clientImage").addEventListener("change", function(event) {
+      const file = event.target.files[0];
+      if (file) {
+        const reader = new FileReader();
+        reader.onload = function(e) {
+          const imagePreview = document.getElementById("imagePreview");
+          const previewImage = document.getElementById("previewImage");
+          imagePreview.style.display = "block";
+          previewImage.src = e.target.result;
+        };
+        reader.readAsDataURL(file);
+      }
+    });
   </script>
 
   </body>

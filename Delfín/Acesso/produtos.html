@@ -21,6 +21,7 @@
     <link rel="stylesheet" href="css/app-dark.css" id="darkTheme" disabled>
     <link href="https://cdn.jsdelivr.net/npm/bootstrap-icons/font/bootstrap-icons.css" rel="stylesheet">
     <!-- Bootstrap CSS -->
+    <link rel="stylesheet" href="css/modal.css">
   </head>
   <body class="horizontal light  ">
     <div class="wrapper">
@@ -784,6 +785,12 @@
                                   <a class="nav-link" id="stock-tab" data-toggle="tab" href="#stock" role="tab" aria-controls="stock" aria-selected="false">Estoque</a>
                                 </li>
                                 <li class="nav-item">
+                                  <a class="nav-link" id="details-tab" data-toggle="tab" href="#details" role="tab" aria-controls="details" aria-selected="false">Detalhes</a>
+                                </li>
+                                <li class="nav-item">
+                                  <a class="nav-link" id="fiscal-tab" data-toggle="tab" href="#fiscal" role="tab" aria-controls="fiscal" aria-selected="false">Fiscal</a>
+                                </li>
+                                <li class="nav-item">
                                   <a class="nav-link" id="additional-tab" data-toggle="tab" href="#additional" role="tab" aria-controls="additional" aria-selected="false">Informações Adicionais</a>
                                 </li>
                               </ul>
@@ -794,46 +801,255 @@
                                   <h6>Informações Básicas</h6>
                                   <p class="text-muted">Dados principais do produto</p>
                                   <div class="form-row">
-                                    <div class="form-group col-md-6">
+                                    <div class="form-group col-md-4">
                                       <label for="productCode">Código</label>
                                       <input type="text" class="form-control" id="productCode" placeholder="Código do Produto">
                                     </div>
-                                    <div class="form-group col-md-6">
+                                    <div class="form-group col-md-4">
                                       <label for="productReference">Referência</label>
                                       <input type="text" class="form-control" id="productReference" placeholder="Referência">
                                     </div>
+                                    <div class="form-group col-md-4">
+                                      <label for="productBarcode">Código de Barras</label>
+                                      <input type="text" class="form-control" id="productBarcode" placeholder="Código de Barras">
+                                    </div>
                                   </div>
-                                  <div class="form-group">
-                                    <label for="productDescription">Descrição</label>
-                                    <textarea class="form-control" id="productDescription" rows="2" placeholder="Descrição do Produto"></textarea>
-                                  </div>
-                                  <div class="form-group">
-                                    <label for="productBarcode">Código de Barras</label>
-                                    <input type="text" class="form-control" id="productBarcode" placeholder="Código de Barras">
-                                  </div>
-                                </div>
-                                <!-- Preços -->
-                                <div class="tab-pane fade" id="pricing" role="tabpanel" aria-labelledby="pricing-tab">
-                                  <h6>Preços</h6>
                                   <div class="form-row">
                                     <div class="form-group col-md-6">
-                                      <label for="productCost">Custo</label>
-                                      <input type="number" class="form-control" id="productCost" placeholder="Digite o custo">
+                                      <label for="productDescription">Descrição</label>
+                                      <input class="form-control" id="productDescription" rows="2" placeholder="Descrição do Produto"></input>
                                     </div>
                                     <div class="form-group col-md-6">
-                                      <label for="productPrice">Preço de Venda</label>
-                                      <input type="number" class="form-control" id="productPrice" placeholder="Digite o preço">
+                                      <label for="productDetalhamento">Detalhamento</label>
+                                      <textarea class="form-control" id="productDetalhamento" rows="2" placeholder="Detalhamento do Produto"></textarea>
                                     </div>
                                   </div>
                                 </div>
+                                
+                                <!-- Preços -->
+                                <div class="tab-pane fade" id="pricing" role="tabpanel" aria-labelledby="pricing-tab">
+                                  <h6>Informações sobre o valor de Custo</h6>
+                                  <div class="form-row">
+                                    <div class="form-group col-md-2">
+                                      <label for="productCost">Custo</label>
+                                      <input type="number" class="form-control" id="productCost" placeholder="Digite o custo" oninput="calcularCustoFinal()">
+                                    </div>
+                                    <div class="form-group col-md-2">
+                                      <label for="productOtherCostsPercentage">% Outros Custos</label>
+                                      <input type="number" class="form-control" id="productOtherCostsPercentage" placeholder="% de outros custos" readonly>
+                                    </div>
+                                    <div class="form-group col-md-2">
+                                      <label for="productOtherCosts">Outros Custos</label>
+                                      <input type="number" class="form-control" id="productOtherCosts" placeholder="Digite outros custos" oninput="calcularCustoFinal()">
+                                    </div>
+                                    <div class="form-group col-md-2">
+                                      <label for="productFinalCost">Custo Final</label>
+                                      <input type="number" class="form-control" id="productFinalCost" readonly>
+                                    </div>
+                                  </div>
+                                  <h6>Informações sobre o valor de Venda</h6>
+                                  <div class="form-row">
+                                    <div class="form-group col-md-4">
+                                      <label for="suggestedMargin">Margem Sugerida (%)</label>
+                                      <input type="number" class="form-control" id="suggestedMargin" placeholder="Margem sugerida (%)" value="100" oninput="calcularVarejo()">
+                                    </div>
+                                    <div class="form-group col-md-4">
+                                      <label for="grossMargin">Margem Bruta (%)</label>
+                                      <input type="number" class="form-control" id="grossMargin" placeholder="Margem Bruta (%)" value="100" oninput="calcularVarejo()">
+                                    </div>
+                                    <div class="form-group col-md-4">
+                                      <label for="netMargin">Margem Líquida (%)</label>
+                                      <input type="number" class="form-control" id="netMargin" placeholder="Margem Líquida (%)" value="50" oninput="calcularVarejo()">
+                                    </div>
+                                    <div class="form-group col-md-4">
+                                      <label for="productRetailPrice">Valor Varejo</label>
+                                      <input type="number" class="form-control" id="productRetailPrice" placeholder="Valor de Venda" oninput="calcularMargens(); calcularLucro()">
+                                    </div>
+                                    <div class="form-group col-md-4">
+                                      <label for="productProfit">Lucro (R$)</label>
+                                      <input type="number" class="form-control" id="productProfit" placeholder="Lucro" readonly>
+                                    </div>
+                                    <div class="form-group col-md-4">
+                                      <label for="productProfitPercentage">Lucro (%)</label>
+                                      <input type="number" class="form-control" id="productProfitPercentage" placeholder="Lucro (%)" readonly>
+                                    </div>
+                                  </div>
+                                </div>
+
                                 <!-- Estoque -->
                                 <div class="tab-pane fade" id="stock" role="tabpanel" aria-labelledby="stock-tab">
                                   <h6>Estoque</h6>
-                                  <div class="form-group">
-                                    <label for="productStock">Quantidade em Estoque</label>
-                                    <input type="number" class="form-control" id="productStock" placeholder="Digite a quantidade">
+                                  <div class="form-row">
+                                    <div class="form-group col-md-4">
+                                      <label for="productStock">Quantidade em Estoque</label>
+                                      <input type="number" class="form-control" id="productStock" placeholder="Digite a quantidade">
+                                    </div>
+                                    <div class="form-group col-md-4">
+                                      <label for="minStock">Estoque Mínimo</label>
+                                      <input type="number" class="form-control" id="minStock" placeholder="Digite o estoque mínimo">
+                                    </div>
+                                    <div class="form-group col-md-4">
+                                      <label for="idealStock">Estoque Ideal</label>
+                                      <input type="number" class="form-control" id="idealStock" placeholder="Digite o estoque ideal">
+                                    </div>
+                                  </div>
+
+                                  <h6>Resultados</h6>
+                                  <div class="form-row">
+                                    <div class="form-group col-md-4">
+                                      <label for="deliveryTime">Tempo de Entrega (em dias)</label>
+                                      <input type="number" class="form-control" id="deliveryTime" placeholder="Digite o tempo de entrega">
+                                    </div>
+                                    <div class="form-group col-md-4">
+                                      <label for="salesPeriod">Período de Venda (em dias)</label>
+                                      <input type="number" class="form-control" id="salesPeriod" placeholder="Digite o período de venda">
+                                    </div>
+                                    <div class="form-group col-md-4 d-flex align-items-end">
+                                      <button class="btn btn-primary w-100" id="calculateStockResults" onclick="calcularResultadosEstoque()">Calcular</button>
+                                    </div>
+                                  </div>
+
+                                  <div class="form-row">
+                                    <div class="form-group col-md-4">
+                                      <label for="soldQuantity">Qtde Produtos Vendidos</label>
+                                      <input type="number" class="form-control" id="soldQuantity" readonly>
+                                    </div>
+                                    <div class="form-group col-md-4">
+                                      <label for="monthlySalesAvg">Média de Vendas Mensal</label>
+                                      <input type="number" class="form-control" id="monthlySalesAvg" readonly>
+                                    </div>
+                                    <div class="form-group col-md-4">
+                                      <label for="dailySalesAvg">Média de Vendas Diária</label>
+                                      <input type="number" class="form-control" id="dailySalesAvg" readonly>
+                                    </div>
+                                  </div>
+                                  <div class="form-row">
+                                    <div class="form-group col-md-4">
+                                      <label for="calculatedMinStock">Estoque Mínimo</label>
+                                      <input type="number" class="form-control" id="calculatedMinStock" readonly>
+                                    </div>
+                                    <div class="form-group col-md-4">
+                                      <label for="calculatedIdealStock">Estoque Ideal</label>
+                                      <input type="number" class="form-control" id="calculatedIdealStock" readonly>
+                                    </div>
+                                    <div class="form-group col-md-4 d-flex align-items-end">
+                                      <button class="btn btn-secondary w-100" id="adjustStock" onclick="ajustarEstoque()">Alterar</button>
+                                    </div>
                                   </div>
                                 </div>
+                                
+                                <!-- Detalhes -->
+                                <div class="tab-pane fade" id="details" role="tabpanel" aria-labelledby="details-tab">
+                                  <h6>Departamentos</h6>
+                                  <div class="form-row">
+                                    <div class="form-group col-md-4">
+                                      <label for="departmentSection">Seção</label>
+                                      <div class="input-group">
+                                        <input type="text" class="form-control col-md-2" id="departmentSectionCode" placeholder="Código">
+                                        <input type="text" class="form-control col-md-10" id="departmentSectionDescription" placeholder="Descrição" readonly>
+                                      </div>
+                                    </div>
+                                    <div class="form-group col-md-4">
+                                      <label for="departmentGroup">Grupo</label>
+                                      <div class="input-group">
+                                        <input type="text" class="form-control col-md-2" id="departmentGroupCode" placeholder="Código">
+                                        <input type="text" class="form-control col-md-10" id="departmentGroupDescription" placeholder="Descrição" readonly>
+                                      </div>
+                                    </div>
+                                    <div class="form-group col-md-4">
+                                      <label for="departmentSubgroup">Subgrupo</label>
+                                      <div class="input-group">
+                                        <input type="text" class="form-control col-md-2" id="departmentSubgroupCode" placeholder="Código">
+                                        <input type="text" class="form-control col-md-10" id="departmentSubgroupDescription" placeholder="Descrição" readonly>
+                                      </div>
+                                    </div>
+                                  </div>
+
+                                  <h6>Características</h6>
+                                  <div class="form-row">
+                                    <div class="form-group col-md-4">
+                                      <label for="grossWeight">Peso Bruto (kg)</label>
+                                      <input type="number" class="form-control" id="grossWeight" placeholder="Digite o peso bruto">
+                                    </div>
+                                    <div class="form-group col-md-4">
+                                      <label for="netWeight">Peso Líquido (kg)</label>
+                                      <input type="number" class="form-control" id="netWeight" placeholder="Digite o peso líquido">
+                                    </div>
+                                    <div class="form-group col-md-4">
+                                      <label for="liters">Litros</label>
+                                      <input type="number" class="form-control" id="liters" placeholder="Digite os litros">
+                                    </div>
+                                  </div>
+                                  <div class="form-row">
+                                    <div class="form-group col-md-4">
+                                      <label for="volume">Volume (m³)</label>
+                                      <input type="number" class="form-control" id="volume" placeholder="Digite o volume">
+                                    </div>
+                                    <div class="form-group col-md-4">
+                                      <label for="height">Altura (cm)</label>
+                                      <input type="number" class="form-control" id="height" placeholder="Digite a altura">
+                                    </div>
+                                    <div class="form-group col-md-4">
+                                      <label for="width">Largura (cm)</label>
+                                      <input type="number" class="form-control" id="width" placeholder="Digite a largura">
+                                    </div>
+                                  </div>
+                                  <div class="form-row">
+                                    <div class="form-group col-md-4">
+                                      <label for="length">Comprimento (cm)</label>
+                                      <input type="number" class="form-control" id="length" placeholder="Digite o comprimento">
+                                    </div>
+                                  </div>
+                                </div>
+
+                                <!-- Fiscal -->
+                                <div class="tab-pane fade" id="fiscal" role="tabpanel" aria-labelledby="fiscal-tab">
+                                  <h6>Situação Tributária</h6>
+                                  <div class="form-row">
+                                    <div class="form-group col-md-6">
+                                      <label for="taxSituationCode">Código</label>
+                                      <input type="text" class="form-control" id="taxSituationCode" placeholder="Digite o código">
+                                    </div>
+                                    <div class="form-group col-md-6">
+                                      <label for="taxSituationDescription">Descrição</label>
+                                      <input type="text" class="form-control" id="taxSituationDescription" placeholder="Descrição" readonly>
+                                    </div>
+                                  </div>
+
+                                  <h6>Tributação</h6>
+                                  <div class="form-row">
+                                    <div class="form-group col-md-6">
+                                      <label for="ncmCode">Código NCM</label>
+                                      <div class="input-group">
+                                        <input type="text" class="form-control" id="ncmCode" placeholder="Digite o código NCM">
+                                        <input type="text" class="form-control" id="ncmDescription" placeholder="Descrição do NCM" readonly>
+                                      </div>
+                                    </div>
+                                    <div class="form-group col-md-6">
+                                      <label for="cestCode">Código CEST</label>
+                                      <div class="input-group">
+                                        <input type="text" class="form-control" id="cestCode" placeholder="Digite o código CEST">
+                                        <input type="text" class="form-control" id="cestDescription" placeholder="Descrição do CEST" readonly>
+                                      </div>
+                                    </div>
+                                  </div>
+
+                                  <h6>Tipo de Produto</h6>
+                                  <div class="form-group">
+                                    <label for="productType">Selecione o Tipo</label>
+                                    <select class="form-control" id="productType">
+                                      <option value="">Selecione</option>
+                                      <option value="ativo-imobilizado">Ativo Imobilizado</option>
+                                      <option value="industrializado">Industrializado</option>
+                                      <option value="uso-consumo">Uso e Consumo</option>
+                                      <option value="revenda">Revenda</option>
+                                      <option value="medicamentos">Medicamentos</option>
+                                      <option value="combustivel">Combustível</option>
+                                      <!-- Adicione mais opções conforme necessário -->
+                                    </select>
+                                  </div>
+                                </div>
+
                                 <!-- Informações Adicionais -->
                                 <div class="tab-pane fade" id="additional" role="tabpanel" aria-labelledby="additional-tab">
                                   <h6>Informações Adicionais</h6>
@@ -1043,6 +1259,164 @@
       }
       gtag('js', new Date());
       gtag('config', 'UA-56159088-1');
+    </script>
+
+    <script>
+      // Função para calcular o % de Outros Custos
+      function calcularOutrosCustosPercentage() {
+        const custo = parseFloat(document.getElementById('productCost').value) || 0;
+        const outrosCustos = parseFloat(document.getElementById('productOtherCosts').value) || 0;
+
+        if (custo > 0) {
+          const percentual = (outrosCustos / custo) * 100;
+          document.getElementById('productOtherCostsPercentage').value = percentual.toFixed(2);
+        } else {
+          document.getElementById('productOtherCostsPercentage').value = 0;
+        }
+      }
+
+      // Função para calcular a Margem Bruta
+      function calcularMargemBruta(custoFinal, precoVenda) {
+        return ((precoVenda - custoFinal) / precoVenda) * 100;
+      }
+
+      // Função para calcular a Margem Líquida
+      function calcularMargemLiquida(custoFinal, precoVenda) {
+        // Exemplo simples: consideramos que o lucro líquido é baseado na margem bruta
+        const margemBruta = calcularMargemBruta(custoFinal, precoVenda);
+        return margemBruta * (custoFinal / precoVenda); // fórmula simplificada
+      }
+
+      // Função para calcular o Custo Final
+      function calcularCustoFinal() {
+        const custo = parseFloat(document.getElementById('productCost').value) || 0;
+        const outrosCustos = parseFloat(document.getElementById('productOtherCosts').value) || 0;
+
+        const custoFinal = custo + outrosCustos;
+
+        document.getElementById('productFinalCost').value = custoFinal.toFixed(2);
+
+        calcularOutrosCustosPercentage(); // Recalcula a porcentagem dos outros custos
+        calcularVarejo(); // Chama o cálculo do varejo após calcular o custo final
+      }
+
+      // Função para calcular o valor de varejo
+      function calcularVarejo() {
+        const custoFinal = parseFloat(document.getElementById('productFinalCost').value) || 0;
+        const margemBruta = parseFloat(document.getElementById('grossMargin').value) || 100;
+
+        // Calcula o valor de varejo com base na margem bruta
+        const valorVarejo = custoFinal * (1 + (margemBruta / 100));
+
+        document.getElementById('productRetailPrice').value = valorVarejo.toFixed(2);
+
+        // Limpa o valor de lucro e percentual quando o valor de venda for alterado
+        document.getElementById('productProfit').value = '';
+        document.getElementById('productProfitPercentage').value = '';
+
+        // Calcula as margens com base no valor de varejo
+        calcularMargens();
+        calcularLucro(); // Recalcula o lucro assim que o valor de varejo for alterado
+      }
+
+      // Função para recalcular as margens quando o valor de varejo for alterado
+      function calcularMargens() {
+        const custoFinal = parseFloat(document.getElementById('productFinalCost').value) || 0;
+        const valorVarejo = parseFloat(document.getElementById('productRetailPrice').value) || 0;
+
+        if (valorVarejo > 0 && custoFinal > 0) {
+          // Margem Bruta
+          const margemBruta = calcularMargemBruta(custoFinal, valorVarejo);
+          document.getElementById('grossMargin').value = margemBruta.toFixed(2);
+
+          // Margem Líquida
+          const margemLiquida = calcularMargemLiquida(custoFinal, valorVarejo);
+          document.getElementById('netMargin').value = margemLiquida.toFixed(2);
+        }
+      }
+
+      // Função para calcular o Lucro (R$ e %)
+      function calcularLucro() {
+        const custoFinal = parseFloat(document.getElementById('productFinalCost').value) || 0;
+        const valorVarejo = parseFloat(document.getElementById('productRetailPrice').value) || 0;
+
+        if (valorVarejo > 0 && custoFinal > 0) {
+          const lucro = valorVarejo - custoFinal;
+          const lucroPercentual = (lucro / custoFinal) * 100;
+
+          document.getElementById('productProfit').value = lucro.toFixed(2);
+          document.getElementById('productProfitPercentage').value = lucroPercentual.toFixed(2);
+        }
+      }
+
+      // Função para calcular a Custo Final
+      function calcularCustoFinal() {
+        const custo = parseFloat(document.getElementById('productCost').value) || 0;
+        const outrosCustos = parseFloat(document.getElementById('productOtherCosts').value) || 0;
+
+        const custoFinal = custo + outrosCustos;
+
+        document.getElementById('productFinalCost').value = custoFinal.toFixed(2);
+
+        calcularOutrosCustosPercentage(); // Recalcula a porcentagem dos outros custos
+        calcularVarejo(); // Chama o cálculo do varejo após calcular o custo final
+      }
+
+      // Função para calcular a % de outros custos
+      function calcularOutrosCustosPercentage() {
+        const custo = parseFloat(document.getElementById('productCost').value) || 0;
+        const outrosCustos = parseFloat(document.getElementById('productOtherCosts').value) || 0;
+
+        if (custo > 0) {
+          const percentual = (outrosCustos / custo) * 100;
+          document.getElementById('productOtherCostsPercentage').value = percentual.toFixed(2);
+        } else {
+          document.getElementById('productOtherCostsPercentage').value = '0.00';
+        }
+      }
+
+      // Chama as funções de cálculo logo após o carregamento inicial da página ou após o preenchimento do custo
+      window.onload = function() {
+        calcularCustoFinal(); // Garante que o custo final seja calculado e as margens sejam ajustadas.
+        calcularVarejo(); // Garante que o valor de varejo seja calculado com base nas margens e custo final
+        calcularLucro(); // Garante que o lucro seja calculado assim que o valor de varejo e custo final forem preenchidos
+      }
+
+      // Função para calcular os resultados do estoque
+      function calcularResultadosEstoque() {
+        const deliveryTime = parseFloat(document.getElementById('deliveryTime').value) || 0;
+        const salesPeriod = parseFloat(document.getElementById('salesPeriod').value) || 0;
+        const productStock = parseFloat(document.getElementById('productStock').value) || 0;
+
+        if (salesPeriod > 0) {
+          // Simulação de dados para o cálculo
+          const totalSold = Math.round(productStock / 2); // Exemplo: estoque atual dividido por 2
+          const dailySales = totalSold / salesPeriod;
+          const monthlySales = dailySales * 30;
+
+          // Cálculo de estoque mínimo e ideal
+          const minStock = dailySales * deliveryTime;
+          const idealStock = minStock + (dailySales * 7); // Uma semana extra de segurança
+
+          // Atualiza os campos
+          document.getElementById('soldQuantity').value = totalSold.toFixed(2);
+          document.getElementById('monthlySalesAvg').value = monthlySales.toFixed(2);
+          document.getElementById('dailySalesAvg').value = dailySales.toFixed(2);
+          document.getElementById('calculatedMinStock').value = minStock.toFixed(2);
+          document.getElementById('calculatedIdealStock').value = idealStock.toFixed(2);
+        } else {
+          alert('Por favor, insira um período de venda válido.');
+        }
+      }
+
+      // Função para ajustar o estoque mínimo e ideal
+      function ajustarEstoque() {
+        const calculatedMinStock = parseFloat(document.getElementById('calculatedMinStock').value) || 0;
+        const calculatedIdealStock = parseFloat(document.getElementById('calculatedIdealStock').value) || 0;
+
+        document.getElementById('minStock').value = calculatedMinStock.toFixed(2);
+        document.getElementById('idealStock').value = calculatedIdealStock.toFixed(2);
+      }
     </script>
   </body>
 </html>
