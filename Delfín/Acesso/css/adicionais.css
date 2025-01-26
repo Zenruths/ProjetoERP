@@ -1,0 +1,12 @@
+/* Botão Ocultar/Exibir Legendas de Status na tela de Contas a Receber */
+
+#legendContent {
+    display: none;
+    /* Inicia escondido */
+    margin-top: 10px;
+}
+
+#legendContainer ul {
+    display: none;
+    /* Esconde título e legendas inicialmente */
+}

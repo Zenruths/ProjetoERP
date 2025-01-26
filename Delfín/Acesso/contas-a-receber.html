@@ -25,6 +25,8 @@
   <link href="https://cdn.jsdelivr.net/npm/bootstrap-icons/font/bootstrap-icons.css" rel="stylesheet">
   <!-- Bootstrap CSS -->
   <link rel="stylesheet" href="css/modal.css">
+  <!-- Adicionais CSS -->
+  <link rel="stylesheet" href="css/adicionais.css">
 </head>
 
 <body class="horizontal light  ">
@@ -873,6 +875,7 @@
                           </th>
                           <th>Sequência</th>
                           <th>Lançamento</th>
+                          <th>Código Cliente</th>
                           <th>Nome</th>
                           <th>Proveniente</th>
                           <th>Documento</th>
@@ -899,6 +902,7 @@
                           </td>
                           <td>1155</td>
                           <td>26-12-2020 01:32:21</td>
+                          <td>193</td>
                           <td>Maria Santos</td>
                           <td>Avulso</td>
                           <td>53/1</td>
@@ -931,6 +935,7 @@
                           </td>
                           <td>1156</td>
                           <td>21-04-2020 00:38:38</td>
+                          <td>532</td>
                           <td>Adriano Marques</td>
                           <td>Venda 54</td>
                           <td>54/1</td>
@@ -963,6 +968,7 @@
                           </td>
                           <td>1157</td>
                           <td>21-04-2020 00:38:38</td>
+                          <td>532</td>
                           <td>Adriano Marques</td>
                           <td>Venda 54</td>
                           <td>54/2</td>
@@ -991,170 +997,208 @@
                     </table>
                     <!-- Fim Tabela -->
 
-                    <!-- Botão Receber -->
-                    <button type="button" class="btn btn-success" data-toggle="modal"
-                      data-target="#receberModal">Receber</button>
-
                   </div>
                 </div>
               </div> <!-- simple table -->
             </div> <!-- end section -->
 
-            <!-- Legenda das cores -->
             <div class="row mt-4">
-              <div class="col-md-12">
+              <!-- Legenda das cores -->
+              <div class="col-md-6">
                 <div class="card shadow">
                   <div class="card-body">
                     <h5><strong>Legenda das Cores</strong></h5>
                     <p>As cores abaixo indicam o status das contas:</p>
-                    <ul>
-                      <li><span class="dot dot-lg bg-success mr-2"></span> <strong>Concluído</strong> - Conta quitada
-                        com sucesso.</li>
-                      <li><span class="dot dot-lg bg-warning mr-2"></span> <strong>Em Aberto</strong> - Conta dentro do
-                        prazo de pagamento.</li>
-                      <li><span class="dot dot-lg bg-danger mr-2"></span> <strong>Vencida</strong> - Conta ultrapassou a
-                        data de vencimento.</li>
-                      <li><span class="dot dot-lg bg-info mr-2"></span> <strong>Em Espera</strong> - Conta aguardando
-                        mais informações.</li>
-                      <li><span class="dot dot-lg bg-secondary mr-2"></span> <strong>Inativa</strong> - Conta inativa ou
-                        sem ação recente.</li>
-                    </ul>
+
+                    <!-- Botão para minimizar/maximizar -->
+                    <button class="btn btn-primary mb-3" id="toggleButton">Exibir Legenda</button>
+
+                    <!-- Conteúdo da legenda, que será alternado -->
+                    <div id="legendContent" style="display: none;">
+                      <ul>
+                        <li><span class="dot dot-lg bg-success mr-2"></span> <strong>Concluído</strong> - Conta quitada
+                          com sucesso.</li>
+                        <li><span class="dot dot-lg bg-warning mr-2"></span> <strong>Em Aberto</strong> - Conta dentro
+                          do prazo de pagamento.</li>
+                        <li><span class="dot dot-lg bg-danger mr-2"></span> <strong>Vencida</strong> - Conta ultrapassou
+                          a data de vencimento.</li>
+                        <li><span class="dot dot-lg bg-info mr-2"></span> <strong>Em Espera</strong> - Conta aguardando
+                          mais informações.</li>
+                        <li><span class="dot dot-lg bg-secondary mr-2"></span> <strong>Inativa</strong> - Conta inativa
+                          ou sem ação recente.</li>
+                      </ul>
+                    </div>
                   </div>
                 </div>
               </div>
-            </div>
-            <!-- Fim Legenda das Cores -->
 
-          </div> <!-- .col-12 -->
-        </div> <!-- .row -->
-      </div> <!-- .container-fluid -->
+              <!-- Receber Contas -->
+              <div class="col-md-6">
+                <div class="card shadow">
+                  <div class="card-body">
+                    <h5><strong>Recebimento</strong></h5>
+                    <p>Totalizador de contas a serem recebidas.</p>
 
-      <div class="modal fade modal-notif modal-slide" tabindex="-1" role="dialog" aria-labelledby="defaultModalLabel"
-        aria-hidden="true">
-        <div class="modal-dialog modal-sm" role="document">
-          <div class="modal-content">
-            <div class="modal-header">
-              <h5 class="modal-title" id="defaultModalLabel">Notificações</h5>
-              <button type="button" class="close" data-dismiss="modal" aria-label="Close">
-                <span aria-hidden="true">&times;</span>
-              </button>
+                    <!-- Totalizador (pré-visualização) -->
+                    <div class="row mb-3">
+                      <div class="col-md-3">
+                        <label for="totalOriginal">Total Original</label>
+                        <input type="text" class="form-control" id="totalOriginal" value="R$ 0,00" readonly>
+                      </div>
+                      <div class="col-md-3">
+                        <label for="totalParcela">Total Parcela</label>
+                        <input type="text" class="form-control" id="totalParcela" value="R$ 0,00" readonly>
+                      </div>
+                      <div class="col-md-3">
+                        <label for="totalJuros">Total Juros</label>
+                        <input type="text" class="form-control" id="totalJuros" value="R$ 0,00" readonly>
+                      </div>
+                      <div class="col-md-3">
+                        <label for="totalFinal">Total Final</label>
+                        <input type="text" class="form-control" id="totalFinal" value="R$ 0,00" readonly>
+                      </div>
+                    </div>
+
+                    <!-- Botão Receber -->
+                    <button type="button" class="btn btn-primary mb-3" data-toggle="modal"
+                      data-target="#receberModal">Receber</button>
+                  </div>
+                </div>
+              </div>
+
             </div>
-            <div class="modal-body">
-              <div class="list-group list-group-flush my-n3">
-                <div class="list-group-item bg-transparent">
-                  <div class="row align-items-center">
-                    <div class="col-auto">
-                      <span class="fe fe-box fe-24"></span>
-                    </div>
-                    <div class="col">
-                      <small><strong>O pacote foi carregado com sucesso</strong></small>
-                      <div class="my-0 text-muted small">O pacote é compactado e carregado</div>
-                      <small class="badge badge-pill badge-light text-muted">1 minutos atrás</small>
-                    </div>
-                  </div>
+
+          </div>
+        </div> <!-- .col-12 -->
+      </div> <!-- .row -->
+  </div> <!-- .container-fluid -->
+
+  <div class="modal fade modal-notif modal-slide" tabindex="-1" role="dialog" aria-labelledby="defaultModalLabel"
+    aria-hidden="true">
+    <div class="modal-dialog modal-sm" role="document">
+      <div class="modal-content">
+        <div class="modal-header">
+          <h5 class="modal-title" id="defaultModalLabel">Notificações</h5>
+          <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+            <span aria-hidden="true">&times;</span>
+          </button>
+        </div>
+        <div class="modal-body">
+          <div class="list-group list-group-flush my-n3">
+            <div class="list-group-item bg-transparent">
+              <div class="row align-items-center">
+                <div class="col-auto">
+                  <span class="fe fe-box fe-24"></span>
                 </div>
-                <div class="list-group-item bg-transparent">
-                  <div class="row align-items-center">
-                    <div class="col-auto">
-                      <span class="fe fe-download fe-24"></span>
-                    </div>
-                    <div class="col">
-                      <small><strong>Os widgets foram atualizados com sucesso</strong></small>
-                      <div class="my-0 text-muted small">Basta criar um novo layout Índice, formulário, tabela</div>
-                      <small class="badge badge-pill badge-light text-muted">2 minutos atrás</small>
-                    </div>
-                  </div>
+                <div class="col">
+                  <small><strong>O pacote foi carregado com sucesso</strong></small>
+                  <div class="my-0 text-muted small">O pacote é compactado e carregado</div>
+                  <small class="badge badge-pill badge-light text-muted">1 minutos atrás</small>
                 </div>
-                <div class="list-group-item bg-transparent">
-                  <div class="row align-items-center">
-                    <div class="col-auto">
-                      <span class="fe fe-inbox fe-24"></span>
-                    </div>
-                    <div class="col">
-                      <small><strong>Notificações foram enviadas</strong></small>
-                      <div class="my-0 text-muted small">Fusce dapibus, tellus ac cursus commodo</div>
-                      <small class="badge badge-pill badge-light text-muted">30 minutos atrás</small>
-                    </div>
-                  </div> <!-- / .row -->
-                </div>
-                <div class="list-group-item bg-transparent">
-                  <div class="row align-items-center">
-                    <div class="col-auto">
-                      <span class="fe fe-link fe-24"></span>
-                    </div>
-                    <div class="col">
-                      <small><strong>O link foi anexado ao menu</strong></small>
-                      <div class="my-0 text-muted small">Novo layout foi anexado ao menu</div>
-                      <small class="badge badge-pill badge-light text-muted">1 hora atrás</small>
-                    </div>
-                  </div>
-                </div> <!-- / .row -->
-              </div> <!-- / .list-group -->
+              </div>
             </div>
-            <div class="modal-footer">
-              <button type="button" class="btn btn-secondary btn-block" data-dismiss="modal">Limpar tudo</button>
+            <div class="list-group-item bg-transparent">
+              <div class="row align-items-center">
+                <div class="col-auto">
+                  <span class="fe fe-download fe-24"></span>
+                </div>
+                <div class="col">
+                  <small><strong>Os widgets foram atualizados com sucesso</strong></small>
+                  <div class="my-0 text-muted small">Basta criar um novo layout Índice, formulário, tabela</div>
+                  <small class="badge badge-pill badge-light text-muted">2 minutos atrás</small>
+                </div>
+              </div>
+            </div>
+            <div class="list-group-item bg-transparent">
+              <div class="row align-items-center">
+                <div class="col-auto">
+                  <span class="fe fe-inbox fe-24"></span>
+                </div>
+                <div class="col">
+                  <small><strong>Notificações foram enviadas</strong></small>
+                  <div class="my-0 text-muted small">Fusce dapibus, tellus ac cursus commodo</div>
+                  <small class="badge badge-pill badge-light text-muted">30 minutos atrás</small>
+                </div>
+              </div> <!-- / .row -->
+            </div>
+            <div class="list-group-item bg-transparent">
+              <div class="row align-items-center">
+                <div class="col-auto">
+                  <span class="fe fe-link fe-24"></span>
+                </div>
+                <div class="col">
+                  <small><strong>O link foi anexado ao menu</strong></small>
+                  <div class="my-0 text-muted small">Novo layout foi anexado ao menu</div>
+                  <small class="badge badge-pill badge-light text-muted">1 hora atrás</small>
+                </div>
+              </div>
+            </div> <!-- / .row -->
+          </div> <!-- / .list-group -->
+        </div>
+        <div class="modal-footer">
+          <button type="button" class="btn btn-secondary btn-block" data-dismiss="modal">Limpar tudo</button>
+        </div>
+      </div>
+    </div>
+  </div>
+  <div class="modal fade modal-shortcut modal-slide" tabindex="-1" role="dialog" aria-labelledby="defaultModalLabel"
+    aria-hidden="true">
+    <div class="modal-dialog" role="document">
+      <div class="modal-content">
+        <div class="modal-header">
+          <h5 class="modal-title" id="defaultModalLabel">Atalhos</h5>
+          <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+            <span aria-hidden="true">&times;</span>
+          </button>
+        </div>
+        <div class="modal-body px-5">
+          <div class="row align-items-center">
+            <div class="col-6 text-center">
+              <div class="squircle bg-success justify-content-center">
+                <i class="fe fe-cpu fe-32 align-self-center text-white"></i>
+              </div>
+              <p>Área de controle</p>
+            </div>
+            <div class="col-6 text-center">
+              <div class="squircle bg-primary justify-content-center">
+                <i class="fe fe-activity fe-32 align-self-center text-white"></i>
+              </div>
+              <p>Atividade</p>
+            </div>
+          </div>
+          <div class="row align-items-center">
+            <div class="col-6 text-center">
+              <div class="squircle bg-primary justify-content-center">
+                <i class="fe fe-droplet fe-32 align-self-center text-white"></i>
+              </div>
+              <p>Droplet</p>
+            </div>
+            <div class="col-6 text-center">
+              <div class="squircle bg-primary justify-content-center">
+                <i class="fe fe-upload-cloud fe-32 align-self-center text-white"></i>
+              </div>
+              <p>Carregar</p>
+            </div>
+          </div>
+          <div class="row align-items-center">
+            <div class="col-6 text-center">
+              <div class="squircle bg-primary justify-content-center">
+                <i class="fe fe-users fe-32 align-self-center text-white"></i>
+              </div>
+              <p>Usuários</p>
+            </div>
+            <div class="col-6 text-center">
+              <div class="squircle bg-primary justify-content-center">
+                <i class="fe fe-settings fe-32 align-self-center text-white"></i>
+              </div>
+              <p>Configurações</p>
             </div>
           </div>
         </div>
       </div>
-      <div class="modal fade modal-shortcut modal-slide" tabindex="-1" role="dialog" aria-labelledby="defaultModalLabel"
-        aria-hidden="true">
-        <div class="modal-dialog" role="document">
-          <div class="modal-content">
-            <div class="modal-header">
-              <h5 class="modal-title" id="defaultModalLabel">Atalhos</h5>
-              <button type="button" class="close" data-dismiss="modal" aria-label="Close">
-                <span aria-hidden="true">&times;</span>
-              </button>
-            </div>
-            <div class="modal-body px-5">
-              <div class="row align-items-center">
-                <div class="col-6 text-center">
-                  <div class="squircle bg-success justify-content-center">
-                    <i class="fe fe-cpu fe-32 align-self-center text-white"></i>
-                  </div>
-                  <p>Área de controle</p>
-                </div>
-                <div class="col-6 text-center">
-                  <div class="squircle bg-primary justify-content-center">
-                    <i class="fe fe-activity fe-32 align-self-center text-white"></i>
-                  </div>
-                  <p>Atividade</p>
-                </div>
-              </div>
-              <div class="row align-items-center">
-                <div class="col-6 text-center">
-                  <div class="squircle bg-primary justify-content-center">
-                    <i class="fe fe-droplet fe-32 align-self-center text-white"></i>
-                  </div>
-                  <p>Droplet</p>
-                </div>
-                <div class="col-6 text-center">
-                  <div class="squircle bg-primary justify-content-center">
-                    <i class="fe fe-upload-cloud fe-32 align-self-center text-white"></i>
-                  </div>
-                  <p>Carregar</p>
-                </div>
-              </div>
-              <div class="row align-items-center">
-                <div class="col-6 text-center">
-                  <div class="squircle bg-primary justify-content-center">
-                    <i class="fe fe-users fe-32 align-self-center text-white"></i>
-                  </div>
-                  <p>Usuários</p>
-                </div>
-                <div class="col-6 text-center">
-                  <div class="squircle bg-primary justify-content-center">
-                    <i class="fe fe-settings fe-32 align-self-center text-white"></i>
-                  </div>
-                  <p>Configurações</p>
-                </div>
-              </div>
-            </div>
-          </div>
-        </div>
-      </div>
-    </main> <!-- main -->
+    </div>
+  </div>
+  </main> <!-- main -->
   </div> <!-- .wrapper -->
   <script src="js/jquery.min.js"></script>
   <script src="js/popper.min.js"></script>
@@ -1168,6 +1212,9 @@
   <script src='js/jquery.dataTables.min.js'></script>
   <script src='js/dataTables.bootstrap4.min.js'></script>
   <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha3/dist/js/bootstrap.bundle.min.js"></script>
+
+  <script src="js/adicionais.js"></script>
+
   <script>
     $('#dataTable-1').DataTable({
       autoWidth: true,
