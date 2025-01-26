@@ -1,0 +1,320 @@
+tenho essa tabela de contas a receber e o script para listar quantos registros tem e se ultrapassar do limite da tabela poder passar para mais registros, sem alterar a estrutura do meu codigo, consegue implementar no meio da opção de exibir registros e de passar para mais opções um botao receber, onde ao clicar abre um exemplo de modal, pois a ideia é poder selecionar atraves da checkbox varias contas e receber elas em uma unica
+
+<div class="container-fluid">
+        <div class="row justify-content-center">
+          <div class="col-12">
+            <h2 class="mb-2 page-title">Contas a Receber</h2>
+            <p class="card-text">Bem-vindo à tela de Contas a Receber! Aqui você poderá registrar verificar contas a
+              receber disponíveis ou para realizar a baixa na gestão no sistema.</p>
+            <!-- Filtros Contas a Receber -->
+            <div class="row mb-4 items-align-center">
+              <div class="col-md">
+                <ul class="nav nav-pills justify-content-start">
+                  <li class="nav-item">
+                    <a class="nav-link active bg-transparent pr-2 pl-0 text-primary" href="#">Todos <span
+                        class="badge badge-pill bg-primary text-white ml-2">164</span></a>
+                  </li>
+                  <li class="nav-item">
+                    <a class="nav-link text-muted px-2" href="#">Pendente <span
+                        class="badge badge-pill bg-white border text-muted ml-2">64</span></a>
+                  </li>
+                  <li class="nav-item">
+                    <a class="nav-link text-muted px-2" href="#">Processamento <span
+                        class="badge badge-pill bg-white border text-muted ml-2">48</span></a>
+                  </li>
+                  <li class="nav-item">
+                    <a class="nav-link text-muted px-2" href="#">Concluído <span
+                        class="badge badge-pill bg-white border text-muted ml-2">52</span></a>
+                  </li>
+                </ul>
+              </div>
+              <div class="col-md-auto ml-auto text-right">
+                <span class="small bg-white border py-1 px-2 rounded mr-2 d-none d-lg-inline">
+                  <a href="#" class="text-muted"><i class="fe fe-x mx-1"></i></a>
+                  <span class="text-muted">Status : <strong>Pendente</strong></span>
+                </span>
+                <span class="small bg-white border py-1 px-2 rounded mr-2 d-none d-lg-inline">
+                  <a href="#" class="text-muted"><i class="fe fe-x mx-1"></i></a>
+                  <span class="text-muted">14 de abril de 2020 - 13 de maio de 2020</span>
+                </span>
+                <button type="button" class="btn" data-toggle="modal" data-target=".modal-slide"><span
+                    class="fe fe-filter fe-16 text-muted"></span></button>
+                <button type="button" class="btn"><span class="fe fe-refresh-ccw fe-16 text-muted"></span></button>
+              </div>
+            </div>
+            <!-- Fim Filtros Contas a Receber -->
+
+            <!-- Slide Modal -->
+            <div class="modal fade modal-slide" tabindex="-1" role="dialog" aria-labelledby="defaultModalLabel"
+              aria-hidden="true">
+              <div class="modal-dialog" role="document">
+                <div class="modal-content">
+                  <div class="modal-header">
+                    <h5 class="modal-title" id="defaultModalLabel">Filtros</h5>
+                    <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                      <i class="fe fe-x fe-12"></i>
+                    </button>
+                  </div>
+                  <div class="modal-body">
+                    <div class="p-2">
+                      <div class="form-group my-4">
+                        <p class="mb-2"><strong>Filtrar por Tipo de Parcela</strong></p>
+                        <label for="multi-select2" class="sr-only"></label>
+                        <select class="form-control select2-multi" id="multi-select2">
+                          <option value="vencida">Vencida</option>
+                          <option value="avencer">A Vencer</option>
+                          <option value="quitada">Quitada</option>
+                          <option value="todas">Todas</option>
+                        </select>
+                      </div> <!-- form-group -->
+
+                      <div class="form-group my-4">
+                        <p class="mb-2">
+                          <strong>Pagamento</strong>
+                        </p>
+                        <div class="custom-control custom-checkbox">
+                          <input type="checkbox" class="custom-control-input" id="customCheck1">
+                          <label class="custom-control-label" for="customCheck1">Paypal</label>
+                        </div>
+                        <div class="custom-control custom-checkbox">
+                          <input type="checkbox" class="custom-control-input" id="customCheck2">
+                          <label class="custom-control-label" for="customCheck2">Cartão de crédito</label>
+                        </div>
+                        <div class="custom-control custom-checkbox">
+                          <input type="checkbox" class="custom-control-input" id="customCheck1-1" checked>
+                          <label class="custom-control-label" for="customCheck1">Transferência bancária</label>
+                        </div>
+                      </div> <!-- form-group -->
+                      <div class="form-group my-4">
+                        <p class="mb-2">
+                          <strong>Tipos</strong>
+                        </p>
+                        <div class="custom-control custom-radio">
+                          <input type="radio" id="customRadio1" name="customRadio" class="custom-control-input">
+                          <label class="custom-control-label" for="customRadio1">Usuários finais</label>
+                        </div>
+                        <div class="custom-control custom-radio">
+                          <input type="radio" id="customRadio2" name="customRadio" class="custom-control-input" checked>
+                          <label class="custom-control-label" for="customRadio2">Vendas por atacado</label>
+                        </div>
+                      </div> <!-- form-group -->
+                      <div class="form-group my-4">
+                        <p class="mb-2">
+                          <strong>Concluído</strong>
+                        </p>
+                        <div class="custom-control custom-switch">
+                          <input type="checkbox" class="custom-control-input" id="customSwitch1">
+                          <label class="custom-control-label" for="customSwitch1">Incluir</label>
+                        </div>
+                      </div> <!-- form-group -->
+                    </div>
+                  </div>
+                  <div class="modal-footer">
+                    <button type="button" class="btn mb-2 btn-primary btn-block">Aplicar</button>
+                    <button type="button" class="btn mb-2 btn-secondary btn-block">Resetar</button>
+                  </div>
+                </div>
+              </div>
+            </div>
+            <!-- Fim Slide Modal -->
+
+            <div class="row my-4">
+              <!-- Small table -->
+              <div class="col-md-12">
+                <div class="card shadow">
+                  <div class="card-body">
+                    <!-- Tabela -->
+                    <table class="table datatables" id="dataTable-1">
+                      <thead>
+                        <tr>
+                          <!-- <th></th> -->
+                          <th>
+                            <div class="custom-control custom-checkbox">
+                              <input type="checkbox" class="custom-control-input" id="all">
+                              <label class="custom-control-label" for="all"></label>
+                            </div>
+                          </th>
+                          <th>Sequência</th>
+                          <th>Lançamento</th>
+                          <th>Nome</th>
+                          <th>Proveniente</th>
+                          <th>Documento</th>
+                          <th>Vencimento</th>
+                          <th>Valor Original</th>
+                          <th>Valor Parcela</th>
+                          <th>Valor Pendente</th>
+                          <th>Juros</th>
+                          <th>Valor Recebido</th>
+                          <th>Total</th>
+                          <th>Pagamento</th>
+                          <th>Quitação</th>
+                          <th>Status</th>
+                          <th>Ação</th>
+                        </tr>
+                      </thead>
+                      <tbody>
+                        <tr>
+                          <td>
+                            <div class="custom-control custom-checkbox">
+                              <input type="checkbox" class="custom-control-input">
+                              <label class="custom-control-label"></label>
+                            </div>
+                          </td>
+                          <td>1155</td>
+                          <td>26-12-2020 01:32:21</td>
+                          <td>Maria Santos</td>
+                          <td>Avulso</td>
+                          <td>53/1</td>
+                          <td>26-01-2021</td>
+                          <td>R$ 300,64</td>
+                          <td>R$ 300,64</td>
+                          <td>R$ 300,64</td>
+                          <td>R$ 5,00</td>
+                          <td>R$ 0,00</td>
+                          <td>R$ 305,64</td>
+                          <td>Cartão de crédito</td>
+                          <td>Pendente</td>
+                          <td><span class="dot dot-lg bg-warning mr-2"></span></td>
+                          <td><button class="btn btn-sm dropdown-toggle more-horizontal" type="button"
+                              data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+                              <span class="text-muted sr-only">Action</span>
+                            </button>
+                            <div class="dropdown-menu dropdown-menu-right">
+                              <a class="dropdown-item" href="#">Editar</a>
+                              <a class="dropdown-item" href="#">Remover</a>
+                            </div>
+                          </td>
+                        </tr>
+                        <tr>
+                          <td>
+                            <div class="custom-control custom-checkbox">
+                              <input type="checkbox" class="custom-control-input">
+                              <label class="custom-control-label"></label>
+                            </div>
+                          </td>
+                          <td>1156</td>
+                          <td>21-04-2020 00:38:38</td>
+                          <td>Adriano Marques</td>
+                          <td>Venda 54</td>
+                          <td>54/1</td>
+                          <td>21-05-2020</td>
+                          <td>R$ 1200,00</td>
+                          <td>R$ 600,00</td>
+                          <td>R$ 0,00</td>
+                          <td>R$ 0,00</td>
+                          <td>R$ 600,00</td>
+                          <td>R$ 600,00</td>
+                          <td>A vista</td>
+                          <td>21-05-2020</td>
+                          <td><span class="dot dot-lg bg-success mr-2"></span></td>
+                          <td><button class="btn btn-sm dropdown-toggle more-horizontal" type="button"
+                              data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+                              <span class="text-muted sr-only">Action</span>
+                            </button>
+                            <div class="dropdown-menu dropdown-menu-right">
+                              <a class="dropdown-item" href="#">Editar</a>
+                              <a class="dropdown-item" href="#">Remover</a>
+                            </div>
+                          </td>
+                        </tr>
+                        <tr>
+                          <td>
+                            <div class="custom-control custom-checkbox">
+                              <input type="checkbox" class="custom-control-input">
+                              <label class="custom-control-label"></label>
+                            </div>
+                          </td>
+                          <td>1157</td>
+                          <td>21-04-2020 00:38:38</td>
+                          <td>Adriano Marques</td>
+                          <td>Venda 54</td>
+                          <td>54/2</td>
+                          <td>21-06-2020</td>
+                          <td>R$ 1200,00</td>
+                          <td>R$ 600,00</td>
+                          <td>R$ 600,00</td>
+                          <td>R$ 30,00</td>
+                          <td>R$ 0,00</td>
+                          <td>R$ 630,00</td>
+                          <td>Cartão de crédito</td>
+                          <td>Pendente</td>
+                          <!-- <td><span class="dot dot-lg bg-primary mr-2"></span></td> -->
+                          <td><span class="dot dot-lg bg-danger mr-2"></span></td>
+                          <td><button class="btn btn-sm dropdown-toggle more-horizontal" type="button"
+                              data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+                              <span class="text-muted sr-only">Action</span>
+                            </button>
+                            <div class="dropdown-menu dropdown-menu-right">
+                              <a class="dropdown-item" href="#">Editar</a>
+                              <a class="dropdown-item" href="#">Remover</a>
+                            </div>
+                          </td>
+                        </tr>
+                      </tbody>
+                    </table>
+                    <!-- Fim Tabela -->
+                  </div>
+                </div>
+              </div> <!-- simple table -->
+            </div> <!-- end section -->
+            <!-- Legenda das cores -->
+            <div class="row mt-4">
+              <div class="col-md-12">
+                <div class="card shadow">
+                  <div class="card-body">
+                    <h5><strong>Legenda das Cores</strong></h5>
+                    <p>As cores abaixo indicam o status das contas:</p>
+                    <ul>
+                      <li><span class="dot dot-lg bg-success mr-2"></span> <strong>Concluído</strong> - Conta quitada
+                        com sucesso.</li>
+                      <li><span class="dot dot-lg bg-warning mr-2"></span> <strong>Em Aberto</strong> - Conta dentro do
+                        prazo de pagamento.</li>
+                      <li><span class="dot dot-lg bg-danger mr-2"></span> <strong>Vencida</strong> - Conta ultrapassou a
+                        data de vencimento.</li>
+                      <li><span class="dot dot-lg bg-info mr-2"></span> <strong>Em Espera</strong> - Conta aguardando
+                        mais informações.</li>
+                      <li><span class="dot dot-lg bg-secondary mr-2"></span> <strong>Inativa</strong> - Conta inativa ou
+                        sem ação recente.</li>
+                    </ul>
+                  </div>
+                </div>
+              </div>
+            </div>
+            <!-- Fim Legenda das Cores -->
+          </div> <!-- .col-12 -->
+        </div> <!-- .row -->
+      </div> <!-- .container-fluid -->
+
+<script>
+    $('#dataTable-1').DataTable({
+      autoWidth: true,
+      "lengthMenu": [
+        [16, 32, 64, -1],
+        [16, 32, 64, "Todos"]
+      ],
+      "language": {
+        "decimal": "",
+        "emptyTable": "Nenhum dado disponível na tabela",
+        "info": "Mostrando _START_ até _END_ de _TOTAL_ registros",
+        "infoEmpty": "Mostrando 0 até 0 de 0 registros",
+        "infoFiltered": "(filtrado de _MAX_ registros no total)",
+        "infoPostFix": "",
+        "thousands": ",",
+        "lengthMenu": "Mostrar _MENU_ registros",
+        "loadingRecords": "Carregando...",
+        "processing": "Processando...",
+        "search": "Pesquisar:",
+        "zeroRecords": "Nenhum registro correspondente encontrado",
+        "paginate": {
+          "first": "Primeiro",
+          "last": "Último",
+          "next": "Próximo",
+          "previous": "Anterior"
+        },
+        "aria": {
+          "sortAscending": ": ativar para ordenar a coluna de forma ascendente",
+          "sortDescending": ": ativar para ordenar a coluna de forma descendente"
+        }
+      }
+    });
+  </script>

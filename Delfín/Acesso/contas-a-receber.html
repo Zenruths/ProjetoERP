@@ -990,10 +990,41 @@
                       </tbody>
                     </table>
                     <!-- Fim Tabela -->
+
+                    <!-- Botão Receber -->
+                    <button type="button" class="btn btn-success" data-toggle="modal"
+                      data-target="#receberModal">Receber</button>
+
                   </div>
                 </div>
               </div> <!-- simple table -->
             </div> <!-- end section -->
+
+            <!-- Legenda das cores -->
+            <div class="row mt-4">
+              <div class="col-md-12">
+                <div class="card shadow">
+                  <div class="card-body">
+                    <h5><strong>Legenda das Cores</strong></h5>
+                    <p>As cores abaixo indicam o status das contas:</p>
+                    <ul>
+                      <li><span class="dot dot-lg bg-success mr-2"></span> <strong>Concluído</strong> - Conta quitada
+                        com sucesso.</li>
+                      <li><span class="dot dot-lg bg-warning mr-2"></span> <strong>Em Aberto</strong> - Conta dentro do
+                        prazo de pagamento.</li>
+                      <li><span class="dot dot-lg bg-danger mr-2"></span> <strong>Vencida</strong> - Conta ultrapassou a
+                        data de vencimento.</li>
+                      <li><span class="dot dot-lg bg-info mr-2"></span> <strong>Em Espera</strong> - Conta aguardando
+                        mais informações.</li>
+                      <li><span class="dot dot-lg bg-secondary mr-2"></span> <strong>Inativa</strong> - Conta inativa ou
+                        sem ação recente.</li>
+                    </ul>
+                  </div>
+                </div>
+              </div>
+            </div>
+            <!-- Fim Legenda das Cores -->
+
           </div> <!-- .col-12 -->
         </div> <!-- .row -->
       </div> <!-- .container-fluid -->
