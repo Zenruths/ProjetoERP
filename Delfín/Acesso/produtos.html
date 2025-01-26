@@ -1,1422 +1,1538 @@
 <!doctype html>
 <html lang="pt-BR">
-  <head>
-    <meta charset="utf-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
-    <meta name="description" content="">
-    <meta name="author" content="">
-    <link rel="icon" href="favicon.ico">
-    <title>Tiny Dashboard - A Bootstrap Dashboard Template</title>
-    <!-- Simple bar CSS -->
-    <link rel="stylesheet" href="css/simplebar.css">
-    <!-- Fonts CSS -->
-    <link href="https://fonts.googleapis.com/css2?family=Overpass:ital,wght@0,100;0,200;0,300;0,400;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,600;1,700;1,800;1,900&display=swap" rel="stylesheet">
-    <!-- Icons CSS -->
-    <link rel="stylesheet" href="css/feather.css">
-    <link rel="stylesheet" href="css/dataTables.bootstrap4.css">
-    <!-- Date Range Picker CSS -->
-    <link rel="stylesheet" href="css/daterangepicker.css">
-    <!-- App CSS -->
-    <link rel="stylesheet" href="css/app-light.css" id="lightTheme">
-    <link rel="stylesheet" href="css/app-dark.css" id="darkTheme" disabled>
-    <link href="https://cdn.jsdelivr.net/npm/bootstrap-icons/font/bootstrap-icons.css" rel="stylesheet">
-    <!-- Bootstrap CSS -->
-    <link rel="stylesheet" href="css/modal.css">
-  </head>
-  <body class="horizontal light  ">
-    <div class="wrapper">
-      <nav class="navbar navbar-expand-lg navbar-light bg-white flex-row border-bottom shadow">
-        <div class="container-fluid">
-          <a class="navbar-brand mx-lg-1 mr-0" href="index.html">
-            <svg version="1.1" id="logo" class="navbar-brand-img brand-sm" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" x="0px" y="0px" viewBox="0 0 120 120" xml:space="preserve">
-              <g>
-                <polygon class="st0" points="78,105 15,105 24,87 87,87 	" />
-                <polygon class="st0" points="96,69 33,69 42,51 105,51 	" />
-                <polygon class="st0" points="78,33 15,33 24,15 87,15 	" />
-              </g>
-            </svg>
+
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+  <meta name="description" content="">
+  <meta name="author" content="">
+  <link rel="icon" href="favicon.ico">
+  <title>Tiny Dashboard - A Bootstrap Dashboard Template</title>
+  <!-- Simple bar CSS -->
+  <link rel="stylesheet" href="css/simplebar.css">
+  <!-- Fonts CSS -->
+  <link
+    href="https://fonts.googleapis.com/css2?family=Overpass:ital,wght@0,100;0,200;0,300;0,400;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,600;1,700;1,800;1,900&display=swap"
+    rel="stylesheet">
+  <!-- Icons CSS -->
+  <link rel="stylesheet" href="css/feather.css">
+  <link rel="stylesheet" href="css/dataTables.bootstrap4.css">
+  <!-- Date Range Picker CSS -->
+  <link rel="stylesheet" href="css/daterangepicker.css">
+  <!-- App CSS -->
+  <link rel="stylesheet" href="css/app-light.css" id="lightTheme">
+  <link rel="stylesheet" href="css/app-dark.css" id="darkTheme" disabled>
+  <link href="https://cdn.jsdelivr.net/npm/bootstrap-icons/font/bootstrap-icons.css" rel="stylesheet">
+  <!-- Bootstrap CSS -->
+  <link rel="stylesheet" href="css/modal.css">
+</head>
+
+<body class="horizontal light  ">
+  <div class="wrapper">
+    <nav class="navbar navbar-expand-lg navbar-light bg-white flex-row border-bottom shadow">
+      <div class="container-fluid">
+        <a class="navbar-brand mx-lg-1 mr-0" href="index.html">
+          <svg version="1.1" id="logo" class="navbar-brand-img brand-sm" xmlns="http://www.w3.org/2000/svg"
+            xmlns:xlink="http://www.w3.org/1999/xlink" x="0px" y="0px" viewBox="0 0 120 120" xml:space="preserve">
+            <g>
+              <polygon class="st0" points="78,105 15,105 24,87 87,87 	" />
+              <polygon class="st0" points="96,69 33,69 42,51 105,51 	" />
+              <polygon class="st0" points="78,33 15,33 24,15 87,15 	" />
+            </g>
+          </svg>
+        </a>
+        <button class="navbar-toggler mt-2 mr-auto toggle-sidebar text-muted">
+          <i class="fe fe-menu navbar-toggler-icon"></i>
+        </button>
+        <div class="navbar-slide bg-white ml-lg-4" id="navbarSupportedContent">
+          <a href="#" class="btn toggle-sidebar d-lg-none text-muted ml-2 mt-3" data-toggle="toggle">
+            <i class="fe fe-x"><span class="sr-only"></span></i>
           </a>
-          <button class="navbar-toggler mt-2 mr-auto toggle-sidebar text-muted">
-            <i class="fe fe-menu navbar-toggler-icon"></i>
-          </button>
-          <div class="navbar-slide bg-white ml-lg-4" id="navbarSupportedContent">
-            <a href="#" class="btn toggle-sidebar d-lg-none text-muted ml-2 mt-3" data-toggle="toggle">
-              <i class="fe fe-x"><span class="sr-only"></span></i>
-            </a>
-            <ul class="navbar-nav mr-auto">
+          <ul class="navbar-nav mr-auto">
 
-              <!-- 1. Início -->
-              <li class="nav-item dropdown">
-                <a href="#" id="inicioDropdown" class="dropdown-toggle nav-link" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
-                  <span class="ml-lg-2">Início</span><span class="sr-only">(current)</span>
-                </a>
-                <div class="dropdown-menu" aria-labelledby="inicioDropdown">
-                  <a class="nav-link pl-lg-2" href="index.html"><span class="ml-1">Análise Geral</span></a>
-                  <a class="nav-link pl-lg-2" href="#"><span class="ml-1">Estatísticas</span></a>
-                </div>
-              </li>
+            <!-- 1. Início -->
+            <li class="nav-item dropdown">
+              <a href="#" id="inicioDropdown" class="dropdown-toggle nav-link" role="button" data-toggle="dropdown"
+                aria-haspopup="true" aria-expanded="false">
+                <span class="ml-lg-2">Início</span><span class="sr-only">(current)</span>
+              </a>
+              <div class="dropdown-menu" aria-labelledby="inicioDropdown">
+                <a class="nav-link pl-lg-2" href="index.html"><span class="ml-1">Análise Geral</span></a>
+                <a class="nav-link pl-lg-2" href="#"><span class="ml-1">Estatísticas</span></a>
+              </div>
+            </li>
 
-              <!-- 2. Financeiro -->
-              <li class="nav-item dropdown">
-                <a class="dropdown-toggle nav-link pl-lg-3" href="#" id="financeiroDropdown" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false"> 
-                  Financeiro </a>
-                <ul class="dropdown-menu" aria-labelledby="financeiroDropdown">
+            <!-- 2. Financeiro -->
+            <li class="nav-item dropdown">
+              <a class="dropdown-toggle nav-link pl-lg-3" href="#" id="financeiroDropdown" role="button"
+                data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+                Financeiro </a>
+              <ul class="dropdown-menu" aria-labelledby="financeiroDropdown">
 
-                  <!-- 2.1 Caixa Principal -->
-                  <li class="nav-item dropdown">
-                    <a class="dropdown-toggle nav-link pl-lg-2" href="#" id="caixaPrincipalDropdown" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
-                      <span class="ml-1">Caixa Principal</span>
-                    </a>
-                    <ul class="dropdown-menu" aria-labelledby="caixaPrincipalDropdown">
-                      <a class="nav-link pl-lg-2" href="#"><span class="ml-1">Movimentação</span></a>
-                      <a class="nav-link pl-lg-2" href="#"><span class="ml-1">Abertura/Fechamento</span></a>
-                      <a class="nav-link pl-lg-2" href="#"><span class="ml-1">Conferência</span></a>
-                    </ul>
-                  </li>
-
-                  <!-- 2.2 Lançamentos -->
-                  <li class="nav-item dropdown">
-                    <a class="dropdown-toggle nav-link pl-lg-2" href="#" data-toggle="collapse" id="lancamentosDropdown" aria-expanded="false">
-                      <span class="ml-1">Lançamentos</span>
-                    </a>
-                    <ul class="dropdown-menu" aria-labelledby="lancamentosDropdown">
-                      <a class="nav-link pl-lg-2" href="#"><span class="ml-1">Contas a Receber</span></a>
-                      <a class="nav-link pl-lg-2" href="#"><span class="ml-1">Contas a Pagar</span></a>
-                      <a class="nav-link pl-lg-2" href="#"><span class="ml-1">Renegociação</span></a>
-                      <a class="nav-link pl-lg-2" href="#"><span class="ml-1">Avulso</span></a>
-                    </ul>
-                  </li>
-                  
-                  <!-- 2.3 Controladoria -->
-                  <li class="nav-item dropdown">
-                    <a class="dropdown-toggle nav-link pl-lg-2" href="#" data-toggle="collapse" id="controladoriasDropdown" aria-expanded="false">
-                      <span class="ml-1">Controladoria</span>
-                    </a>
-                    <ul class="dropdown-menu" aria-labelledby="controladoriasDropdown">
-                      <a class="nav-link pl-lg-2" href="#"><span class="ml-1">Liberação de Crédito</span></a>
-                      <a class="nav-link pl-lg-2" href="#"><span class="ml-1">Liberação de Desconto</span></a>
-                    </ul>
-                  </li>
-
-                  <!-- 2.3 Comissões -->
-                  <li class="nav-item dropdown">
-                    <a class="dropdown-toggle nav-link pl-lg-2" href="#" data-toggle="collapse" id="comissoesDropdown" aria-expanded="false">
-                      <span class="ml-1">Comissões</span>
-                    </a>
-                    <ul class="dropdown-menu" aria-labelledby="comissoesDropdown">
-                      <a class="nav-link pl-lg-2" href="#"><span class="ml-1">Relação de Comissões</span></a>
-                    </ul>
-                  </li>
-
-                  <!-- 2.3 Central de Cobranças -->
-                  <li class="nav-item dropdown">
-                    <a class="dropdown nav-link pl-lg-2" href="#" id="centralCobrançasDropdown" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
-                      <span class="ml-1">Central de Cobranças</span>
-                    </a>
-                  </li>
-
-                </ul>
-              </li>
-
-              <!-- 4. Estoque -->
-              <li class="nav-item dropdown">
-                <a class="dropdown-toggle nav-link pl-lg-3" href="#" id="estoqueDropdown" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false"> 
-                  Estoque </a>
-                <ul class="dropdown-menu" aria-labelledby="estoqueDropdown">
-            
-                  <!-- 2.1 Produtos -->
-                  <li class="nav-item">
-                    <a class="nav-link pl-lg-2" href="produtos.html" id="estoqueProdutos">
-                      <span class="ml-1">Produtos</span>
-                    </a>
-                  </li>
-                  
-                  <!-- 2.1 Estoque -->
-                  <li class="nav-item dropdown">
-                    <a class="dropdown-toggle nav-link pl-lg-2" href="#" id="estoqueDetalheDropdown" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
-                      <span class="ml-1">Estoque</span>
-                    </a>
-                    <ul class="dropdown-menu" aria-labelledby="estoqueDetalheDropdown">
-                      <a class="nav-link pl-lg-2" href="#"><span class="ml-1">Acerto de Estoque</span></a>
-                      <a class="nav-link pl-lg-2" href="#"><span class="ml-1">Inventário</span></a>
-                    </ul>
-                  </li>
-
-                  <!-- 2.2 Relação -->
-                  <li class="nav-item dropdown">
-                    <a class="dropdown-toggle nav-link pl-lg-2" href="#" data-toggle="collapse" id="relacaoDropdown" aria-expanded="false">
-                      <span class="ml-1">Relação</span>
-                    </a>
-                    <ul class="dropdown-menu" aria-labelledby="relacaoDropdown">
-                      <a class="nav-link pl-lg-2" href="#"><span class="ml-1">Auditoria</span></a>
-                      <a class="nav-link pl-lg-2" href="#"><span class="ml-1">Avisos</span></a>
-                    </ul>
-                  </li>
-                  
-                  <!-- 2.3 Compras -->
-                  <li class="nav-item dropdown">
-                    <a class="dropdown-toggle nav-link pl-lg-2" href="#" data-toggle="collapse" id="comprasDropdown" aria-expanded="false">
-                      <span class="ml-1">Compras</span>
-                    </a>
-                    <ul class="dropdown-menu" aria-labelledby="comprasDropdown">
-                      <a class="nav-link pl-lg-2" href="#"><span class="ml-1">Entradas</span></a>
-                      <a class="nav-link pl-lg-2" href="#"><span class="ml-1">Lista de Compras</span></a>
-                      <a class="nav-link pl-lg-2" href="#"><span class="ml-1">Lista de Faltas</span></a>
-                    </ul>
-                  </li>
-                </ul>
-              </li>
-
-              <!-- 3. Comercial -->
-              <li class="nav-item dropdown">
-                <a href="#" id="comercialDropdown" class="dropdown-toggle nav-link" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
-                  <span class="ml-lg-2">Comercial</span>
-                </a>
-                <div class="dropdown-menu" aria-labelledby="comercialDropdown">
-                  <a class="nav-link pl-lg-2" href="#"><span class="ml-1">Vendas</span></a>
-                  <a class="nav-link pl-lg-2" href="#"><span class="ml-1">Ordem de Serviço</span></a>
-                  <a class="nav-link pl-lg-2" href="#"><span class="ml-1">Orçamentos</span></a>
-                  <a class="nav-link pl-lg-2" href="#"><span class="ml-1">Condicional</span></a>
-                  <a class="nav-link pl-lg-2" href="#"><span class="ml-1">Vale Compra</span></a>
-                </div>
-
-                <!-- 3.1 Pré-vendas -->
+                <!-- 2.1 Caixa Principal -->
                 <li class="nav-item dropdown">
-                  <a class="dropdown-toggle nav-link pl-lg-2" href="#" id="preVendasDropdown" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+                  <a class="dropdown-toggle nav-link pl-lg-2" href="#" id="caixaPrincipalDropdown" role="button"
+                    data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+                    <span class="ml-1">Caixa Principal</span>
+                  </a>
+                  <ul class="dropdown-menu" aria-labelledby="caixaPrincipalDropdown">
+                    <a class="nav-link pl-lg-2" href="#"><span class="ml-1">Movimentação</span></a>
+                    <a class="nav-link pl-lg-2" href="#"><span class="ml-1">Abertura/Fechamento</span></a>
+                    <a class="nav-link pl-lg-2" href="#"><span class="ml-1">Conferência</span></a>
+                  </ul>
+                </li>
+
+                <!-- 2.2 Lançamentos -->
+                <li class="nav-item dropdown">
+                  <a class="dropdown-toggle nav-link pl-lg-2" href="#" data-toggle="collapse" id="lancamentosDropdown"
+                    aria-expanded="false">
+                    <span class="ml-1">Lançamentos</span>
+                  </a>
+                  <ul class="dropdown-menu" aria-labelledby="lancamentosDropdown">
+                    <a class="nav-link pl-lg-2" href="contas-a-receber.html"><span class="ml-1">Contas a Receber</span></a>
+                    <a class="nav-link pl-lg-2" href="#"><span class="ml-1">Contas a Pagar</span></a>
+                    <a class="nav-link pl-lg-2" href="#"><span class="ml-1">Renegociação</span></a>
+                    <a class="nav-link pl-lg-2" href="#"><span class="ml-1">Avulso</span></a>
+                  </ul>
+                </li>
+
+                <!-- 2.3 Controladoria -->
+                <li class="nav-item dropdown">
+                  <a class="dropdown-toggle nav-link pl-lg-2" href="#" data-toggle="collapse"
+                    id="controladoriasDropdown" aria-expanded="false">
+                    <span class="ml-1">Controladoria</span>
+                  </a>
+                  <ul class="dropdown-menu" aria-labelledby="controladoriasDropdown">
+                    <a class="nav-link pl-lg-2" href="#"><span class="ml-1">Liberação de Crédito</span></a>
+                    <a class="nav-link pl-lg-2" href="#"><span class="ml-1">Liberação de Desconto</span></a>
+                  </ul>
+                </li>
+
+                <!-- 2.3 Comissões -->
+                <li class="nav-item dropdown">
+                  <a class="dropdown-toggle nav-link pl-lg-2" href="#" data-toggle="collapse" id="comissoesDropdown"
+                    aria-expanded="false">
+                    <span class="ml-1">Comissões</span>
+                  </a>
+                  <ul class="dropdown-menu" aria-labelledby="comissoesDropdown">
+                    <a class="nav-link pl-lg-2" href="#"><span class="ml-1">Relação de Comissões</span></a>
+                  </ul>
+                </li>
+
+                <!-- 2.3 Central de Cobranças -->
+                <li class="nav-item dropdown">
+                  <a class="dropdown nav-link pl-lg-2" href="#" id="centralCobrançasDropdown" role="button"
+                    data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+                    <span class="ml-1">Central de Cobranças</span>
+                  </a>
+                </li>
+
+              </ul>
+            </li>
+
+            <!-- 4. Estoque -->
+            <li class="nav-item dropdown">
+              <a class="dropdown-toggle nav-link pl-lg-3" href="#" id="estoqueDropdown" role="button"
+                data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+                Estoque </a>
+              <ul class="dropdown-menu" aria-labelledby="estoqueDropdown">
+
+                <!-- 2.1 Produtos -->
+                <li class="nav-item">
+                  <a class="nav-link pl-lg-2" href="produtos.html" id="estoqueProdutos">
+                    <span class="ml-1">Produtos</span>
+                  </a>
+                </li>
+
+                <!-- 2.1 Estoque -->
+                <li class="nav-item dropdown">
+                  <a class="dropdown-toggle nav-link pl-lg-2" href="#" id="estoqueDetalheDropdown" role="button"
+                    data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+                    <span class="ml-1">Estoque</span>
+                  </a>
+                  <ul class="dropdown-menu" aria-labelledby="estoqueDetalheDropdown">
+                    <a class="nav-link pl-lg-2" href="#"><span class="ml-1">Acerto de Estoque</span></a>
+                    <a class="nav-link pl-lg-2" href="#"><span class="ml-1">Inventário</span></a>
+                  </ul>
+                </li>
+
+                <!-- 2.2 Relação -->
+                <li class="nav-item dropdown">
+                  <a class="dropdown-toggle nav-link pl-lg-2" href="#" data-toggle="collapse" id="relacaoDropdown"
+                    aria-expanded="false">
+                    <span class="ml-1">Relação</span>
+                  </a>
+                  <ul class="dropdown-menu" aria-labelledby="relacaoDropdown">
+                    <a class="nav-link pl-lg-2" href="#"><span class="ml-1">Auditoria</span></a>
+                    <a class="nav-link pl-lg-2" href="#"><span class="ml-1">Avisos</span></a>
+                  </ul>
+                </li>
+
+                <!-- 2.3 Compras -->
+                <li class="nav-item dropdown">
+                  <a class="dropdown-toggle nav-link pl-lg-2" href="#" data-toggle="collapse" id="comprasDropdown"
+                    aria-expanded="false">
+                    <span class="ml-1">Compras</span>
+                  </a>
+                  <ul class="dropdown-menu" aria-labelledby="comprasDropdown">
+                    <a class="nav-link pl-lg-2" href="#"><span class="ml-1">Entradas</span></a>
+                    <a class="nav-link pl-lg-2" href="#"><span class="ml-1">Lista de Compras</span></a>
+                    <a class="nav-link pl-lg-2" href="#"><span class="ml-1">Lista de Faltas</span></a>
+                  </ul>
+                </li>
+              </ul>
+            </li>
+
+            <!-- 3. Comercial -->
+            <li class="nav-item dropdown">
+              <a href="#" id="comercialDropdown" class="dropdown-toggle nav-link" role="button" data-toggle="dropdown"
+                aria-haspopup="true" aria-expanded="false">
+                <span class="ml-lg-2">Comercial</span>
+              </a>
+              <div class="dropdown-menu" aria-labelledby="comercialDropdown">
+                <a class="nav-link pl-lg-2" href="#"><span class="ml-1">Vendas</span></a>
+                <a class="nav-link pl-lg-2" href="#"><span class="ml-1">Ordem de Serviço</span></a>
+                <a class="nav-link pl-lg-2" href="#"><span class="ml-1">Orçamentos</span></a>
+                <a class="nav-link pl-lg-2" href="#"><span class="ml-1">Condicional</span></a>
+                <a class="nav-link pl-lg-2" href="#"><span class="ml-1">Vale Compra</span></a>
+              </div>
+
+              <!-- 3.1 Pré-vendas -->
+            <li class="nav-item dropdown">
+              <a class="dropdown-toggle nav-link pl-lg-2" href="#" id="preVendasDropdown" role="button"
+                data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+                <span class="ml-1">Pré-vendas</span>
+              </a>
+              <ul class="dropdown-menu" aria-labelledby="preVendasDropdown">
+                <a class="nav-link pl-lg-2" href="#"><span class="ml-1">Pedidos</span></a>
+                <a class="nav-link pl-lg-2" href="#"><span class="ml-1">Pedidos Agrupados</span></a>
+                <a class="nav-link pl-lg-2" href="#"><span class="ml-1">Separação e Conferência</span></a>
+              </ul>
+            </li>
+
+            <!-- 3.2 Devoluções -->
+            <li class="nav-item dropdown">
+              <a class="dropdown-toggle nav-link pl-lg-2" href="#" id="devolucoesDropdown" role="button"
+                data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+                <span class="ml-1">Devoluções</span>
+              </a>
+              <ul class="dropdown-menu" aria-labelledby="devolucoesDropdown">
+                <a class="nav-link pl-lg-2" href="#"><span class="ml-1">Devolução de Venda</span></a>
+                <a class="nav-link pl-lg-2" href="#"><span class="ml-1">Devolução de Ordem de Serviço</span></a>
+                <a class="nav-link pl-lg-2" href="#"><span class="ml-1">Devolução de Condicional</span></a>
+              </ul>
+            </li>
+            </li>
+
+            <!-- 4. Cadastros -->
+            <li class="nav-item dropdown">
+              <a class="dropdown-toggle nav-link pl-lg-3" href="#" id="cadastrosDropdown" role="button"
+                data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+                Cadastros </a>
+              <ul class="dropdown-menu" aria-labelledby="cadastrosDropdown">
+
+                <!-- 2.1 Financeiro -->
+                <li class="nav-item dropdown">
+                  <a class="dropdown-toggle nav-link pl-lg-2" href="#" id="cadastroFinanceiroDropdown" role="button"
+                    data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+                    <span class="ml-1">Financeiro</span>
+                  </a>
+                  <ul class="dropdown-menu" aria-labelledby="cadastroFinanceiroDropdown">
+                    <a class="nav-link pl-lg-2" href="#"><span class="ml-1">Caixas</span></a>
+                    <a class="nav-link pl-lg-2" href="#"><span class="ml-1">Contas Correntes</span></a>
+                    <a class="nav-link pl-lg-2" href="#"><span class="ml-1">Plano de Contas</span></a>
+                  </ul>
+                </li>
+
+                <!-- 2.2 Pessoas -->
+                <li class="nav-item dropdown">
+                  <a class="dropdown-toggle nav-link pl-lg-2" href="#" data-toggle="collapse" id="pessoasDropdown"
+                    aria-expanded="false">
+                    <span class="ml-1">Pessoas</span>
+                  </a>
+                  <ul class="dropdown-menu" aria-labelledby="pessoasDropdown">
+                    <a class="nav-link pl-lg-2" href="clientes.html"><span class="ml-1">Clientes</span></a>
+                    <a class="nav-link pl-lg-2" href="#"><span class="ml-1">Colaboradores</span></a>
+                    <a class="nav-link pl-lg-2" href="#"><span class="ml-1">Usuários</span></a>
+                  </ul>
+                </li>
+
+                <!-- 2.3 Produtos -->
+                <li class="nav-item dropdown">
+                  <a class="dropdown-toggle nav-link pl-lg-2" href="#" data-toggle="collapse" id="produtosDropdown"
+                    aria-expanded="false">
+                    <span class="ml-1">Produtos</span>
+                  </a>
+                  <ul class="dropdown-menu" aria-labelledby="produtosDropdown">
+                    <a class="nav-link pl-lg-2" href="#"><span class="ml-1">Seção/Grupo/SubGrupo</span></a>
+                    <a class="nav-link pl-lg-2" href="#"><span class="ml-1">Prateleira/Gôndola/Gaveta</span></a>
+                    <a class="nav-link pl-lg-2" href="#"><span class="ml-1">Fabricantes/Marcas</span></a>
+                    <a class="nav-link pl-lg-2" href="#"><span class="ml-1">Grades</span></a>
+                  </ul>
+                </li>
+
+                <!-- 2.3 Serviços -->
+                <li class="nav-item dropdown">
+                  <a class="dropdown-toggle nav-link pl-lg-2" href="#" data-toggle="collapse" id="servicosDropdown"
+                    aria-expanded="false">
+                    <span class="ml-1">Serviços</span>
+                  </a>
+                  <ul class="dropdown-menu" aria-labelledby="servicosDropdown">
+                    <a class="nav-link pl-lg-2" href="#"><span class="ml-1">Detalhes</span></a>
+                    <a class="nav-link pl-lg-2" href="#"><span class="ml-1">Fisco</span></a>
+                  </ul>
+                </li>
+
+              </ul>
+            </li>
+
+            <!-- 6. Consultas -->
+            <li class="nav-item dropdown">
+              <a class="dropdown-toggle nav-link pl-lg-3" href="#" id="consultasDropdown" role="button"
+                data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+                Consultas
+              </a>
+              <ul class="dropdown-menu" aria-labelledby="consultasDropdown">
+
+                <!-- 6.1 Financeiro -->
+                <li class="nav-item dropdown">
+                  <a class="dropdown-toggle nav-link pl-lg-2" href="#" id="consultaFinanceiroDropdown" role="button"
+                    data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+                    <span class="ml-1">Financeiro</span>
+                  </a>
+                  <ul class="dropdown-menu" aria-labelledby="consultaFinanceiroDropdown">
+                    <a class="nav-link pl-lg-2" href="#"><span class="ml-1">Contas a Receber</span></a>
+                    <a class="nav-link pl-lg-2" href="#"><span class="ml-1">Contas a Pagar</span></a>
+                  </ul>
+                </li>
+
+                <!-- 6.2 Controladoria -->
+                <li class="nav-item dropdown">
+                  <a class="dropdown-toggle nav-link pl-lg-2" href="#" id="consultaControladoriaDropdown" role="button"
+                    data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+                    <span class="ml-1">Controladoria</span>
+                  </a>
+                  <ul class="dropdown-menu" aria-labelledby="consultaControladoriaDropdown">
+                    <a class="nav-link pl-lg-2" href="#"><span class="ml-1">Liberação de Crédito</span></a>
+                    <a class="nav-link pl-lg-2" href="#"><span class="ml-1">Liberação de Desconto</span></a>
+                  </ul>
+                </li>
+
+                <!-- 6.3 Comercial -->
+                <li class="nav-item dropdown">
+                  <a class="dropdown-toggle nav-link pl-lg-2" href="#" id="consultaComercialDropdown" role="button"
+                    data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+                    <span class="ml-1">Comercial</span>
+                  </a>
+                  <ul class="dropdown-menu" aria-labelledby="consultaComercialDropdown">
+                    <a class="nav-link pl-lg-2" href="#"><span class="ml-1">Vendas</span></a>
+                    <a class="nav-link pl-lg-2" href="#"><span class="ml-1">Ordem de Serviço</span></a>
+                    <a class="nav-link pl-lg-2" href="#"><span class="ml-1">Orçamentos</span></a>
+                    <a class="nav-link pl-lg-2" href="#"><span class="ml-1">Pré-vendas</span></a>
+                    <a class="nav-link pl-lg-2" href="#"><span class="ml-1">Devoluções</span></a>
+                    <a class="nav-link pl-lg-2" href="#"><span class="ml-1">Vale Compras</span></a>
+                  </ul>
+                </li>
+
+                <!-- 6.4 Estoque -->
+                <li class="nav-item dropdown">
+                  <a class="dropdown-toggle nav-link pl-lg-2" href="#" id="consultaEstoqueDropdown" role="button"
+                    data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+                    <span class="ml-1">Estoque</span>
+                  </a>
+                  <ul class="dropdown-menu" aria-labelledby="consultaEstoqueDropdown">
+                    <a class="nav-link pl-lg-2" href="#"><span class="ml-1">Histórico de Movimentação</span></a>
+                    <a class="nav-link pl-lg-2" href="#"><span class="ml-1">Produtos Excluídos</span></a>
+                  </ul>
+                </li>
+
+                <!-- 6.5 Cadastros -->
+                <li class="nav-item dropdown">
+                  <a class="dropdown-toggle nav-link pl-lg-2" href="#" id="consultaCadastrosDropdown" role="button"
+                    data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+                    <span class="ml-1">Cadastros</span>
+                  </a>
+                  <ul class="dropdown-menu" aria-labelledby="consultaCadastrosDropdown">
+                    <a class="nav-link pl-lg-2" href="#"><span class="ml-1">Estatísticas de Clientes</span></a>
+                    <a class="nav-link pl-lg-2" href="#"><span class="ml-1">Estatísticas de Colaboradores</span></a>
+                  </ul>
+                </li>
+
+                <!-- 6.6 Calendários -->
+                <li class="nav-item dropdown">
+                  <a class="dropdown-toggle nav-link pl-lg-2" href="#" id="calendariosDropdown" role="button"
+                    data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+                    <span class="ml-1">Calendários</span>
+                  </a>
+                  <ul class="dropdown-menu" aria-labelledby="calendariosDropdown">
+                    <a class="nav-link pl-lg-2" href="#"><span class="ml-1">Aniversariantes</span></a>
+                    <a class="nav-link pl-lg-2" href="#"><span class="ml-1">Ausência</span></a>
+                    <a class="nav-link pl-lg-2" href="#"><span class="ml-1">Feriados</span></a>
+                  </ul>
+                </li>
+
+                <!-- 6.7 Gráficos -->
+                <li class="nav-item dropdown">
+                  <a class="dropdown-toggle nav-link pl-lg-2" href="#" id="graficosDropdown" role="button"
+                    data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+                    <span class="ml-1">Gráficos</span>
+                  </a>
+                  <ul class="dropdown-menu" aria-labelledby="graficosDropdown">
+                    <a class="nav-link pl-lg-2" href="#"><span class="ml-1">Resultados - Dashboard</span></a>
+                    <a class="nav-link pl-lg-2" href="#"><span class="ml-1">Metas</span></a>
+                    <a class="nav-link pl-lg-2" href="#"><span class="ml-1">Comparações</span></a>
+                  </ul>
+                </li>
+
+              </ul>
+            </li>
+
+            <!-- 7. Faturamento -->
+            <li class="nav-item dropdown">
+              <a class="dropdown-toggle nav-link pl-lg-3" href="#" id="faturamentoDropdown" role="button"
+                data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+                Faturamento
+              </a>
+              <ul class="dropdown-menu" aria-labelledby="faturamentoDropdown">
+                <a class="nav-link pl-lg-2" href="#"><span class="ml-1">Vendas Agrupadas</span></a>
+
+                <!-- 7.2 Emissão Manual -->
+                <li class="nav-item dropdown">
+                  <a class="dropdown-toggle nav-link pl-lg-2" href="#" id="emissaoManualDropdown" role="button"
+                    data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+                    <span class="ml-1">Emissão Manual</span>
+                  </a>
+                  <ul class="dropdown-menu" aria-labelledby="emissaoManualDropdown">
+                    <a class="nav-link pl-lg-2" href="#"><span class="ml-1">Saídas</span></a>
+                    <a class="nav-link pl-lg-2" href="#"><span class="ml-1">Entradas</span></a>
+                  </ul>
+                </li>
+
+                <a class="nav-link pl-lg-2" href="#"><span class="ml-1">Emissão de NFe</span></a>
+                <a class="nav-link pl-lg-2" href="#"><span class="ml-1">Emissão de NFCe</span></a>
+                <a class="nav-link pl-lg-2" href="#"><span class="ml-1">Relação de Notas Fiscais</span></a>
+              </ul>
+            </li>
+
+            <!-- 8. Emissão -->
+            <li class="nav-item dropdown">
+              <a class="dropdown-toggle nav-link pl-lg-3" href="#" id="emissaoDropdown" role="button"
+                data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+                Emissão
+              </a>
+              <ul class="dropdown-menu" aria-labelledby="emissaoDropdown">
+                <a class="nav-link pl-lg-2" href="#"><span class="ml-1">Carnê</span></a>
+                <a class="nav-link pl-lg-2" href="#"><span class="ml-1">Recibo</span></a>
+                <a class="nav-link pl-lg-2" href="#"><span class="ml-1">Duplicatas</span></a>
+                <a class="nav-link pl-lg-2" href="#"><span class="ml-1">Contratos</span></a>
+                <a class="nav-link pl-lg-2" href="#"><span class="ml-1">Etiquetas</span></a>
+              </ul>
+            </li>
+
+            <!-- 9. Relatórios -->
+            <li class="nav-item dropdown">
+              <a class="dropdown-toggle nav-link pl-lg-3" href="#" id="relatoriosDropdown" role="button"
+                data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+                Relatórios
+              </a>
+              <ul class="dropdown-menu" aria-labelledby="relatoriosDropdown">
+                <!-- 9.1 Produtos -->
+                <li class="nav-item dropdown">
+                  <a class="dropdown-toggle nav-link pl-lg-2" href="#" id="relatorioProdutoDropdown" role="button"
+                    data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+                    <span class="ml-1">Produtos</span>
+                  </a>
+                  <ul class="dropdown-menu" aria-labelledby="relatorioProdutoDropdown">
+                    <li><a class="nav-link pl-lg-2" href="#"><span class="ml-1">Relação de Produtos</span></a></li>
+                    <li><a class="nav-link pl-lg-2" href="#"><span class="ml-1">Relação do Estoque</span></a></li>
+                    <li><a class="nav-link pl-lg-2" href="#"><span class="ml-1">Relação de Entradas X Saídas</span></a>
+                    </li>
+                    <li><a class="nav-link pl-lg-2" href="#"><span class="ml-1">Relação de Custo X Venda</span></a></li>
+                    <li><a class="nav-link pl-lg-2" href="#"><span class="ml-1">Mais Vendidos</span></a></li>
+                    <li><a class="nav-link pl-lg-2" href="#"><span class="ml-1">Excluídos/Inativados</span></a></li>
+                  </ul>
+                </li>
+
+                <!-- 9.2 Clientes -->
+                <li class="nav-item dropdown">
+                  <a class="dropdown-toggle nav-link pl-lg-2" href="#" id="relatorioClienteDropdown" role="button"
+                    data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+                    <span class="ml-1">Clientes</span>
+                  </a>
+                  <ul class="dropdown-menu" aria-labelledby="relatorioClienteDropdown">
+                    <li><a class="nav-link pl-lg-2" href="#"><span class="ml-1">Relação de Clientes</span></a></li>
+                    <li><a class="nav-link pl-lg-2" href="#"><span class="ml-1">Fidelidade de Clientes</span></a></li>
+                    <li><a class="nav-link pl-lg-2" href="#"><span class="ml-1">Estatísticas de Clientes</span></a></li>
+                    <li><a class="nav-link pl-lg-2" href="#"><span class="ml-1">Excluídos/Inativados</span></a></li>
+                  </ul>
+                </li>
+
+                <!-- 9.3 Financeiro -->
+                <li class="nav-item dropdown">
+                  <a class="dropdown-toggle nav-link pl-lg-2" href="#" id="relatorioFinanceiroDropdown" role="button"
+                    data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+                    <span class="ml-1">Financeiro</span>
+                  </a>
+                  <ul class="dropdown-menu" aria-labelledby="relatorioFinanceiroDropdown">
+                    <li><a class="nav-link pl-lg-2" href="#"><span class="ml-1">Caixas</span></a></li>
+                    <li><a class="nav-link pl-lg-2" href="#"><span class="ml-1">Contas a Receber</span></a></li>
+                    <li><a class="nav-link pl-lg-2" href="#"><span class="ml-1">Contas a Pagar</span></a></li>
+                    <li><a class="nav-link pl-lg-2" href="#"><span class="ml-1">Renegociações</span></a></li>
+                    <li><a class="nav-link pl-lg-2" href="#"><span class="ml-1">Contas Excluídas</span></a></li>
+                    <li><a class="nav-link pl-lg-2" href="#"><span class="ml-1">Liberação de Crédito</span></a></li>
+                    <li><a class="nav-link pl-lg-2" href="#"><span class="ml-1">Liberação de Desconto</span></a></li>
+                    <li><a class="nav-link pl-lg-2" href="#"><span class="ml-1">DRE</span></a></li>
+                  </ul>
+                </li>
+
+                <!-- 9.4 Vendas -->
+                <li class="nav-item dropdown">
+                  <a class="dropdown-toggle nav-link pl-lg-2" href="#" id="relatorioVendasDropdown" role="button"
+                    data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+                    <span class="ml-1">Vendas</span>
+                  </a>
+                  <ul class="dropdown-menu" aria-labelledby="relatorioVendasDropdown">
+                    <li><a class="nav-link pl-lg-2" href="#"><span class="ml-1">Análise de Venda</span></a></li>
+                    <li><a class="nav-link pl-lg-2" href="#"><span class="ml-1">Vendas Excluídas</span></a></li>
+                    <li class="nav-item dropdown">
+                      <a class="dropdown-toggle nav-link pl-lg-2" href="#" id="relatorioResumoDropdown" role="button"
+                        data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+                        <span class="ml-1">Resumos</span>
+                      </a>
+                      <ul class="dropdown-menu" aria-labelledby="relatorioResumoDropdown">
+                        <li><a class="nav-link pl-lg-2" href="#"><span class="ml-1">Vendedor</span></a></li>
+                        <li><a class="nav-link pl-lg-2" href="#"><span class="ml-1">Cidades</span></a></li>
+                        <li><a class="nav-link pl-lg-2" href="#"><span class="ml-1">Clientes</span></a></li>
+                        <li><a class="nav-link pl-lg-2" href="#"><span class="ml-1">Produtos</span></a></li>
+                      </ul>
+                    </li>
+                  </ul>
+                </li>
+
+                <!-- 9.5 Ordens de Serviços -->
+                <li class="nav-item dropdown">
+                  <a class="dropdown-toggle nav-link pl-lg-2" href="#" id="relatorioOsDropdown" role="button"
+                    data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+                    <span class="ml-1">Ordens de Serviços</span>
+                  </a>
+                  <ul class="dropdown-menu" aria-labelledby="relatorioOsDropdown">
+                    <li><a class="nav-link pl-lg-2" href="#"><span class="ml-1">Análise de OS</span></a></li>
+                    <li><a class="nav-link pl-lg-2" href="#"><span class="ml-1">Execução de Serviços</span></a></li>
+                    <li><a class="nav-link pl-lg-2" href="#"><span class="ml-1">OS Excluídas</span></a></li>
+                    <li><a class="nav-link pl-lg-2" href="#"><span class="ml-1">Insumos Utilizados</span></a></li>
+                  </ul>
+                </li>
+
+                <!-- 9.6 Orçamentos -->
+                <li class="nav-item dropdown">
+                  <a class="dropdown-toggle nav-link pl-lg-2" href="#" id="relatorioOrcamentoDropdown" role="button"
+                    data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+                    <span class="ml-1">Orçamentos</span>
+                  </a>
+                  <ul class="dropdown-menu" aria-labelledby="relatorioOrcamentoDropdown">
+                    <li><a class="nav-link pl-lg-2" href="#"><span class="ml-1">Análise de Orçamentos</span></a></li>
+                    <li><a class="nav-link pl-lg-2" href="#"><span class="ml-1">Orçamentos Excluídos</span></a></li>
+                  </ul>
+                </li>
+
+                <!-- 9.7 Pré-vendas -->
+                <li class="nav-item dropdown">
+                  <a class="dropdown-toggle nav-link pl-lg-2" href="#" id="relatorioPreVendasDropdown" role="button"
+                    data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
                     <span class="ml-1">Pré-vendas</span>
                   </a>
-                  <ul class="dropdown-menu" aria-labelledby="preVendasDropdown">
-                    <a class="nav-link pl-lg-2" href="#"><span class="ml-1">Pedidos</span></a>
-                    <a class="nav-link pl-lg-2" href="#"><span class="ml-1">Pedidos Agrupados</span></a>
-                    <a class="nav-link pl-lg-2" href="#"><span class="ml-1">Separação e Conferência</span></a>
+                  <ul class="dropdown-menu" aria-labelledby="relatorioPreVendasDropdown">
+                    <li><a class="nav-link pl-lg-2" href="#"><span class="ml-1">Análise de Pré-vendas</span></a></li>
+                    <li><a class="nav-link pl-lg-2" href="#"><span class="ml-1">Pré-vendas Excluídas</span></a></li>
                   </ul>
                 </li>
 
-                <!-- 3.2 Devoluções -->
+                <!-- 9.8 Condicionais -->
                 <li class="nav-item dropdown">
-                  <a class="dropdown-toggle nav-link pl-lg-2" href="#" id="devolucoesDropdown" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+                  <a class="dropdown-toggle nav-link pl-lg-2" href="#" id="relatorioCondicionaisDropdown" role="button"
+                    data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+                    <span class="ml-1">Condicionais</span>
+                  </a>
+                  <ul class="dropdown-menu" aria-labelledby="relatorioCondicionaisDropdown">
+                    <li><a class="nav-link pl-lg-2" href="#"><span class="ml-1">Análise de Condicionais</span></a></li>
+                    <li><a class="nav-link pl-lg-2" href="#"><span class="ml-1">Condicionais Excluídas</span></a></li>
+                  </ul>
+                </li>
+
+                <!-- 9.9 Devoluções -->
+                <li class="nav-item dropdown">
+                  <a class="dropdown-toggle nav-link pl-lg-2" href="#" id="relatorioDevolucoesDropdown" role="button"
+                    data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
                     <span class="ml-1">Devoluções</span>
                   </a>
-                  <ul class="dropdown-menu" aria-labelledby="devolucoesDropdown">
-                    <a class="nav-link pl-lg-2" href="#"><span class="ml-1">Devolução de Venda</span></a>
-                    <a class="nav-link pl-lg-2" href="#"><span class="ml-1">Devolução de Ordem de Serviço</span></a>
-                    <a class="nav-link pl-lg-2" href="#"><span class="ml-1">Devolução de Condicional</span></a>
+                  <ul class="dropdown-menu" aria-labelledby="relatorioDevolucoesDropdown">
+                    <li><a class="nav-link pl-lg-2" href="#"><span class="ml-1">Análise de Devoluções</span></a></li>
+                    <li><a class="nav-link pl-lg-2" href="#"><span class="ml-1">Devoluções Excluídas</span></a></li>
                   </ul>
                 </li>
-              </li>
 
-              <!-- 4. Cadastros -->
-              <li class="nav-item dropdown">
-                <a class="dropdown-toggle nav-link pl-lg-3" href="#" id="cadastrosDropdown" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false"> 
-                  Cadastros </a>
-                <ul class="dropdown-menu" aria-labelledby="cadastrosDropdown">
-                  
-                  <!-- 2.1 Financeiro -->
-                  <li class="nav-item dropdown">
-                    <a class="dropdown-toggle nav-link pl-lg-2" href="#" id="cadastroFinanceiroDropdown" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
-                      <span class="ml-1">Financeiro</span>
-                    </a>
-                    <ul class="dropdown-menu" aria-labelledby="cadastroFinanceiroDropdown">
-                      <a class="nav-link pl-lg-2" href="#"><span class="ml-1">Caixas</span></a>
-                      <a class="nav-link pl-lg-2" href="#"><span class="ml-1">Contas Correntes</span></a>
-                      <a class="nav-link pl-lg-2" href="#"><span class="ml-1">Plano de Contas</span></a>
-                    </ul>
-                  </li>
-
-                  <!-- 2.2 Pessoas -->
-                  <li class="nav-item dropdown">
-                    <a class="dropdown-toggle nav-link pl-lg-2" href="#" data-toggle="collapse" id="pessoasDropdown" aria-expanded="false">
-                      <span class="ml-1">Pessoas</span>
-                    </a>
-                    <ul class="dropdown-menu" aria-labelledby="pessoasDropdown">
-                      <a class="nav-link pl-lg-2" href="clientes.html"><span class="ml-1">Clientes</span></a>
-                      <a class="nav-link pl-lg-2" href="#"><span class="ml-1">Colaboradores</span></a>
-                      <a class="nav-link pl-lg-2" href="#"><span class="ml-1">Usuários</span></a>
-                    </ul>
-                  </li>
-                  
-                  <!-- 2.3 Produtos -->
-                  <li class="nav-item dropdown">
-                    <a class="dropdown-toggle nav-link pl-lg-2" href="#" data-toggle="collapse" id="produtosDropdown" aria-expanded="false">
-                      <span class="ml-1">Produtos</span>
-                    </a>
-                    <ul class="dropdown-menu" aria-labelledby="produtosDropdown">
-                      <a class="nav-link pl-lg-2" href="#"><span class="ml-1">Seção/Grupo/SubGrupo</span></a>
-                      <a class="nav-link pl-lg-2" href="#"><span class="ml-1">Prateleira/Gôndola/Gaveta</span></a>
-                      <a class="nav-link pl-lg-2" href="#"><span class="ml-1">Fabricantes/Marcas</span></a>
-                      <a class="nav-link pl-lg-2" href="#"><span class="ml-1">Grades</span></a>
-                    </ul>
-                  </li>
-
-                  <!-- 2.3 Serviços -->
-                  <li class="nav-item dropdown">
-                    <a class="dropdown-toggle nav-link pl-lg-2" href="#" data-toggle="collapse" id="servicosDropdown" aria-expanded="false">
-                      <span class="ml-1">Serviços</span>
-                    </a>
-                    <ul class="dropdown-menu" aria-labelledby="servicosDropdown">
-                      <a class="nav-link pl-lg-2" href="#"><span class="ml-1">Detalhes</span></a>
-                      <a class="nav-link pl-lg-2" href="#"><span class="ml-1">Fisco</span></a>
-                    </ul>
-                  </li>
-
-                </ul>
-              </li>
-
-              <!-- 6. Consultas -->
-              <li class="nav-item dropdown">
-                <a class="dropdown-toggle nav-link pl-lg-3" href="#" id="consultasDropdown" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
-                  Consultas
-                </a>
-                <ul class="dropdown-menu" aria-labelledby="consultasDropdown">
-
-                  <!-- 6.1 Financeiro -->
-                  <li class="nav-item dropdown">
-                    <a class="dropdown-toggle nav-link pl-lg-2" href="#" id="consultaFinanceiroDropdown" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
-                      <span class="ml-1">Financeiro</span>
-                    </a>
-                    <ul class="dropdown-menu" aria-labelledby="consultaFinanceiroDropdown">
-                      <a class="nav-link pl-lg-2" href="#"><span class="ml-1">Contas a Receber</span></a>
-                      <a class="nav-link pl-lg-2" href="#"><span class="ml-1">Contas a Pagar</span></a>
-                    </ul>
-                  </li>
-
-                  <!-- 6.2 Controladoria -->
-                  <li class="nav-item dropdown">
-                    <a class="dropdown-toggle nav-link pl-lg-2" href="#" id="consultaControladoriaDropdown" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
-                      <span class="ml-1">Controladoria</span>
-                    </a>
-                    <ul class="dropdown-menu" aria-labelledby="consultaControladoriaDropdown">
-                      <a class="nav-link pl-lg-2" href="#"><span class="ml-1">Liberação de Crédito</span></a>
-                      <a class="nav-link pl-lg-2" href="#"><span class="ml-1">Liberação de Desconto</span></a>
-                    </ul>
-                  </li>
-
-                  <!-- 6.3 Comercial -->
-                  <li class="nav-item dropdown">
-                    <a class="dropdown-toggle nav-link pl-lg-2" href="#" id="consultaComercialDropdown" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
-                      <span class="ml-1">Comercial</span>
-                    </a>
-                    <ul class="dropdown-menu" aria-labelledby="consultaComercialDropdown">
-                      <a class="nav-link pl-lg-2" href="#"><span class="ml-1">Vendas</span></a>
-                      <a class="nav-link pl-lg-2" href="#"><span class="ml-1">Ordem de Serviço</span></a>
-                      <a class="nav-link pl-lg-2" href="#"><span class="ml-1">Orçamentos</span></a>
-                      <a class="nav-link pl-lg-2" href="#"><span class="ml-1">Pré-vendas</span></a>
-                      <a class="nav-link pl-lg-2" href="#"><span class="ml-1">Devoluções</span></a>
-                      <a class="nav-link pl-lg-2" href="#"><span class="ml-1">Vale Compras</span></a>
-                    </ul>
-                  </li>
-
-                  <!-- 6.4 Estoque -->
-                  <li class="nav-item dropdown">
-                    <a class="dropdown-toggle nav-link pl-lg-2" href="#" id="consultaEstoqueDropdown" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
-                      <span class="ml-1">Estoque</span>
-                    </a>
-                    <ul class="dropdown-menu" aria-labelledby="consultaEstoqueDropdown">
-                      <a class="nav-link pl-lg-2" href="#"><span class="ml-1">Histórico de Movimentação</span></a>
-                      <a class="nav-link pl-lg-2" href="#"><span class="ml-1">Produtos Excluídos</span></a>
-                    </ul>
-                  </li>
-
-                  <!-- 6.5 Cadastros -->
-                  <li class="nav-item dropdown">
-                    <a class="dropdown-toggle nav-link pl-lg-2" href="#" id="consultaCadastrosDropdown" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
-                      <span class="ml-1">Cadastros</span>
-                    </a>
-                    <ul class="dropdown-menu" aria-labelledby="consultaCadastrosDropdown">
-                      <a class="nav-link pl-lg-2" href="#"><span class="ml-1">Estatísticas de Clientes</span></a>
-                      <a class="nav-link pl-lg-2" href="#"><span class="ml-1">Estatísticas de Colaboradores</span></a>
-                    </ul>
-                  </li>
-
-                  <!-- 6.6 Calendários -->
-                  <li class="nav-item dropdown">
-                    <a class="dropdown-toggle nav-link pl-lg-2" href="#" id="calendariosDropdown" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
-                      <span class="ml-1">Calendários</span>
-                    </a>
-                    <ul class="dropdown-menu" aria-labelledby="calendariosDropdown">
-                      <a class="nav-link pl-lg-2" href="#"><span class="ml-1">Aniversariantes</span></a>
-                      <a class="nav-link pl-lg-2" href="#"><span class="ml-1">Ausência</span></a>
-                      <a class="nav-link pl-lg-2" href="#"><span class="ml-1">Feriados</span></a>
-                    </ul>
-                  </li>
-
-                  <!-- 6.7 Gráficos -->
-                  <li class="nav-item dropdown">
-                    <a class="dropdown-toggle nav-link pl-lg-2" href="#" id="graficosDropdown" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
-                      <span class="ml-1">Gráficos</span>
-                    </a>
-                    <ul class="dropdown-menu" aria-labelledby="graficosDropdown">
-                      <a class="nav-link pl-lg-2" href="#"><span class="ml-1">Resultados - Dashboard</span></a>
-                      <a class="nav-link pl-lg-2" href="#"><span class="ml-1">Metas</span></a>
-                      <a class="nav-link pl-lg-2" href="#"><span class="ml-1">Comparações</span></a>
-                    </ul>
-                  </li>
-
-                </ul>
-              </li>
-
-              <!-- 7. Faturamento -->
-              <li class="nav-item dropdown">
-                <a class="dropdown-toggle nav-link pl-lg-3" href="#" id="faturamentoDropdown" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
-                  Faturamento
-                </a>
-                <ul class="dropdown-menu" aria-labelledby="faturamentoDropdown">
-                  <a class="nav-link pl-lg-2" href="#"><span class="ml-1">Vendas Agrupadas</span></a>
-
-                  <!-- 7.2 Emissão Manual -->
-                  <li class="nav-item dropdown">
-                    <a class="dropdown-toggle nav-link pl-lg-2" href="#" id="emissaoManualDropdown" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
-                      <span class="ml-1">Emissão Manual</span>
-                    </a>
-                    <ul class="dropdown-menu" aria-labelledby="emissaoManualDropdown">
-                      <a class="nav-link pl-lg-2" href="#"><span class="ml-1">Saídas</span></a>
-                      <a class="nav-link pl-lg-2" href="#"><span class="ml-1">Entradas</span></a>
-                    </ul>
-                  </li>
-
-                  <a class="nav-link pl-lg-2" href="#"><span class="ml-1">Emissão de NFe</span></a>
-                  <a class="nav-link pl-lg-2" href="#"><span class="ml-1">Emissão de NFCe</span></a>
-                  <a class="nav-link pl-lg-2" href="#"><span class="ml-1">Relação de Notas Fiscais</span></a>
-                </ul>
-              </li>
-
-              <!-- 8. Emissão -->
-              <li class="nav-item dropdown">
-                <a class="dropdown-toggle nav-link pl-lg-3" href="#" id="emissaoDropdown" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
-                  Emissão
-                </a>
-                <ul class="dropdown-menu" aria-labelledby="emissaoDropdown">
-                  <a class="nav-link pl-lg-2" href="#"><span class="ml-1">Carnê</span></a>
-                  <a class="nav-link pl-lg-2" href="#"><span class="ml-1">Recibo</span></a>
-                  <a class="nav-link pl-lg-2" href="#"><span class="ml-1">Duplicatas</span></a>
-                  <a class="nav-link pl-lg-2" href="#"><span class="ml-1">Contratos</span></a>
-                  <a class="nav-link pl-lg-2" href="#"><span class="ml-1">Etiquetas</span></a>
-                </ul>
-              </li>
-
-              <!-- 9. Relatórios -->
-              <li class="nav-item dropdown">
-                <a class="dropdown-toggle nav-link pl-lg-3" href="#" id="relatoriosDropdown" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
-                  Relatórios
-                </a>
-                <ul class="dropdown-menu" aria-labelledby="relatoriosDropdown">
-                  <!-- 9.1 Produtos -->
-                  <li class="nav-item dropdown">
-                    <a class="dropdown-toggle nav-link pl-lg-2" href="#" id="relatorioProdutoDropdown" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
-                      <span class="ml-1">Produtos</span>
-                    </a>
-                    <ul class="dropdown-menu" aria-labelledby="relatorioProdutoDropdown">
-                      <li><a class="nav-link pl-lg-2" href="#"><span class="ml-1">Relação de Produtos</span></a></li>
-                      <li><a class="nav-link pl-lg-2" href="#"><span class="ml-1">Relação do Estoque</span></a></li>
-                      <li><a class="nav-link pl-lg-2" href="#"><span class="ml-1">Relação de Entradas X Saídas</span></a></li>
-                      <li><a class="nav-link pl-lg-2" href="#"><span class="ml-1">Relação de Custo X Venda</span></a></li>
-                      <li><a class="nav-link pl-lg-2" href="#"><span class="ml-1">Mais Vendidos</span></a></li>
-                      <li><a class="nav-link pl-lg-2" href="#"><span class="ml-1">Excluídos/Inativados</span></a></li>
-                    </ul>
-                  </li>
-
-                  <!-- 9.2 Clientes -->
-                  <li class="nav-item dropdown">
-                    <a class="dropdown-toggle nav-link pl-lg-2" href="#" id="relatorioClienteDropdown" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
-                      <span class="ml-1">Clientes</span>
-                    </a>
-                    <ul class="dropdown-menu" aria-labelledby="relatorioClienteDropdown">
-                      <li><a class="nav-link pl-lg-2" href="#"><span class="ml-1">Relação de Clientes</span></a></li>
-                      <li><a class="nav-link pl-lg-2" href="#"><span class="ml-1">Fidelidade de Clientes</span></a></li>
-                      <li><a class="nav-link pl-lg-2" href="#"><span class="ml-1">Estatísticas de Clientes</span></a></li>
-                      <li><a class="nav-link pl-lg-2" href="#"><span class="ml-1">Excluídos/Inativados</span></a></li>
-                    </ul>
-                  </li>
-
-                  <!-- 9.3 Financeiro -->
-                  <li class="nav-item dropdown">
-                    <a class="dropdown-toggle nav-link pl-lg-2" href="#" id="relatorioFinanceiroDropdown" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
-                      <span class="ml-1">Financeiro</span>
-                    </a>
-                    <ul class="dropdown-menu" aria-labelledby="relatorioFinanceiroDropdown">
-                      <li><a class="nav-link pl-lg-2" href="#"><span class="ml-1">Caixas</span></a></li>
-                      <li><a class="nav-link pl-lg-2" href="#"><span class="ml-1">Contas a Receber</span></a></li>
-                      <li><a class="nav-link pl-lg-2" href="#"><span class="ml-1">Contas a Pagar</span></a></li>
-                      <li><a class="nav-link pl-lg-2" href="#"><span class="ml-1">Renegociações</span></a></li>
-                      <li><a class="nav-link pl-lg-2" href="#"><span class="ml-1">Contas Excluídas</span></a></li>
-                      <li><a class="nav-link pl-lg-2" href="#"><span class="ml-1">Liberação de Crédito</span></a></li>
-                      <li><a class="nav-link pl-lg-2" href="#"><span class="ml-1">Liberação de Desconto</span></a></li>
-                      <li><a class="nav-link pl-lg-2" href="#"><span class="ml-1">DRE</span></a></li>
-                    </ul>
-                  </li>
-
-                  <!-- 9.4 Vendas -->
-                  <li class="nav-item dropdown">
-                    <a class="dropdown-toggle nav-link pl-lg-2" href="#" id="relatorioVendasDropdown" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
-                      <span class="ml-1">Vendas</span>
-                    </a>
-                    <ul class="dropdown-menu" aria-labelledby="relatorioVendasDropdown">
-                      <li><a class="nav-link pl-lg-2" href="#"><span class="ml-1">Análise de Venda</span></a></li>
-                      <li><a class="nav-link pl-lg-2" href="#"><span class="ml-1">Vendas Excluídas</span></a></li>
-                      <li class="nav-item dropdown">
-                        <a class="dropdown-toggle nav-link pl-lg-2" href="#" id="relatorioResumoDropdown" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
-                          <span class="ml-1">Resumos</span>
-                        </a>
-                        <ul class="dropdown-menu" aria-labelledby="relatorioResumoDropdown">
-                          <li><a class="nav-link pl-lg-2" href="#"><span class="ml-1">Vendedor</span></a></li>
-                          <li><a class="nav-link pl-lg-2" href="#"><span class="ml-1">Cidades</span></a></li>
-                          <li><a class="nav-link pl-lg-2" href="#"><span class="ml-1">Clientes</span></a></li>
-                          <li><a class="nav-link pl-lg-2" href="#"><span class="ml-1">Produtos</span></a></li>
-                        </ul>
-                      </li>
-                    </ul>
-                  </li>
-
-                  <!-- 9.5 Ordens de Serviços -->
-                  <li class="nav-item dropdown">
-                    <a class="dropdown-toggle nav-link pl-lg-2" href="#" id="relatorioOsDropdown" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
-                      <span class="ml-1">Ordens de Serviços</span>
-                    </a>
-                    <ul class="dropdown-menu" aria-labelledby="relatorioOsDropdown">
-                      <li><a class="nav-link pl-lg-2" href="#"><span class="ml-1">Análise de OS</span></a></li>
-                      <li><a class="nav-link pl-lg-2" href="#"><span class="ml-1">Execução de Serviços</span></a></li>
-                      <li><a class="nav-link pl-lg-2" href="#"><span class="ml-1">OS Excluídas</span></a></li>
-                      <li><a class="nav-link pl-lg-2" href="#"><span class="ml-1">Insumos Utilizados</span></a></li>
-                    </ul>
-                  </li>
-
-                  <!-- 9.6 Orçamentos -->
-                  <li class="nav-item dropdown">
-                    <a class="dropdown-toggle nav-link pl-lg-2" href="#" id="relatorioOrcamentoDropdown" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
-                      <span class="ml-1">Orçamentos</span>
-                    </a>
-                    <ul class="dropdown-menu" aria-labelledby="relatorioOrcamentoDropdown">
-                      <li><a class="nav-link pl-lg-2" href="#"><span class="ml-1">Análise de Orçamentos</span></a></li>
-                      <li><a class="nav-link pl-lg-2" href="#"><span class="ml-1">Orçamentos Excluídos</span></a></li>
-                    </ul>
-                  </li>
-
-                  <!-- 9.7 Pré-vendas -->
-                  <li class="nav-item dropdown">
-                    <a class="dropdown-toggle nav-link pl-lg-2" href="#" id="relatorioPreVendasDropdown" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
-                      <span class="ml-1">Pré-vendas</span>
-                    </a>
-                    <ul class="dropdown-menu" aria-labelledby="relatorioPreVendasDropdown">
-                      <li><a class="nav-link pl-lg-2" href="#"><span class="ml-1">Análise de Pré-vendas</span></a></li>
-                      <li><a class="nav-link pl-lg-2" href="#"><span class="ml-1">Pré-vendas Excluídas</span></a></li>
-                    </ul>
-                  </li>
-
-                  <!-- 9.8 Condicionais -->
-                  <li class="nav-item dropdown">
-                    <a class="dropdown-toggle nav-link pl-lg-2" href="#" id="relatorioCondicionaisDropdown" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
-                      <span class="ml-1">Condicionais</span>
-                    </a>
-                    <ul class="dropdown-menu" aria-labelledby="relatorioCondicionaisDropdown">
-                      <li><a class="nav-link pl-lg-2" href="#"><span class="ml-1">Análise de Condicionais</span></a></li>
-                      <li><a class="nav-link pl-lg-2" href="#"><span class="ml-1">Condicionais Excluídas</span></a></li>
-                    </ul>
-                  </li>
-
-                  <!-- 9.9 Devoluções -->
-                  <li class="nav-item dropdown">
-                    <a class="dropdown-toggle nav-link pl-lg-2" href="#" id="relatorioDevolucoesDropdown" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
-                      <span class="ml-1">Devoluções</span>
-                    </a>
-                    <ul class="dropdown-menu" aria-labelledby="relatorioDevolucoesDropdown">
-                      <li><a class="nav-link pl-lg-2" href="#"><span class="ml-1">Análise de Devoluções</span></a></li>
-                      <li><a class="nav-link pl-lg-2" href="#"><span class="ml-1">Devoluções Excluídas</span></a></li>
-                    </ul>
-                  </li>
-
-                  <!-- 9.10 Compras -->
-                  <li class="nav-item dropdown">
-                    <a class="dropdown-toggle nav-link pl-lg-2" href="#" id="relatorioComprasDropdown" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
-                      <span class="ml-1">Compras</span>
-                    </a>
-                    <ul class="dropdown-menu" aria-labelledby="relatorioComprasDropdown">
-                      <li><a class="nav-link pl-lg-2" href="#"><span class="ml-1">Análise de Entradas</span></a></li>
-                      <li><a class="nav-link pl-lg-2" href="#"><span class="ml-1">Entradas Excluídas</span></a></li>
-                    </ul>
-                  </li>
-
-                  <!-- 9.11 Faturamento -->
-                  <li class="nav-item dropdown">
-                    <a class="dropdown-toggle nav-link pl-lg-2" href="#" id="relatorioFaturamentoDropdown" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
-                      <span class="ml-1">Faturamento</span>
-                    </a>
-                    <ul class="dropdown-menu" aria-labelledby="relatorioFaturamentoDropdown">
-                      <li><a class="nav-link pl-lg-2" href="#"><span class="ml-1">Análise de Notas Fiscais</span></a></li>
-                      <li><a class="nav-link pl-lg-2" href="#"><span class="ml-1">Notas Canceladas</span></a></li>
-                      <li><a class="nav-link pl-lg-2" href="#"><span class="ml-1">Relação de NFe</span></a></li>
-                      <li><a class="nav-link pl-lg-2" href="#"><span class="ml-1">Relação de NFCe</span></a></li>
-                    </ul>
-                  </li>
-
-                  <!-- 9.12 Comissões -->
-                  <li class="nav-item dropdown">
-                    <a class="dropdown-toggle nav-link pl-lg-2" href="#" id="relatorioComissoesDropdown" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
-                      <span class="ml-1">Comissões</span>
-                    </a>
-                    <ul class="dropdown-menu" aria-labelledby="relatorioComissoesDropdown">
-                      <li><a class="nav-link pl-lg-2" href="#"><span class="ml-1">Relação de Comissões</span></a></li>
-                      <li><a class="nav-link pl-lg-2" href="#"><span class="ml-1">Comissões Avulsas</span></a></li>
-                    </ul>
-                  </li>
-
-                  <!-- 9.13 Vendedores -->
-                  <li class="nav-item dropdown">
-                    <a class="dropdown-toggle nav-link pl-lg-2" href="#" id="relatorioVendedoresDropdown" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
-                      <span class="ml-1">Vendedores</span>
-                    </a>
-                    <ul class="dropdown-menu" aria-labelledby="relatorioVendedoresDropdown">
-                      <li><a class="nav-link pl-lg-2" href="#"><span class="ml-1">Relação de Vendedores</span></a></li>
-                      <li><a class="nav-link pl-lg-2" href="#"><span class="ml-1">Relação de Férias</span></a></li>
-                      <li><a class="nav-link pl-lg-2" href="#"><span class="ml-1">Vendedores Excluídos/Inativos</span></a></li>
-                    </ul>
-                  </li>
-                </ul>
-              </li>
-
-              <!-- 2. Sistema -->
-              <li class="nav-item dropdown">
-                <a class="dropdown-toggle nav-link pl-lg-3" href="#" id="sistemaDropdown" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false"> 
-                  Sistema </a>
-                <ul class="dropdown-menu" aria-labelledby="sistemaDropdown">
-
-                  <!-- 2.1 Configurações -->
-                  <li class="nav-item dropdown">
-                    <a class="dropdown-toggle nav-link pl-lg-2" href="#" id="configuracoesDropdown" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
-                      <span class="ml-1">Configurações</span>
-                    </a>
-                    <ul class="dropdown-menu" aria-labelledby="configuracoesDropdown">
-                      <a class="nav-link pl-lg-2" href="#"><span class="ml-1">Administração do Sistema</span></a>
-                      <a class="nav-link pl-lg-2" href="#"><span class="ml-1">Configurações de Impressão</span></a>
-                      <a class="nav-link pl-lg-2" href="#"><span class="ml-1">Configuração de Etiquetas</span></a>
-                      <a class="nav-link pl-lg-2" href="#"><span class="ml-1">Sair do Sistema</span></a>
-                    </ul>
-                  </li>
-
-                  <!-- 2.1 Utilitários -->
-                  <li class="nav-item dropdown">
-                    <a class="dropdown-toggle nav-link pl-lg-2" href="#" id="utilitariosDropdown" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
-                      <span class="ml-1">Utilitários</span>
-                    </a>
-                    <ul class="dropdown-menu" aria-labelledby="utilitariosDropdown">
-                      <a class="nav-link pl-lg-2" href="#"><span class="ml-1">Calculadora</span></a>
-                      <a class="nav-link pl-lg-2" href="#"><span class="ml-1">Recados</span></a>
-                      <a class="nav-link pl-lg-2" href="#"><span class="ml-1">Wallpapers</span></a>
-                    </ul>
-                  </li>
-                </ul>
-              </li>
-
-              <!-- Mais -->
-              <li class="nav-item dropdown more">
-                <a class="dropdown-toggle more-horizontal nav-link" href="#" id="moreDropdown" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
-                  <span class="ml-2 sr-only">Mais</span>
-                </a>
-                <ul class="dropdown-menu" aria-labelledby="moreDropdown">
-                  <li class="nav-item dropdown">
-                    <a class="dropdown-toggle nav-link pl-lg-2" href="#" data-toggle="collapse" id="pagesDropdown" aria-expanded="false">
-                      <span class="ml-1">Teste</span>
-                    </a>
-                    <ul class="dropdown-menu" aria-labelledby="pagesDropdown">
-                      <a class="nav-link pl-lg-2" href="#">
-                        <span class="ml-1">Manter Teste</span>
-                      </a>
-                    </ul>
-                  </li>
-                  <li class="nav-item dropdown">
-                    <a class="dropdown-toggle nav-link pl-lg-2" href="#" data-toggle="collapse" id="layoutsDropdown" aria-expanded="false">
-                      <span class="ml-1">Outro Teste</span>
-                    </a>
-                    <ul class="dropdown-menu" aria-labelledby="layoutsDropdown">
-                      <a class="nav-link pl-lg-2" href="./index.html"><span class="ml-1">Manter Outro Teste</span></a>
-                    </ul>
-                  </li>
-                </ul>
-              </li>
-            </ul>
-          </div>
-          <form class="form-inline ml-md-auto d-none d-lg-flex searchform text-muted">
-            <input class="form-control mr-sm-2 bg-transparent border-0 pl-4 text-muted" type="search" placeholder="Pesquisar..." aria-label="Search">
-          </form>
-          <ul class="navbar-nav d-flex flex-row">
-            <li class="nav-item">
-              <a class="nav-link text-muted my-2" href="./#" id="modeSwitcher" data-mode="light">
-                <i class="fe fe-sun fe-16"></i>
-              </a>
-            </li>
-            <li class="nav-item">
-              <a class="nav-link text-muted my-2" href="./#" data-toggle="modal" data-target=".modal-shortcut">
-                <i class="fe fe-grid fe-16"></i>
-              </a>
-            </li>
-            <li class="nav-item nav-notif">
-              <a class="nav-link text-muted my-2" href="./#" data-toggle="modal" data-target=".modal-notif">
-                <i class="fe fe-bell fe-16"></i>
-                <span class="dot dot-md bg-success"></span>
-              </a>
-            </li>
-            <li class="nav-item dropdown ml-lg-0">
-              <a class="nav-link dropdown-toggle text-muted" href="#" id="navbarDropdownMenuLink" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
-                <span class="avatar avatar-sm mt-2">
-                  <img src="./assets/avatars/face-1.jpg" alt="..." class="avatar-img rounded-circle">
-                </span>
-              </a>
-              <ul class="dropdown-menu dropdown-menu-right" aria-labelledby="navbarDropdownMenuLink">
-                <li class="nav-item">
-                  <a class="nav-link pl-3" href="#">Perfil</a>
+                <!-- 9.10 Compras -->
+                <li class="nav-item dropdown">
+                  <a class="dropdown-toggle nav-link pl-lg-2" href="#" id="relatorioComprasDropdown" role="button"
+                    data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+                    <span class="ml-1">Compras</span>
+                  </a>
+                  <ul class="dropdown-menu" aria-labelledby="relatorioComprasDropdown">
+                    <li><a class="nav-link pl-lg-2" href="#"><span class="ml-1">Análise de Entradas</span></a></li>
+                    <li><a class="nav-link pl-lg-2" href="#"><span class="ml-1">Entradas Excluídas</span></a></li>
+                  </ul>
                 </li>
-                <li class="nav-item">
-                  <a class="nav-link pl-3" href="#">Configurações</a>
+
+                <!-- 9.11 Faturamento -->
+                <li class="nav-item dropdown">
+                  <a class="dropdown-toggle nav-link pl-lg-2" href="#" id="relatorioFaturamentoDropdown" role="button"
+                    data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+                    <span class="ml-1">Faturamento</span>
+                  </a>
+                  <ul class="dropdown-menu" aria-labelledby="relatorioFaturamentoDropdown">
+                    <li><a class="nav-link pl-lg-2" href="#"><span class="ml-1">Análise de Notas Fiscais</span></a></li>
+                    <li><a class="nav-link pl-lg-2" href="#"><span class="ml-1">Notas Canceladas</span></a></li>
+                    <li><a class="nav-link pl-lg-2" href="#"><span class="ml-1">Relação de NFe</span></a></li>
+                    <li><a class="nav-link pl-lg-2" href="#"><span class="ml-1">Relação de NFCe</span></a></li>
+                  </ul>
                 </li>
-                <li class="nav-item">
-                  <a class="nav-link pl-3" href="#">Atividades</a>
+
+                <!-- 9.12 Comissões -->
+                <li class="nav-item dropdown">
+                  <a class="dropdown-toggle nav-link pl-lg-2" href="#" id="relatorioComissoesDropdown" role="button"
+                    data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+                    <span class="ml-1">Comissões</span>
+                  </a>
+                  <ul class="dropdown-menu" aria-labelledby="relatorioComissoesDropdown">
+                    <li><a class="nav-link pl-lg-2" href="#"><span class="ml-1">Relação de Comissões</span></a></li>
+                    <li><a class="nav-link pl-lg-2" href="#"><span class="ml-1">Comissões Avulsas</span></a></li>
+                  </ul>
+                </li>
+
+                <!-- 9.13 Vendedores -->
+                <li class="nav-item dropdown">
+                  <a class="dropdown-toggle nav-link pl-lg-2" href="#" id="relatorioVendedoresDropdown" role="button"
+                    data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+                    <span class="ml-1">Vendedores</span>
+                  </a>
+                  <ul class="dropdown-menu" aria-labelledby="relatorioVendedoresDropdown">
+                    <li><a class="nav-link pl-lg-2" href="#"><span class="ml-1">Relação de Vendedores</span></a></li>
+                    <li><a class="nav-link pl-lg-2" href="#"><span class="ml-1">Relação de Férias</span></a></li>
+                    <li><a class="nav-link pl-lg-2" href="#"><span class="ml-1">Vendedores Excluídos/Inativos</span></a>
+                    </li>
+                  </ul>
+                </li>
+              </ul>
+            </li>
+
+            <!-- 2. Sistema -->
+            <li class="nav-item dropdown">
+              <a class="dropdown-toggle nav-link pl-lg-3" href="#" id="sistemaDropdown" role="button"
+                data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+                Sistema </a>
+              <ul class="dropdown-menu" aria-labelledby="sistemaDropdown">
+
+                <!-- 2.1 Configurações -->
+                <li class="nav-item dropdown">
+                  <a class="dropdown-toggle nav-link pl-lg-2" href="#" id="configuracoesDropdown" role="button"
+                    data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+                    <span class="ml-1">Configurações</span>
+                  </a>
+                  <ul class="dropdown-menu" aria-labelledby="configuracoesDropdown">
+                    <a class="nav-link pl-lg-2" href="#"><span class="ml-1">Administração do Sistema</span></a>
+                    <a class="nav-link pl-lg-2" href="#"><span class="ml-1">Configurações de Impressão</span></a>
+                    <a class="nav-link pl-lg-2" href="#"><span class="ml-1">Configuração de Etiquetas</span></a>
+                    <a class="nav-link pl-lg-2" href="#"><span class="ml-1">Sair do Sistema</span></a>
+                  </ul>
+                </li>
+
+                <!-- 2.1 Utilitários -->
+                <li class="nav-item dropdown">
+                  <a class="dropdown-toggle nav-link pl-lg-2" href="#" id="utilitariosDropdown" role="button"
+                    data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+                    <span class="ml-1">Utilitários</span>
+                  </a>
+                  <ul class="dropdown-menu" aria-labelledby="utilitariosDropdown">
+                    <a class="nav-link pl-lg-2" href="#"><span class="ml-1">Calculadora</span></a>
+                    <a class="nav-link pl-lg-2" href="#"><span class="ml-1">Recados</span></a>
+                    <a class="nav-link pl-lg-2" href="#"><span class="ml-1">Wallpapers</span></a>
+                  </ul>
+                </li>
+              </ul>
+            </li>
+
+            <!-- Mais -->
+            <li class="nav-item dropdown more">
+              <a class="dropdown-toggle more-horizontal nav-link" href="#" id="moreDropdown" role="button"
+                data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+                <span class="ml-2 sr-only">Mais</span>
+              </a>
+              <ul class="dropdown-menu" aria-labelledby="moreDropdown">
+                <li class="nav-item dropdown">
+                  <a class="dropdown-toggle nav-link pl-lg-2" href="#" data-toggle="collapse" id="pagesDropdown"
+                    aria-expanded="false">
+                    <span class="ml-1">Teste</span>
+                  </a>
+                  <ul class="dropdown-menu" aria-labelledby="pagesDropdown">
+                    <a class="nav-link pl-lg-2" href="#">
+                      <span class="ml-1">Manter Teste</span>
+                    </a>
+                  </ul>
+                </li>
+                <li class="nav-item dropdown">
+                  <a class="dropdown-toggle nav-link pl-lg-2" href="#" data-toggle="collapse" id="layoutsDropdown"
+                    aria-expanded="false">
+                    <span class="ml-1">Outro Teste</span>
+                  </a>
+                  <ul class="dropdown-menu" aria-labelledby="layoutsDropdown">
+                    <a class="nav-link pl-lg-2" href="./index.html"><span class="ml-1">Manter Outro Teste</span></a>
+                  </ul>
                 </li>
               </ul>
             </li>
           </ul>
         </div>
-      </nav>
-      <main role="main" class="main-content">
-        <div class="container-fluid">
-          <div class="row justify-content-center">
-            <div class="col-12">
-              <h2 class="mb-2 page-title">Listagem de Produtos</h2>
-              <p class="card-text">Bem-vindo à tela de Cadastro de Produto! Aqui você poderá registrar todos os itens disponíveis para venda ou gestão no sistema. Preencha as informações de forma clara e detalhada para garantir que o produto seja corretamente registrado, gerenciado e que esteja disponível para venda ou controle de estoque.</p>
-              <!-- Botão para adicionar -->
-              <button type="button" class="btn btn-primary" data-toggle="modal" data-target="#addProductModal" data-whatever="@mdo">Adicionar Produto</button><div class="row my-4">
-                <!-- Small table -->
-                <div class="col-md-12">
-                  <div class="card shadow">
-                    <div class="card-body">
-                      <!-- table -->
-                      <table class="table datatables" id="dataTable-1">
-                        <thead>
-                          <tr>
-                            <!-- <th></th> -->
-                            <th>Código</th>
-                            <th>Referência</th>
-                            <th>Código de Barras</th>
-                            <th>Descrição</th>
-                            <th>Unidade</th>
-                            <th>Estoque</th>
-                            <th>Custo</th>
-                            <th>Venda</th>
-                            <th>Fabricante</th>
-                            <th>Status</th>
-                            <th>Ações</th>
-                          </tr>
-                        </thead>
-                        <tbody>
-                          <tr>
-                            <!-- <td>
+        <form class="form-inline ml-md-auto d-none d-lg-flex searchform text-muted">
+          <input class="form-control mr-sm-2 bg-transparent border-0 pl-4 text-muted" type="search"
+            placeholder="Pesquisar..." aria-label="Search">
+        </form>
+        <ul class="navbar-nav d-flex flex-row">
+          <li class="nav-item">
+            <a class="nav-link text-muted my-2" href="./#" id="modeSwitcher" data-mode="light">
+              <i class="fe fe-sun fe-16"></i>
+            </a>
+          </li>
+          <li class="nav-item">
+            <a class="nav-link text-muted my-2" href="./#" data-toggle="modal" data-target=".modal-shortcut">
+              <i class="fe fe-grid fe-16"></i>
+            </a>
+          </li>
+          <li class="nav-item nav-notif">
+            <a class="nav-link text-muted my-2" href="./#" data-toggle="modal" data-target=".modal-notif">
+              <i class="fe fe-bell fe-16"></i>
+              <span class="dot dot-md bg-success"></span>
+            </a>
+          </li>
+          <li class="nav-item dropdown ml-lg-0">
+            <a class="nav-link dropdown-toggle text-muted" href="#" id="navbarDropdownMenuLink" role="button"
+              data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+              <span class="avatar avatar-sm mt-2">
+                <img src="./assets/avatars/face-1.jpg" alt="..." class="avatar-img rounded-circle">
+              </span>
+            </a>
+            <ul class="dropdown-menu dropdown-menu-right" aria-labelledby="navbarDropdownMenuLink">
+              <li class="nav-item">
+                <a class="nav-link pl-3" href="#">Perfil</a>
+              </li>
+              <li class="nav-item">
+                <a class="nav-link pl-3" href="#">Configurações</a>
+              </li>
+              <li class="nav-item">
+                <a class="nav-link pl-3" href="#">Atividades</a>
+              </li>
+            </ul>
+          </li>
+        </ul>
+      </div>
+    </nav>
+    <main role="main" class="main-content">
+      <div class="container-fluid">
+        <div class="row justify-content-center">
+          <div class="col-12">
+            <h2 class="mb-2 page-title">Listagem de Produtos</h2>
+            <p class="card-text">Bem-vindo à tela de Cadastro de Produto! Aqui você poderá registrar todos os itens
+              disponíveis para venda ou gestão no sistema. Preencha as informações de forma clara e detalhada para
+              garantir que o produto seja corretamente registrado, gerenciado e que esteja disponível para venda ou
+              controle de estoque.</p>
+            <!-- Botão para adicionar -->
+            <button type="button" class="btn btn-primary" data-toggle="modal" data-target="#addProductModal"
+              data-whatever="@mdo">Adicionar Produto</button>
+            <div class="row my-4">
+              <!-- Small table -->
+              <div class="col-md-12">
+                <div class="card shadow">
+                  <div class="card-body">
+                    <!-- table -->
+                    <table class="table datatables" id="dataTable-1">
+                      <thead>
+                        <tr>
+                          <!-- <th></th> -->
+                          <th>Código</th>
+                          <th>Referência</th>
+                          <th>Código de Barras</th>
+                          <th>Descrição</th>
+                          <th>Unidade</th>
+                          <th>Estoque</th>
+                          <th>Custo</th>
+                          <th>Venda</th>
+                          <th>Fabricante</th>
+                          <th>Status</th>
+                          <th>Ações</th>
+                        </tr>
+                      </thead>
+                      <tbody>
+                        <tr>
+                          <!-- <td>
                               <div class="custom-control custom-checkbox">
                                 <input type="checkbox" class="custom-control-input">
                                 <label class="custom-control-label"></label>
                               </div>
                             </td> -->
-                            <td>368</td>
-                            <td>1</td>
-                            <td>8949461894984</td>
-                            <td>Produto Teste 1</td>
-                            <td>UN</td>
-                            <td>0</td>
-                            <td>R$ 12,99</td>
-                            <td>R$ 29,99</td>
-                            <td>Fabricante Teste 1</td>
-                            <td>Ativo</td>
-                            <td><button class="btn btn-sm dropdown-toggle more-horizontal" type="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
-                                <span class="text-muted sr-only">Action</span>
-                              </button>
-                              <div class="dropdown-menu dropdown-menu-right">
-                                <a class="dropdown-item" href="#">Editar</a>
-                                <a class="dropdown-item" href="#">Remover</a>
-                              </div>
-                            </td>
-                          </tr>
-                          <tr>
-                            <!-- <td>
+                          <td>368</td>
+                          <td>1</td>
+                          <td>8949461894984</td>
+                          <td>Produto Teste 1</td>
+                          <td>UN</td>
+                          <td>0</td>
+                          <td>R$ 12,99</td>
+                          <td>R$ 29,99</td>
+                          <td>Fabricante Teste 1</td>
+                          <td>Ativo</td>
+                          <td><button class="btn btn-sm dropdown-toggle more-horizontal" type="button"
+                              data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+                              <span class="text-muted sr-only">Action</span>
+                            </button>
+                            <div class="dropdown-menu dropdown-menu-right">
+                              <a class="dropdown-item" href="#">Editar</a>
+                              <a class="dropdown-item" href="#">Remover</a>
+                            </div>
+                          </td>
+                        </tr>
+                        <tr>
+                          <!-- <td>
                               <div class="custom-control custom-checkbox">
                                 <input type="checkbox" class="custom-control-input">
                                 <label class="custom-control-label"></label>
                               </div>
                             </td> -->
-                            <td>427</td>
-                            <td>1</td>
-                            <td>6548964631668</td>
-                            <td>Produto Teste 1</td>
-                            <td>UN</td>
-                            <td>1</td>
-                            <td>R$ 49,99</td>
-                            <td>R$ 99,99</td>
-                            <td>Fabricante Teste 2</td>
-                            <td>Ativo</td>
-                            <td><button class="btn btn-sm dropdown-toggle more-horizontal" type="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
-                                <span class="text-muted sr-only">Action</span>
-                              </button>
-                              <div class="dropdown-menu dropdown-menu-right">
-                                <a class="dropdown-item" href="#">Editar</a>
-                                <a class="dropdown-item" href="#">Remover</a>
-                              </div>
-                            </td>
-                          </tr>
-                        </tbody>
-                      </table>
-
-                      <!-- Modal Adicionar Produto-->
-                      <div class="modal fade" id="addProductModal" tabindex="-1" role="dialog" aria-labelledby="addProductModalLabel" aria-hidden="true">
-                        <div class="modal-dialog modal-lg" role="document">
-                          <div class="modal-content">
-                            <div class="modal-header">
-                              <h5 class="modal-title" id="addProductModalLabel">Adicionar Novo Produto</h5>
-                              <button type="button" class="close" data-dismiss="modal" aria-label="Close">
-                                <span aria-hidden="true">&times;</span>
-                              </button>
+                          <td>427</td>
+                          <td>1</td>
+                          <td>6548964631668</td>
+                          <td>Produto Teste 1</td>
+                          <td>UN</td>
+                          <td>1</td>
+                          <td>R$ 49,99</td>
+                          <td>R$ 99,99</td>
+                          <td>Fabricante Teste 2</td>
+                          <td>Ativo</td>
+                          <td><button class="btn btn-sm dropdown-toggle more-horizontal" type="button"
+                              data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+                              <span class="text-muted sr-only">Action</span>
+                            </button>
+                            <div class="dropdown-menu dropdown-menu-right">
+                              <a class="dropdown-item" href="#">Editar</a>
+                              <a class="dropdown-item" href="#">Remover</a>
                             </div>
-                            <div class="modal-body">
-                              <p class="text-muted">Preencha as informações do produto nos campos abaixo</p>
-                              <!-- Nav Tabs -->
-                              <ul class="nav nav-tabs" id="productTabs" role="tablist">
-                                <li class="nav-item">
-                                  <a class="nav-link active" id="basic-tab" data-toggle="tab" href="#basic" role="tab" aria-controls="basic" aria-selected="true">Informações Básicas</a>
-                                </li>
-                                <li class="nav-item">
-                                  <a class="nav-link" id="pricing-tab" data-toggle="tab" href="#pricing" role="tab" aria-controls="pricing" aria-selected="false">Preços</a>
-                                </li>
-                                <li class="nav-item">
-                                  <a class="nav-link" id="stock-tab" data-toggle="tab" href="#stock" role="tab" aria-controls="stock" aria-selected="false">Estoque</a>
-                                </li>
-                                <li class="nav-item">
-                                  <a class="nav-link" id="details-tab" data-toggle="tab" href="#details" role="tab" aria-controls="details" aria-selected="false">Detalhes</a>
-                                </li>
-                                <li class="nav-item">
-                                  <a class="nav-link" id="fiscal-tab" data-toggle="tab" href="#fiscal" role="tab" aria-controls="fiscal" aria-selected="false">Fiscal</a>
-                                </li>
-                                <li class="nav-item">
-                                  <a class="nav-link" id="additional-tab" data-toggle="tab" href="#additional" role="tab" aria-controls="additional" aria-selected="false">Informações Adicionais</a>
-                                </li>
-                              </ul>
-                              <!-- Tab Content -->
-                              <div class="tab-content mt-3" id="productTabsContent">
-                                <!-- Informações Básicas -->
-                                <div class="tab-pane fade show active" id="basic" role="tabpanel" aria-labelledby="basic-tab">
-                                  <h6>Informações Básicas</h6>
-                                  <p class="text-muted">Dados principais do produto</p>
-                                  <div class="form-row">
-                                    <div class="form-group col-md-4">
-                                      <label for="productCode">Código</label>
-                                      <input type="text" class="form-control" id="productCode" placeholder="Código do Produto">
-                                    </div>
-                                    <div class="form-group col-md-4">
-                                      <label for="productReference">Referência</label>
-                                      <input type="text" class="form-control" id="productReference" placeholder="Referência">
-                                    </div>
-                                    <div class="form-group col-md-4">
-                                      <label for="productBarcode">Código de Barras</label>
-                                      <input type="text" class="form-control" id="productBarcode" placeholder="Código de Barras">
-                                    </div>
+                          </td>
+                        </tr>
+                      </tbody>
+                    </table>
+
+                    <!-- Modal Adicionar Produto-->
+                    <div class="modal fade" id="addProductModal" tabindex="-1" role="dialog"
+                      aria-labelledby="addProductModalLabel" aria-hidden="true">
+                      <div class="modal-dialog modal-lg" role="document">
+                        <div class="modal-content">
+                          <div class="modal-header">
+                            <h5 class="modal-title" id="addProductModalLabel">Adicionar Novo Produto</h5>
+                            <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                              <span aria-hidden="true">&times;</span>
+                            </button>
+                          </div>
+                          <div class="modal-body">
+                            <p class="text-muted">Preencha as informações do produto nos campos abaixo</p>
+                            <!-- Nav Tabs -->
+                            <ul class="nav nav-tabs" id="productTabs" role="tablist">
+                              <li class="nav-item">
+                                <a class="nav-link active" id="basic-tab" data-toggle="tab" href="#basic" role="tab"
+                                  aria-controls="basic" aria-selected="true">Informações Básicas</a>
+                              </li>
+                              <li class="nav-item">
+                                <a class="nav-link" id="pricing-tab" data-toggle="tab" href="#pricing" role="tab"
+                                  aria-controls="pricing" aria-selected="false">Preços</a>
+                              </li>
+                              <li class="nav-item">
+                                <a class="nav-link" id="stock-tab" data-toggle="tab" href="#stock" role="tab"
+                                  aria-controls="stock" aria-selected="false">Estoque</a>
+                              </li>
+                              <li class="nav-item">
+                                <a class="nav-link" id="details-tab" data-toggle="tab" href="#details" role="tab"
+                                  aria-controls="details" aria-selected="false">Detalhes</a>
+                              </li>
+                              <li class="nav-item">
+                                <a class="nav-link" id="fiscal-tab" data-toggle="tab" href="#fiscal" role="tab"
+                                  aria-controls="fiscal" aria-selected="false">Fiscal</a>
+                              </li>
+                              <li class="nav-item">
+                                <a class="nav-link" id="additional-tab" data-toggle="tab" href="#additional" role="tab"
+                                  aria-controls="additional" aria-selected="false">Informações Adicionais</a>
+                              </li>
+                            </ul>
+                            <!-- Tab Content -->
+                            <div class="tab-content mt-3" id="productTabsContent">
+                              <!-- Informações Básicas -->
+                              <div class="tab-pane fade show active" id="basic" role="tabpanel"
+                                aria-labelledby="basic-tab">
+                                <h6>Informações Básicas</h6>
+                                <p class="text-muted">Dados principais do produto</p>
+                                <div class="form-row">
+                                  <div class="form-group col-md-4">
+                                    <label for="productCode">Código</label>
+                                    <input type="text" class="form-control" id="productCode"
+                                      placeholder="Código do Produto">
                                   </div>
-                                  <div class="form-row">
-                                    <div class="form-group col-md-6">
-                                      <label for="productDescription">Descrição</label>
-                                      <input class="form-control" id="productDescription" rows="2" placeholder="Descrição do Produto"></input>
-                                    </div>
-                                    <div class="form-group col-md-6">
-                                      <label for="productDetalhamento">Detalhamento</label>
-                                      <textarea class="form-control" id="productDetalhamento" rows="2" placeholder="Detalhamento do Produto"></textarea>
-                                    </div>
+                                  <div class="form-group col-md-4">
+                                    <label for="productReference">Referência</label>
+                                    <input type="text" class="form-control" id="productReference"
+                                      placeholder="Referência">
+                                  </div>
+                                  <div class="form-group col-md-4">
+                                    <label for="productBarcode">Código de Barras</label>
+                                    <input type="text" class="form-control" id="productBarcode"
+                                      placeholder="Código de Barras">
                                   </div>
                                 </div>
-                                
-                                <!-- Preços -->
-                                <div class="tab-pane fade" id="pricing" role="tabpanel" aria-labelledby="pricing-tab">
-                                  <h6>Informações sobre o valor de Custo</h6>
-                                  <div class="form-row">
-                                    <div class="form-group col-md-2">
-                                      <label for="productCost">Custo</label>
-                                      <input type="number" class="form-control" id="productCost" placeholder="Digite o custo" oninput="calcularCustoFinal()">
-                                    </div>
-                                    <div class="form-group col-md-2">
-                                      <label for="productOtherCostsPercentage">% Outros Custos</label>
-                                      <input type="number" class="form-control" id="productOtherCostsPercentage" placeholder="% de outros custos" readonly>
-                                    </div>
-                                    <div class="form-group col-md-2">
-                                      <label for="productOtherCosts">Outros Custos</label>
-                                      <input type="number" class="form-control" id="productOtherCosts" placeholder="Digite outros custos" oninput="calcularCustoFinal()">
-                                    </div>
-                                    <div class="form-group col-md-2">
-                                      <label for="productFinalCost">Custo Final</label>
-                                      <input type="number" class="form-control" id="productFinalCost" readonly>
-                                    </div>
+                                <div class="form-row">
+                                  <div class="form-group col-md-6">
+                                    <label for="productDescription">Descrição</label>
+                                    <input class="form-control" id="productDescription" rows="2"
+                                      placeholder="Descrição do Produto"></input>
                                   </div>
-                                  <h6>Informações sobre o valor de Venda</h6>
-                                  <div class="form-row">
-                                    <div class="form-group col-md-4">
-                                      <label for="suggestedMargin">Margem Sugerida (%)</label>
-                                      <input type="number" class="form-control" id="suggestedMargin" placeholder="Margem sugerida (%)" value="100" oninput="calcularVarejo()">
-                                    </div>
-                                    <div class="form-group col-md-4">
-                                      <label for="grossMargin">Margem Bruta (%)</label>
-                                      <input type="number" class="form-control" id="grossMargin" placeholder="Margem Bruta (%)" value="100" oninput="calcularVarejo()">
-                                    </div>
-                                    <div class="form-group col-md-4">
-                                      <label for="netMargin">Margem Líquida (%)</label>
-                                      <input type="number" class="form-control" id="netMargin" placeholder="Margem Líquida (%)" value="50" oninput="calcularVarejo()">
-                                    </div>
-                                    <div class="form-group col-md-4">
-                                      <label for="productRetailPrice">Valor Varejo</label>
-                                      <input type="number" class="form-control" id="productRetailPrice" placeholder="Valor de Venda" oninput="calcularMargens(); calcularLucro()">
-                                    </div>
-                                    <div class="form-group col-md-4">
-                                      <label for="productProfit">Lucro (R$)</label>
-                                      <input type="number" class="form-control" id="productProfit" placeholder="Lucro" readonly>
-                                    </div>
-                                    <div class="form-group col-md-4">
-                                      <label for="productProfitPercentage">Lucro (%)</label>
-                                      <input type="number" class="form-control" id="productProfitPercentage" placeholder="Lucro (%)" readonly>
-                                    </div>
-                                  </div>
-                                </div>
-
-                                <!-- Estoque -->
-                                <div class="tab-pane fade" id="stock" role="tabpanel" aria-labelledby="stock-tab">
-                                  <h6>Estoque</h6>
-                                  <div class="form-row">
-                                    <div class="form-group col-md-4">
-                                      <label for="productStock">Quantidade em Estoque</label>
-                                      <input type="number" class="form-control" id="productStock" placeholder="Digite a quantidade">
-                                    </div>
-                                    <div class="form-group col-md-4">
-                                      <label for="minStock">Estoque Mínimo</label>
-                                      <input type="number" class="form-control" id="minStock" placeholder="Digite o estoque mínimo">
-                                    </div>
-                                    <div class="form-group col-md-4">
-                                      <label for="idealStock">Estoque Ideal</label>
-                                      <input type="number" class="form-control" id="idealStock" placeholder="Digite o estoque ideal">
-                                    </div>
-                                  </div>
-
-                                  <h6>Resultados</h6>
-                                  <div class="form-row">
-                                    <div class="form-group col-md-4">
-                                      <label for="deliveryTime">Tempo de Entrega (em dias)</label>
-                                      <input type="number" class="form-control" id="deliveryTime" placeholder="Digite o tempo de entrega">
-                                    </div>
-                                    <div class="form-group col-md-4">
-                                      <label for="salesPeriod">Período de Venda (em dias)</label>
-                                      <input type="number" class="form-control" id="salesPeriod" placeholder="Digite o período de venda">
-                                    </div>
-                                    <div class="form-group col-md-4 d-flex align-items-end">
-                                      <button class="btn btn-primary w-100" id="calculateStockResults" onclick="calcularResultadosEstoque()">Calcular</button>
-                                    </div>
-                                  </div>
-
-                                  <div class="form-row">
-                                    <div class="form-group col-md-4">
-                                      <label for="soldQuantity">Qtde Produtos Vendidos</label>
-                                      <input type="number" class="form-control" id="soldQuantity" readonly>
-                                    </div>
-                                    <div class="form-group col-md-4">
-                                      <label for="monthlySalesAvg">Média de Vendas Mensal</label>
-                                      <input type="number" class="form-control" id="monthlySalesAvg" readonly>
-                                    </div>
-                                    <div class="form-group col-md-4">
-                                      <label for="dailySalesAvg">Média de Vendas Diária</label>
-                                      <input type="number" class="form-control" id="dailySalesAvg" readonly>
-                                    </div>
-                                  </div>
-                                  <div class="form-row">
-                                    <div class="form-group col-md-4">
-                                      <label for="calculatedMinStock">Estoque Mínimo</label>
-                                      <input type="number" class="form-control" id="calculatedMinStock" readonly>
-                                    </div>
-                                    <div class="form-group col-md-4">
-                                      <label for="calculatedIdealStock">Estoque Ideal</label>
-                                      <input type="number" class="form-control" id="calculatedIdealStock" readonly>
-                                    </div>
-                                    <div class="form-group col-md-4 d-flex align-items-end">
-                                      <button class="btn btn-secondary w-100" id="adjustStock" onclick="ajustarEstoque()">Alterar</button>
-                                    </div>
-                                  </div>
-                                </div>
-                                
-                                <!-- Detalhes -->
-                                <div class="tab-pane fade" id="details" role="tabpanel" aria-labelledby="details-tab">
-                                  <h6>Departamentos</h6>
-                                  <div class="form-row">
-                                    <div class="form-group col-md-4">
-                                      <label for="departmentSection">Seção</label>
-                                      <div class="input-group">
-                                        <input type="text" class="form-control col-md-2" id="departmentSectionCode" placeholder="Código">
-                                        <input type="text" class="form-control col-md-10" id="departmentSectionDescription" placeholder="Descrição" readonly>
-                                      </div>
-                                    </div>
-                                    <div class="form-group col-md-4">
-                                      <label for="departmentGroup">Grupo</label>
-                                      <div class="input-group">
-                                        <input type="text" class="form-control col-md-2" id="departmentGroupCode" placeholder="Código">
-                                        <input type="text" class="form-control col-md-10" id="departmentGroupDescription" placeholder="Descrição" readonly>
-                                      </div>
-                                    </div>
-                                    <div class="form-group col-md-4">
-                                      <label for="departmentSubgroup">Subgrupo</label>
-                                      <div class="input-group">
-                                        <input type="text" class="form-control col-md-2" id="departmentSubgroupCode" placeholder="Código">
-                                        <input type="text" class="form-control col-md-10" id="departmentSubgroupDescription" placeholder="Descrição" readonly>
-                                      </div>
-                                    </div>
-                                  </div>
-
-                                  <h6>Características</h6>
-                                  <div class="form-row">
-                                    <div class="form-group col-md-4">
-                                      <label for="grossWeight">Peso Bruto (kg)</label>
-                                      <input type="number" class="form-control" id="grossWeight" placeholder="Digite o peso bruto">
-                                    </div>
-                                    <div class="form-group col-md-4">
-                                      <label for="netWeight">Peso Líquido (kg)</label>
-                                      <input type="number" class="form-control" id="netWeight" placeholder="Digite o peso líquido">
-                                    </div>
-                                    <div class="form-group col-md-4">
-                                      <label for="liters">Litros</label>
-                                      <input type="number" class="form-control" id="liters" placeholder="Digite os litros">
-                                    </div>
-                                  </div>
-                                  <div class="form-row">
-                                    <div class="form-group col-md-4">
-                                      <label for="volume">Volume (m³)</label>
-                                      <input type="number" class="form-control" id="volume" placeholder="Digite o volume">
-                                    </div>
-                                    <div class="form-group col-md-4">
-                                      <label for="height">Altura (cm)</label>
-                                      <input type="number" class="form-control" id="height" placeholder="Digite a altura">
-                                    </div>
-                                    <div class="form-group col-md-4">
-                                      <label for="width">Largura (cm)</label>
-                                      <input type="number" class="form-control" id="width" placeholder="Digite a largura">
-                                    </div>
-                                  </div>
-                                  <div class="form-row">
-                                    <div class="form-group col-md-4">
-                                      <label for="length">Comprimento (cm)</label>
-                                      <input type="number" class="form-control" id="length" placeholder="Digite o comprimento">
-                                    </div>
-                                  </div>
-                                </div>
-
-                                <!-- Fiscal -->
-                                <div class="tab-pane fade" id="fiscal" role="tabpanel" aria-labelledby="fiscal-tab">
-                                  <h6>Situação Tributária</h6>
-                                  <div class="form-row">
-                                    <div class="form-group col-md-6">
-                                      <label for="taxSituationCode">Código</label>
-                                      <input type="text" class="form-control" id="taxSituationCode" placeholder="Digite o código">
-                                    </div>
-                                    <div class="form-group col-md-6">
-                                      <label for="taxSituationDescription">Descrição</label>
-                                      <input type="text" class="form-control" id="taxSituationDescription" placeholder="Descrição" readonly>
-                                    </div>
-                                  </div>
-
-                                  <h6>Tributação</h6>
-                                  <div class="form-row">
-                                    <div class="form-group col-md-6">
-                                      <label for="ncmCode">Código NCM</label>
-                                      <div class="input-group">
-                                        <input type="text" class="form-control" id="ncmCode" placeholder="Digite o código NCM">
-                                        <input type="text" class="form-control" id="ncmDescription" placeholder="Descrição do NCM" readonly>
-                                      </div>
-                                    </div>
-                                    <div class="form-group col-md-6">
-                                      <label for="cestCode">Código CEST</label>
-                                      <div class="input-group">
-                                        <input type="text" class="form-control" id="cestCode" placeholder="Digite o código CEST">
-                                        <input type="text" class="form-control" id="cestDescription" placeholder="Descrição do CEST" readonly>
-                                      </div>
-                                    </div>
-                                  </div>
-
-                                  <h6>Tipo de Produto</h6>
-                                  <div class="form-group">
-                                    <label for="productType">Selecione o Tipo</label>
-                                    <select class="form-control" id="productType">
-                                      <option value="">Selecione</option>
-                                      <option value="ativo-imobilizado">Ativo Imobilizado</option>
-                                      <option value="industrializado">Industrializado</option>
-                                      <option value="uso-consumo">Uso e Consumo</option>
-                                      <option value="revenda">Revenda</option>
-                                      <option value="medicamentos">Medicamentos</option>
-                                      <option value="combustivel">Combustível</option>
-                                      <!-- Adicione mais opções conforme necessário -->
-                                    </select>
-                                  </div>
-                                </div>
-
-                                <!-- Informações Adicionais -->
-                                <div class="tab-pane fade" id="additional" role="tabpanel" aria-labelledby="additional-tab">
-                                  <h6>Informações Adicionais</h6>
-                                  <div class="form-group">
-                                    <label for="additionalInfo">Detalhes Adicionais</label>
-                                    <textarea class="form-control" id="additionalInfo" rows="3" placeholder="Adicione informações adicionais sobre o produto"></textarea>
+                                  <div class="form-group col-md-6">
+                                    <label for="productDetalhamento">Detalhamento</label>
+                                    <textarea class="form-control" id="productDetalhamento" rows="2"
+                                      placeholder="Detalhamento do Produto"></textarea>
                                   </div>
                                 </div>
                               </div>
+
+                              <!-- Preços -->
+                              <div class="tab-pane fade" id="pricing" role="tabpanel" aria-labelledby="pricing-tab">
+                                <h6>Informações sobre o valor de Custo</h6>
+                                <div class="form-row">
+                                  <div class="form-group col-md-2">
+                                    <label for="productCost">Custo</label>
+                                    <input type="number" class="form-control" id="productCost"
+                                      placeholder="Digite o custo" oninput="calcularCustoFinal()">
+                                  </div>
+                                  <div class="form-group col-md-2">
+                                    <label for="productOtherCostsPercentage">% Outros Custos</label>
+                                    <input type="number" class="form-control" id="productOtherCostsPercentage"
+                                      placeholder="% de outros custos" readonly>
+                                  </div>
+                                  <div class="form-group col-md-2">
+                                    <label for="productOtherCosts">Outros Custos</label>
+                                    <input type="number" class="form-control" id="productOtherCosts"
+                                      placeholder="Digite outros custos" oninput="calcularCustoFinal()">
+                                  </div>
+                                  <div class="form-group col-md-2">
+                                    <label for="productFinalCost">Custo Final</label>
+                                    <input type="number" class="form-control" id="productFinalCost" readonly>
+                                  </div>
+                                </div>
+                                <h6>Informações sobre o valor de Venda</h6>
+                                <div class="form-row">
+                                  <div class="form-group col-md-4">
+                                    <label for="suggestedMargin">Margem Sugerida (%)</label>
+                                    <input type="number" class="form-control" id="suggestedMargin"
+                                      placeholder="Margem sugerida (%)" value="100" oninput="calcularVarejo()">
+                                  </div>
+                                  <div class="form-group col-md-4">
+                                    <label for="grossMargin">Margem Bruta (%)</label>
+                                    <input type="number" class="form-control" id="grossMargin"
+                                      placeholder="Margem Bruta (%)" value="100" oninput="calcularVarejo()">
+                                  </div>
+                                  <div class="form-group col-md-4">
+                                    <label for="netMargin">Margem Líquida (%)</label>
+                                    <input type="number" class="form-control" id="netMargin"
+                                      placeholder="Margem Líquida (%)" value="50" oninput="calcularVarejo()">
+                                  </div>
+                                  <div class="form-group col-md-4">
+                                    <label for="productRetailPrice">Valor Varejo</label>
+                                    <input type="number" class="form-control" id="productRetailPrice"
+                                      placeholder="Valor de Venda" oninput="calcularMargens(); calcularLucro()">
+                                  </div>
+                                  <div class="form-group col-md-4">
+                                    <label for="productProfit">Lucro (R$)</label>
+                                    <input type="number" class="form-control" id="productProfit" placeholder="Lucro"
+                                      readonly>
+                                  </div>
+                                  <div class="form-group col-md-4">
+                                    <label for="productProfitPercentage">Lucro (%)</label>
+                                    <input type="number" class="form-control" id="productProfitPercentage"
+                                      placeholder="Lucro (%)" readonly>
+                                  </div>
+                                </div>
+                              </div>
+
+                              <!-- Estoque -->
+                              <div class="tab-pane fade" id="stock" role="tabpanel" aria-labelledby="stock-tab">
+                                <h6>Estoque</h6>
+                                <div class="form-row">
+                                  <div class="form-group col-md-4">
+                                    <label for="productStock">Quantidade em Estoque</label>
+                                    <input type="number" class="form-control" id="productStock"
+                                      placeholder="Digite a quantidade">
+                                  </div>
+                                  <div class="form-group col-md-4">
+                                    <label for="minStock">Estoque Mínimo</label>
+                                    <input type="number" class="form-control" id="minStock"
+                                      placeholder="Digite o estoque mínimo">
+                                  </div>
+                                  <div class="form-group col-md-4">
+                                    <label for="idealStock">Estoque Ideal</label>
+                                    <input type="number" class="form-control" id="idealStock"
+                                      placeholder="Digite o estoque ideal">
+                                  </div>
+                                </div>
+
+                                <h6>Resultados</h6>
+                                <div class="form-row">
+                                  <div class="form-group col-md-4">
+                                    <label for="deliveryTime">Tempo de Entrega (em dias)</label>
+                                    <input type="number" class="form-control" id="deliveryTime"
+                                      placeholder="Digite o tempo de entrega">
+                                  </div>
+                                  <div class="form-group col-md-4">
+                                    <label for="salesPeriod">Período de Venda (em dias)</label>
+                                    <input type="number" class="form-control" id="salesPeriod"
+                                      placeholder="Digite o período de venda">
+                                  </div>
+                                  <div class="form-group col-md-4 d-flex align-items-end">
+                                    <button class="btn btn-primary w-100" id="calculateStockResults"
+                                      onclick="calcularResultadosEstoque()">Calcular</button>
+                                  </div>
+                                </div>
+
+                                <div class="form-row">
+                                  <div class="form-group col-md-4">
+                                    <label for="soldQuantity">Qtde Produtos Vendidos</label>
+                                    <input type="number" class="form-control" id="soldQuantity" readonly>
+                                  </div>
+                                  <div class="form-group col-md-4">
+                                    <label for="monthlySalesAvg">Média de Vendas Mensal</label>
+                                    <input type="number" class="form-control" id="monthlySalesAvg" readonly>
+                                  </div>
+                                  <div class="form-group col-md-4">
+                                    <label for="dailySalesAvg">Média de Vendas Diária</label>
+                                    <input type="number" class="form-control" id="dailySalesAvg" readonly>
+                                  </div>
+                                </div>
+                                <div class="form-row">
+                                  <div class="form-group col-md-4">
+                                    <label for="calculatedMinStock">Estoque Mínimo</label>
+                                    <input type="number" class="form-control" id="calculatedMinStock" readonly>
+                                  </div>
+                                  <div class="form-group col-md-4">
+                                    <label for="calculatedIdealStock">Estoque Ideal</label>
+                                    <input type="number" class="form-control" id="calculatedIdealStock" readonly>
+                                  </div>
+                                  <div class="form-group col-md-4 d-flex align-items-end">
+                                    <button class="btn btn-secondary w-100" id="adjustStock"
+                                      onclick="ajustarEstoque()">Alterar</button>
+                                  </div>
+                                </div>
+                              </div>
+
+                              <!-- Detalhes -->
+                              <div class="tab-pane fade" id="details" role="tabpanel" aria-labelledby="details-tab">
+                                <h6>Departamentos</h6>
+                                <div class="form-row">
+                                  <div class="form-group col-md-4">
+                                    <label for="departmentSection">Seção</label>
+                                    <div class="input-group">
+                                      <input type="text" class="form-control col-md-2" id="departmentSectionCode"
+                                        placeholder="Código">
+                                      <input type="text" class="form-control col-md-10"
+                                        id="departmentSectionDescription" placeholder="Descrição" readonly>
+                                    </div>
+                                  </div>
+                                  <div class="form-group col-md-4">
+                                    <label for="departmentGroup">Grupo</label>
+                                    <div class="input-group">
+                                      <input type="text" class="form-control col-md-2" id="departmentGroupCode"
+                                        placeholder="Código">
+                                      <input type="text" class="form-control col-md-10" id="departmentGroupDescription"
+                                        placeholder="Descrição" readonly>
+                                    </div>
+                                  </div>
+                                  <div class="form-group col-md-4">
+                                    <label for="departmentSubgroup">Subgrupo</label>
+                                    <div class="input-group">
+                                      <input type="text" class="form-control col-md-2" id="departmentSubgroupCode"
+                                        placeholder="Código">
+                                      <input type="text" class="form-control col-md-10"
+                                        id="departmentSubgroupDescription" placeholder="Descrição" readonly>
+                                    </div>
+                                  </div>
+                                </div>
+
+                                <h6>Características</h6>
+                                <div class="form-row">
+                                  <div class="form-group col-md-4">
+                                    <label for="grossWeight">Peso Bruto (kg)</label>
+                                    <input type="number" class="form-control" id="grossWeight"
+                                      placeholder="Digite o peso bruto">
+                                  </div>
+                                  <div class="form-group col-md-4">
+                                    <label for="netWeight">Peso Líquido (kg)</label>
+                                    <input type="number" class="form-control" id="netWeight"
+                                      placeholder="Digite o peso líquido">
+                                  </div>
+                                  <div class="form-group col-md-4">
+                                    <label for="liters">Litros</label>
+                                    <input type="number" class="form-control" id="liters"
+                                      placeholder="Digite os litros">
+                                  </div>
+                                </div>
+                                <div class="form-row">
+                                  <div class="form-group col-md-4">
+                                    <label for="volume">Volume (m³)</label>
+                                    <input type="number" class="form-control" id="volume" placeholder="Digite o volume">
+                                  </div>
+                                  <div class="form-group col-md-4">
+                                    <label for="height">Altura (cm)</label>
+                                    <input type="number" class="form-control" id="height" placeholder="Digite a altura">
+                                  </div>
+                                  <div class="form-group col-md-4">
+                                    <label for="width">Largura (cm)</label>
+                                    <input type="number" class="form-control" id="width" placeholder="Digite a largura">
+                                  </div>
+                                </div>
+                                <div class="form-row">
+                                  <div class="form-group col-md-4">
+                                    <label for="length">Comprimento (cm)</label>
+                                    <input type="number" class="form-control" id="length"
+                                      placeholder="Digite o comprimento">
+                                  </div>
+                                </div>
+                              </div>
+
+                              <!-- Fiscal -->
+                              <div class="tab-pane fade" id="fiscal" role="tabpanel" aria-labelledby="fiscal-tab">
+                                <h6>Situação Tributária</h6>
+                                <div class="form-row">
+                                  <div class="form-group col-md-6">
+                                    <label for="taxSituationCode">Código</label>
+                                    <input type="text" class="form-control" id="taxSituationCode"
+                                      placeholder="Digite o código">
+                                  </div>
+                                  <div class="form-group col-md-6">
+                                    <label for="taxSituationDescription">Descrição</label>
+                                    <input type="text" class="form-control" id="taxSituationDescription"
+                                      placeholder="Descrição" readonly>
+                                  </div>
+                                </div>
+
+                                <h6>Tributação</h6>
+                                <div class="form-row">
+                                  <div class="form-group col-md-6">
+                                    <label for="ncmCode">Código NCM</label>
+                                    <div class="input-group">
+                                      <input type="text" class="form-control" id="ncmCode"
+                                        placeholder="Digite o código NCM">
+                                      <input type="text" class="form-control" id="ncmDescription"
+                                        placeholder="Descrição do NCM" readonly>
+                                    </div>
+                                  </div>
+                                  <div class="form-group col-md-6">
+                                    <label for="cestCode">Código CEST</label>
+                                    <div class="input-group">
+                                      <input type="text" class="form-control" id="cestCode"
+                                        placeholder="Digite o código CEST">
+                                      <input type="text" class="form-control" id="cestDescription"
+                                        placeholder="Descrição do CEST" readonly>
+                                    </div>
+                                  </div>
+                                </div>
+
+                                <h6>Tipo de Produto</h6>
+                                <div class="form-group">
+                                  <label for="productType">Selecione o Tipo</label>
+                                  <select class="form-control" id="productType">
+                                    <option value="">Selecione</option>
+                                    <option value="ativo-imobilizado">Ativo Imobilizado</option>
+                                    <option value="industrializado">Industrializado</option>
+                                    <option value="uso-consumo">Uso e Consumo</option>
+                                    <option value="revenda">Revenda</option>
+                                    <option value="medicamentos">Medicamentos</option>
+                                    <option value="combustivel">Combustível</option>
+                                    <!-- Adicione mais opções conforme necessário -->
+                                  </select>
+                                </div>
+                              </div>
+
+                              <!-- Informações Adicionais -->
+                              <div class="tab-pane fade" id="additional" role="tabpanel"
+                                aria-labelledby="additional-tab">
+                                <h6>Informações Adicionais</h6>
+                                <div class="form-group">
+                                  <label for="additionalInfo">Detalhes Adicionais</label>
+                                  <textarea class="form-control" id="additionalInfo" rows="3"
+                                    placeholder="Adicione informações adicionais sobre o produto"></textarea>
+                                </div>
+                              </div>
                             </div>
-                            <div class="modal-footer">
-                              <button type="button" class="btn btn-secondary" data-dismiss="modal">Cancelar</button>
-                              <button type="button" class="btn btn-primary">Salvar</button>
-                            </div>
+                          </div>
+                          <div class="modal-footer">
+                            <button type="button" class="btn btn-secondary" data-dismiss="modal">Cancelar</button>
+                            <button type="button" class="btn btn-primary">Salvar</button>
                           </div>
                         </div>
                       </div>
-                      <!-- Fim Modal Adicionar Produto -->
+                    </div>
+                    <!-- Fim Modal Adicionar Produto -->
+                  </div>
+                </div>
+              </div> <!-- simple table -->
+            </div> <!-- end section -->
+          </div> <!-- .col-12 -->
+        </div> <!-- .row -->
+      </div> <!-- .container-fluid -->
+
+      <div class="modal fade modal-notif modal-slide" tabindex="-1" role="dialog" aria-labelledby="defaultModalLabel"
+        aria-hidden="true">
+        <div class="modal-dialog modal-sm" role="document">
+          <div class="modal-content">
+            <div class="modal-header">
+              <h5 class="modal-title" id="defaultModalLabel">Notificações</h5>
+              <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                <span aria-hidden="true">&times;</span>
+              </button>
+            </div>
+            <div class="modal-body">
+              <div class="list-group list-group-flush my-n3">
+                <div class="list-group-item bg-transparent">
+                  <div class="row align-items-center">
+                    <div class="col-auto">
+                      <span class="fe fe-box fe-24"></span>
+                    </div>
+                    <div class="col">
+                      <small><strong>O pacote foi carregado com sucesso</strong></small>
+                      <div class="my-0 text-muted small">O pacote é compactado e carregado</div>
+                      <small class="badge badge-pill badge-light text-muted">1 minutos atrás</small>
                     </div>
                   </div>
-                </div> <!-- simple table -->
-              </div> <!-- end section -->
-            </div> <!-- .col-12 -->
-          </div> <!-- .row -->
-        </div> <!-- .container-fluid -->
-
-        <div class="modal fade modal-notif modal-slide" tabindex="-1" role="dialog" aria-labelledby="defaultModalLabel" aria-hidden="true">
-            <div class="modal-dialog modal-sm" role="document">
-              <div class="modal-content">
-                <div class="modal-header">
-                  <h5 class="modal-title" id="defaultModalLabel">Notificações</h5>
-                  <button type="button" class="close" data-dismiss="modal" aria-label="Close">
-                    <span aria-hidden="true">&times;</span>
-                  </button>
                 </div>
-                <div class="modal-body">
-                  <div class="list-group list-group-flush my-n3">
-                    <div class="list-group-item bg-transparent">
-                      <div class="row align-items-center">
-                        <div class="col-auto">
-                          <span class="fe fe-box fe-24"></span>
-                        </div>
-                        <div class="col">
-                          <small><strong>O pacote foi carregado com sucesso</strong></small>
-                          <div class="my-0 text-muted small">O pacote é compactado e carregado</div>
-                          <small class="badge badge-pill badge-light text-muted">1 minutos atrás</small>
-                        </div>
-                      </div>
+                <div class="list-group-item bg-transparent">
+                  <div class="row align-items-center">
+                    <div class="col-auto">
+                      <span class="fe fe-download fe-24"></span>
                     </div>
-                    <div class="list-group-item bg-transparent">
-                      <div class="row align-items-center">
-                        <div class="col-auto">
-                          <span class="fe fe-download fe-24"></span>
-                        </div>
-                        <div class="col">
-                          <small><strong>Os widgets foram atualizados com sucesso</strong></small>
-                          <div class="my-0 text-muted small">Basta criar um novo layout Índice, formulário, tabela</div>
-                          <small class="badge badge-pill badge-light text-muted">2 minutos atrás</small>
-                        </div>
-                      </div>
+                    <div class="col">
+                      <small><strong>Os widgets foram atualizados com sucesso</strong></small>
+                      <div class="my-0 text-muted small">Basta criar um novo layout Índice, formulário, tabela</div>
+                      <small class="badge badge-pill badge-light text-muted">2 minutos atrás</small>
                     </div>
-                    <div class="list-group-item bg-transparent">
-                      <div class="row align-items-center">
-                        <div class="col-auto">
-                          <span class="fe fe-inbox fe-24"></span>
-                        </div>
-                        <div class="col">
-                          <small><strong>Notificações foram enviadas</strong></small>
-                          <div class="my-0 text-muted small">Fusce dapibus, tellus ac cursus commodo</div>
-                          <small class="badge badge-pill badge-light text-muted">30 minutos atrás</small>
-                        </div>
-                      </div> <!-- / .row -->
-                    </div>
-                    <div class="list-group-item bg-transparent">
-                      <div class="row align-items-center">
-                        <div class="col-auto">
-                          <span class="fe fe-link fe-24"></span>
-                        </div>
-                        <div class="col">
-                          <small><strong>O link foi anexado ao menu</strong></small>
-                          <div class="my-0 text-muted small">Novo layout foi anexado ao menu</div>
-                          <small class="badge badge-pill badge-light text-muted">1 hora atrás</small>
-                        </div>
-                      </div>
-                    </div> <!-- / .row -->
-                  </div> <!-- / .list-group -->
+                  </div>
                 </div>
-                <div class="modal-footer">
-                  <button type="button" class="btn btn-secondary btn-block" data-dismiss="modal">Limpar tudo</button>
+                <div class="list-group-item bg-transparent">
+                  <div class="row align-items-center">
+                    <div class="col-auto">
+                      <span class="fe fe-inbox fe-24"></span>
+                    </div>
+                    <div class="col">
+                      <small><strong>Notificações foram enviadas</strong></small>
+                      <div class="my-0 text-muted small">Fusce dapibus, tellus ac cursus commodo</div>
+                      <small class="badge badge-pill badge-light text-muted">30 minutos atrás</small>
+                    </div>
+                  </div> <!-- / .row -->
+                </div>
+                <div class="list-group-item bg-transparent">
+                  <div class="row align-items-center">
+                    <div class="col-auto">
+                      <span class="fe fe-link fe-24"></span>
+                    </div>
+                    <div class="col">
+                      <small><strong>O link foi anexado ao menu</strong></small>
+                      <div class="my-0 text-muted small">Novo layout foi anexado ao menu</div>
+                      <small class="badge badge-pill badge-light text-muted">1 hora atrás</small>
+                    </div>
+                  </div>
+                </div> <!-- / .row -->
+              </div> <!-- / .list-group -->
+            </div>
+            <div class="modal-footer">
+              <button type="button" class="btn btn-secondary btn-block" data-dismiss="modal">Limpar tudo</button>
+            </div>
+          </div>
+        </div>
+      </div>
+      <div class="modal fade modal-shortcut modal-slide" tabindex="-1" role="dialog" aria-labelledby="defaultModalLabel"
+        aria-hidden="true">
+        <div class="modal-dialog" role="document">
+          <div class="modal-content">
+            <div class="modal-header">
+              <h5 class="modal-title" id="defaultModalLabel">Atalhos</h5>
+              <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                <span aria-hidden="true">&times;</span>
+              </button>
+            </div>
+            <div class="modal-body px-5">
+              <div class="row align-items-center">
+                <div class="col-6 text-center">
+                  <div class="squircle bg-success justify-content-center">
+                    <i class="fe fe-cpu fe-32 align-self-center text-white"></i>
+                  </div>
+                  <p>Área de controle</p>
+                </div>
+                <div class="col-6 text-center">
+                  <div class="squircle bg-primary justify-content-center">
+                    <i class="fe fe-activity fe-32 align-self-center text-white"></i>
+                  </div>
+                  <p>Atividade</p>
+                </div>
+              </div>
+              <div class="row align-items-center">
+                <div class="col-6 text-center">
+                  <div class="squircle bg-primary justify-content-center">
+                    <i class="fe fe-droplet fe-32 align-self-center text-white"></i>
+                  </div>
+                  <p>Droplet</p>
+                </div>
+                <div class="col-6 text-center">
+                  <div class="squircle bg-primary justify-content-center">
+                    <i class="fe fe-upload-cloud fe-32 align-self-center text-white"></i>
+                  </div>
+                  <p>Carregar</p>
+                </div>
+              </div>
+              <div class="row align-items-center">
+                <div class="col-6 text-center">
+                  <div class="squircle bg-primary justify-content-center">
+                    <i class="fe fe-users fe-32 align-self-center text-white"></i>
+                  </div>
+                  <p>Usuários</p>
+                </div>
+                <div class="col-6 text-center">
+                  <div class="squircle bg-primary justify-content-center">
+                    <i class="fe fe-settings fe-32 align-self-center text-white"></i>
+                  </div>
+                  <p>Configurações</p>
                 </div>
               </div>
             </div>
           </div>
-          <div class="modal fade modal-shortcut modal-slide" tabindex="-1" role="dialog" aria-labelledby="defaultModalLabel" aria-hidden="true">
-            <div class="modal-dialog" role="document">
-              <div class="modal-content">
-                <div class="modal-header">
-                  <h5 class="modal-title" id="defaultModalLabel">Atalhos</h5>
-                  <button type="button" class="close" data-dismiss="modal" aria-label="Close">
-                    <span aria-hidden="true">&times;</span>
-                  </button>
-                </div>
-                <div class="modal-body px-5">
-                  <div class="row align-items-center">
-                    <div class="col-6 text-center">
-                      <div class="squircle bg-success justify-content-center">
-                        <i class="fe fe-cpu fe-32 align-self-center text-white"></i>
-                      </div>
-                      <p>Área de controle</p>
-                    </div>
-                    <div class="col-6 text-center">
-                      <div class="squircle bg-primary justify-content-center">
-                        <i class="fe fe-activity fe-32 align-self-center text-white"></i>
-                      </div>
-                      <p>Atividade</p>
-                    </div>
-                  </div>
-                  <div class="row align-items-center">
-                    <div class="col-6 text-center">
-                      <div class="squircle bg-primary justify-content-center">
-                        <i class="fe fe-droplet fe-32 align-self-center text-white"></i>
-                      </div>
-                      <p>Droplet</p>
-                    </div>
-                    <div class="col-6 text-center">
-                      <div class="squircle bg-primary justify-content-center">
-                        <i class="fe fe-upload-cloud fe-32 align-self-center text-white"></i>
-                      </div>
-                      <p>Carregar</p>
-                    </div>
-                  </div>
-                  <div class="row align-items-center">
-                    <div class="col-6 text-center">
-                      <div class="squircle bg-primary justify-content-center">
-                        <i class="fe fe-users fe-32 align-self-center text-white"></i>
-                      </div>
-                      <p>Usuários</p>
-                    </div>
-                    <div class="col-6 text-center">
-                      <div class="squircle bg-primary justify-content-center">
-                        <i class="fe fe-settings fe-32 align-self-center text-white"></i>
-                      </div>
-                      <p>Configurações</p>
-                    </div>
-                  </div>
-                </div>
-              </div>
-            </div>
-          </div>
-        </main> <!-- main -->
-      </div> <!-- .wrapper -->
-    <script src="js/jquery.min.js"></script>
-    <script src="js/popper.min.js"></script>
-    <script src="js/moment.min.js"></script>
-    <script src="js/bootstrap.min.js"></script>
-    <script src="js/simplebar.min.js"></script>
-    <script src='js/daterangepicker.js'></script>
-    <script src='js/jquery.stickOnScroll.js'></script>
-    <script src="js/tinycolor-min.js"></script>
-    <script src="js/config.js"></script>
-    <script src='js/jquery.dataTables.min.js'></script>
-    <script src='js/dataTables.bootstrap4.min.js'></script>
-    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha3/dist/js/bootstrap.bundle.min.js"></script>
-    <script>
-        $('#dataTable-1').DataTable({
-          autoWidth: true,
-          "lengthMenu": [
-            [16, 32, 64, -1],
-            [16, 32, 64, "Todos"]
-          ],
-          "language": {
-            "decimal": "",
-            "emptyTable": "Nenhum dado disponível na tabela",
-            "info": "Mostrando _START_ até _END_ de _TOTAL_ registros",
-            "infoEmpty": "Mostrando 0 até 0 de 0 registros",
-            "infoFiltered": "(filtrado de _MAX_ registros no total)",
-            "infoPostFix": "",
-            "thousands": ",",
-            "lengthMenu": "Mostrar _MENU_ registros",
-            "loadingRecords": "Carregando...",
-            "processing": "Processando...",
-            "search": "Pesquisar:",
-            "zeroRecords": "Nenhum registro correspondente encontrado",
-            "paginate": {
-              "first": "Primeiro",
-              "last": "Último",
-              "next": "Próximo",
-              "previous": "Anterior"
-            },
-            "aria": {
-              "sortAscending": ": ativar para ordenar a coluna de forma ascendente",
-              "sortDescending": ": ativar para ordenar a coluna de forma descendente"
-            }
-          }
-        });
-      </script>
-      
-    <script src="js/apps.js"></script>
-    <!-- Global site tag (gtag.js) - Google Analytics -->
-    <script async src="https://www.googletagmanager.com/gtag/js?id=UA-56159088-1"></script>
-    <script>
-      window.dataLayer = window.dataLayer || [];
-
-      function gtag()
-      {
-        dataLayer.push(arguments);
-      }
-      gtag('js', new Date());
-      gtag('config', 'UA-56159088-1');
-    </script>
-
-    <script>
-      // Função para calcular o % de Outros Custos
-      function calcularOutrosCustosPercentage() {
-        const custo = parseFloat(document.getElementById('productCost').value) || 0;
-        const outrosCustos = parseFloat(document.getElementById('productOtherCosts').value) || 0;
-
-        if (custo > 0) {
-          const percentual = (outrosCustos / custo) * 100;
-          document.getElementById('productOtherCostsPercentage').value = percentual.toFixed(2);
-        } else {
-          document.getElementById('productOtherCostsPercentage').value = 0;
+        </div>
+      </div>
+    </main> <!-- main -->
+  </div> <!-- .wrapper -->
+  <script src="js/jquery.min.js"></script>
+  <script src="js/popper.min.js"></script>
+  <script src="js/moment.min.js"></script>
+  <script src="js/bootstrap.min.js"></script>
+  <script src="js/simplebar.min.js"></script>
+  <script src='js/daterangepicker.js'></script>
+  <script src='js/jquery.stickOnScroll.js'></script>
+  <script src="js/tinycolor-min.js"></script>
+  <script src="js/config.js"></script>
+  <script src='js/jquery.dataTables.min.js'></script>
+  <script src='js/dataTables.bootstrap4.min.js'></script>
+  <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha3/dist/js/bootstrap.bundle.min.js"></script>
+  <script>
+    $('#dataTable-1').DataTable({
+      autoWidth: true,
+      "lengthMenu": [
+        [16, 32, 64, -1],
+        [16, 32, 64, "Todos"]
+      ],
+      "language": {
+        "decimal": "",
+        "emptyTable": "Nenhum dado disponível na tabela",
+        "info": "Mostrando _START_ até _END_ de _TOTAL_ registros",
+        "infoEmpty": "Mostrando 0 até 0 de 0 registros",
+        "infoFiltered": "(filtrado de _MAX_ registros no total)",
+        "infoPostFix": "",
+        "thousands": ",",
+        "lengthMenu": "Mostrar _MENU_ registros",
+        "loadingRecords": "Carregando...",
+        "processing": "Processando...",
+        "search": "Pesquisar:",
+        "zeroRecords": "Nenhum registro correspondente encontrado",
+        "paginate": {
+          "first": "Primeiro",
+          "last": "Último",
+          "next": "Próximo",
+          "previous": "Anterior"
+        },
+        "aria": {
+          "sortAscending": ": ativar para ordenar a coluna de forma ascendente",
+          "sortDescending": ": ativar para ordenar a coluna de forma descendente"
         }
       }
+    });
+  </script>
 
-      // Função para calcular a Margem Bruta
-      function calcularMargemBruta(custoFinal, precoVenda) {
-        return ((precoVenda - custoFinal) / precoVenda) * 100;
+  <script src="js/apps.js"></script>
+  <!-- Global site tag (gtag.js) - Google Analytics -->
+  <script async src="https://www.googletagmanager.com/gtag/js?id=UA-56159088-1"></script>
+  <script>
+    window.dataLayer = window.dataLayer || [];
+
+    function gtag() {
+      dataLayer.push(arguments);
+    }
+    gtag('js', new Date());
+    gtag('config', 'UA-56159088-1');
+  </script>
+
+  <script>
+    // Função para calcular o % de Outros Custos
+    function calcularOutrosCustosPercentage() {
+      const custo = parseFloat(document.getElementById('productCost').value) || 0;
+      const outrosCustos = parseFloat(document.getElementById('productOtherCosts').value) || 0;
+
+      if (custo > 0) {
+        const percentual = (outrosCustos / custo) * 100;
+        document.getElementById('productOtherCostsPercentage').value = percentual.toFixed(2);
+      } else {
+        document.getElementById('productOtherCostsPercentage').value = 0;
       }
+    }
 
-      // Função para calcular a Margem Líquida
-      function calcularMargemLiquida(custoFinal, precoVenda) {
-        // Exemplo simples: consideramos que o lucro líquido é baseado na margem bruta
-        const margemBruta = calcularMargemBruta(custoFinal, precoVenda);
-        return margemBruta * (custoFinal / precoVenda); // fórmula simplificada
+    // Função para calcular a Margem Bruta
+    function calcularMargemBruta(custoFinal, precoVenda) {
+      return ((precoVenda - custoFinal) / precoVenda) * 100;
+    }
+
+    // Função para calcular a Margem Líquida
+    function calcularMargemLiquida(custoFinal, precoVenda) {
+      // Exemplo simples: consideramos que o lucro líquido é baseado na margem bruta
+      const margemBruta = calcularMargemBruta(custoFinal, precoVenda);
+      return margemBruta * (custoFinal / precoVenda); // fórmula simplificada
+    }
+
+    // Função para calcular o Custo Final
+    function calcularCustoFinal() {
+      const custo = parseFloat(document.getElementById('productCost').value) || 0;
+      const outrosCustos = parseFloat(document.getElementById('productOtherCosts').value) || 0;
+
+      const custoFinal = custo + outrosCustos;
+
+      document.getElementById('productFinalCost').value = custoFinal.toFixed(2);
+
+      calcularOutrosCustosPercentage(); // Recalcula a porcentagem dos outros custos
+      calcularVarejo(); // Chama o cálculo do varejo após calcular o custo final
+    }
+
+    // Função para calcular o valor de varejo
+    function calcularVarejo() {
+      const custoFinal = parseFloat(document.getElementById('productFinalCost').value) || 0;
+      const margemBruta = parseFloat(document.getElementById('grossMargin').value) || 100;
+
+      // Calcula o valor de varejo com base na margem bruta
+      const valorVarejo = custoFinal * (1 + (margemBruta / 100));
+
+      document.getElementById('productRetailPrice').value = valorVarejo.toFixed(2);
+
+      // Limpa o valor de lucro e percentual quando o valor de venda for alterado
+      document.getElementById('productProfit').value = '';
+      document.getElementById('productProfitPercentage').value = '';
+
+      // Calcula as margens com base no valor de varejo
+      calcularMargens();
+      calcularLucro(); // Recalcula o lucro assim que o valor de varejo for alterado
+    }
+
+    // Função para recalcular as margens quando o valor de varejo for alterado
+    function calcularMargens() {
+      const custoFinal = parseFloat(document.getElementById('productFinalCost').value) || 0;
+      const valorVarejo = parseFloat(document.getElementById('productRetailPrice').value) || 0;
+
+      if (valorVarejo > 0 && custoFinal > 0) {
+        // Margem Bruta
+        const margemBruta = calcularMargemBruta(custoFinal, valorVarejo);
+        document.getElementById('grossMargin').value = margemBruta.toFixed(2);
+
+        // Margem Líquida
+        const margemLiquida = calcularMargemLiquida(custoFinal, valorVarejo);
+        document.getElementById('netMargin').value = margemLiquida.toFixed(2);
       }
+    }
 
-      // Função para calcular o Custo Final
-      function calcularCustoFinal() {
-        const custo = parseFloat(document.getElementById('productCost').value) || 0;
-        const outrosCustos = parseFloat(document.getElementById('productOtherCosts').value) || 0;
+    // Função para calcular o Lucro (R$ e %)
+    function calcularLucro() {
+      const custoFinal = parseFloat(document.getElementById('productFinalCost').value) || 0;
+      const valorVarejo = parseFloat(document.getElementById('productRetailPrice').value) || 0;
 
-        const custoFinal = custo + outrosCustos;
+      if (valorVarejo > 0 && custoFinal > 0) {
+        const lucro = valorVarejo - custoFinal;
+        const lucroPercentual = (lucro / custoFinal) * 100;
 
-        document.getElementById('productFinalCost').value = custoFinal.toFixed(2);
-
-        calcularOutrosCustosPercentage(); // Recalcula a porcentagem dos outros custos
-        calcularVarejo(); // Chama o cálculo do varejo após calcular o custo final
+        document.getElementById('productProfit').value = lucro.toFixed(2);
+        document.getElementById('productProfitPercentage').value = lucroPercentual.toFixed(2);
       }
+    }
 
-      // Função para calcular o valor de varejo
-      function calcularVarejo() {
-        const custoFinal = parseFloat(document.getElementById('productFinalCost').value) || 0;
-        const margemBruta = parseFloat(document.getElementById('grossMargin').value) || 100;
+    // Função para calcular a Custo Final
+    function calcularCustoFinal() {
+      const custo = parseFloat(document.getElementById('productCost').value) || 0;
+      const outrosCustos = parseFloat(document.getElementById('productOtherCosts').value) || 0;
 
-        // Calcula o valor de varejo com base na margem bruta
-        const valorVarejo = custoFinal * (1 + (margemBruta / 100));
+      const custoFinal = custo + outrosCustos;
 
-        document.getElementById('productRetailPrice').value = valorVarejo.toFixed(2);
+      document.getElementById('productFinalCost').value = custoFinal.toFixed(2);
 
-        // Limpa o valor de lucro e percentual quando o valor de venda for alterado
-        document.getElementById('productProfit').value = '';
-        document.getElementById('productProfitPercentage').value = '';
+      calcularOutrosCustosPercentage(); // Recalcula a porcentagem dos outros custos
+      calcularVarejo(); // Chama o cálculo do varejo após calcular o custo final
+    }
 
-        // Calcula as margens com base no valor de varejo
-        calcularMargens();
-        calcularLucro(); // Recalcula o lucro assim que o valor de varejo for alterado
+    // Função para calcular a % de outros custos
+    function calcularOutrosCustosPercentage() {
+      const custo = parseFloat(document.getElementById('productCost').value) || 0;
+      const outrosCustos = parseFloat(document.getElementById('productOtherCosts').value) || 0;
+
+      if (custo > 0) {
+        const percentual = (outrosCustos / custo) * 100;
+        document.getElementById('productOtherCostsPercentage').value = percentual.toFixed(2);
+      } else {
+        document.getElementById('productOtherCostsPercentage').value = '0.00';
       }
+    }
 
-      // Função para recalcular as margens quando o valor de varejo for alterado
-      function calcularMargens() {
-        const custoFinal = parseFloat(document.getElementById('productFinalCost').value) || 0;
-        const valorVarejo = parseFloat(document.getElementById('productRetailPrice').value) || 0;
+    // Chama as funções de cálculo logo após o carregamento inicial da página ou após o preenchimento do custo
+    window.onload = function () {
+      calcularCustoFinal(); // Garante que o custo final seja calculado e as margens sejam ajustadas.
+      calcularVarejo(); // Garante que o valor de varejo seja calculado com base nas margens e custo final
+      calcularLucro(); // Garante que o lucro seja calculado assim que o valor de varejo e custo final forem preenchidos
+    }
 
-        if (valorVarejo > 0 && custoFinal > 0) {
-          // Margem Bruta
-          const margemBruta = calcularMargemBruta(custoFinal, valorVarejo);
-          document.getElementById('grossMargin').value = margemBruta.toFixed(2);
+    // Função para calcular os resultados do estoque
+    function calcularResultadosEstoque() {
+      const deliveryTime = parseFloat(document.getElementById('deliveryTime').value) || 0;
+      const salesPeriod = parseFloat(document.getElementById('salesPeriod').value) || 0;
+      const productStock = parseFloat(document.getElementById('productStock').value) || 0;
 
-          // Margem Líquida
-          const margemLiquida = calcularMargemLiquida(custoFinal, valorVarejo);
-          document.getElementById('netMargin').value = margemLiquida.toFixed(2);
-        }
+      if (salesPeriod > 0) {
+        // Simulação de dados para o cálculo
+        const totalSold = Math.round(productStock / 2); // Exemplo: estoque atual dividido por 2
+        const dailySales = totalSold / salesPeriod;
+        const monthlySales = dailySales * 30;
+
+        // Cálculo de estoque mínimo e ideal
+        const minStock = dailySales * deliveryTime;
+        const idealStock = minStock + (dailySales * 7); // Uma semana extra de segurança
+
+        // Atualiza os campos
+        document.getElementById('soldQuantity').value = totalSold.toFixed(2);
+        document.getElementById('monthlySalesAvg').value = monthlySales.toFixed(2);
+        document.getElementById('dailySalesAvg').value = dailySales.toFixed(2);
+        document.getElementById('calculatedMinStock').value = minStock.toFixed(2);
+        document.getElementById('calculatedIdealStock').value = idealStock.toFixed(2);
+      } else {
+        alert('Por favor, insira um período de venda válido.');
       }
+    }
 
-      // Função para calcular o Lucro (R$ e %)
-      function calcularLucro() {
-        const custoFinal = parseFloat(document.getElementById('productFinalCost').value) || 0;
-        const valorVarejo = parseFloat(document.getElementById('productRetailPrice').value) || 0;
+    // Função para ajustar o estoque mínimo e ideal
+    function ajustarEstoque() {
+      const calculatedMinStock = parseFloat(document.getElementById('calculatedMinStock').value) || 0;
+      const calculatedIdealStock = parseFloat(document.getElementById('calculatedIdealStock').value) || 0;
 
-        if (valorVarejo > 0 && custoFinal > 0) {
-          const lucro = valorVarejo - custoFinal;
-          const lucroPercentual = (lucro / custoFinal) * 100;
+      document.getElementById('minStock').value = calculatedMinStock.toFixed(2);
+      document.getElementById('idealStock').value = calculatedIdealStock.toFixed(2);
+    }
+  </script>
+</body>
 
-          document.getElementById('productProfit').value = lucro.toFixed(2);
-          document.getElementById('productProfitPercentage').value = lucroPercentual.toFixed(2);
-        }
-      }
-
-      // Função para calcular a Custo Final
-      function calcularCustoFinal() {
-        const custo = parseFloat(document.getElementById('productCost').value) || 0;
-        const outrosCustos = parseFloat(document.getElementById('productOtherCosts').value) || 0;
-
-        const custoFinal = custo + outrosCustos;
-
-        document.getElementById('productFinalCost').value = custoFinal.toFixed(2);
-
-        calcularOutrosCustosPercentage(); // Recalcula a porcentagem dos outros custos
-        calcularVarejo(); // Chama o cálculo do varejo após calcular o custo final
-      }
-
-      // Função para calcular a % de outros custos
-      function calcularOutrosCustosPercentage() {
-        const custo = parseFloat(document.getElementById('productCost').value) || 0;
-        const outrosCustos = parseFloat(document.getElementById('productOtherCosts').value) || 0;
-
-        if (custo > 0) {
-          const percentual = (outrosCustos / custo) * 100;
-          document.getElementById('productOtherCostsPercentage').value = percentual.toFixed(2);
-        } else {
-          document.getElementById('productOtherCostsPercentage').value = '0.00';
-        }
-      }
-
-      // Chama as funções de cálculo logo após o carregamento inicial da página ou após o preenchimento do custo
-      window.onload = function() {
-        calcularCustoFinal(); // Garante que o custo final seja calculado e as margens sejam ajustadas.
-        calcularVarejo(); // Garante que o valor de varejo seja calculado com base nas margens e custo final
-        calcularLucro(); // Garante que o lucro seja calculado assim que o valor de varejo e custo final forem preenchidos
-      }
-
-      // Função para calcular os resultados do estoque
-      function calcularResultadosEstoque() {
-        const deliveryTime = parseFloat(document.getElementById('deliveryTime').value) || 0;
-        const salesPeriod = parseFloat(document.getElementById('salesPeriod').value) || 0;
-        const productStock = parseFloat(document.getElementById('productStock').value) || 0;
-
-        if (salesPeriod > 0) {
-          // Simulação de dados para o cálculo
-          const totalSold = Math.round(productStock / 2); // Exemplo: estoque atual dividido por 2
-          const dailySales = totalSold / salesPeriod;
-          const monthlySales = dailySales * 30;
-
-          // Cálculo de estoque mínimo e ideal
-          const minStock = dailySales * deliveryTime;
-          const idealStock = minStock + (dailySales * 7); // Uma semana extra de segurança
-
-          // Atualiza os campos
-          document.getElementById('soldQuantity').value = totalSold.toFixed(2);
-          document.getElementById('monthlySalesAvg').value = monthlySales.toFixed(2);
-          document.getElementById('dailySalesAvg').value = dailySales.toFixed(2);
-          document.getElementById('calculatedMinStock').value = minStock.toFixed(2);
-          document.getElementById('calculatedIdealStock').value = idealStock.toFixed(2);
-        } else {
-          alert('Por favor, insira um período de venda válido.');
-        }
-      }
-
-      // Função para ajustar o estoque mínimo e ideal
-      function ajustarEstoque() {
-        const calculatedMinStock = parseFloat(document.getElementById('calculatedMinStock').value) || 0;
-        const calculatedIdealStock = parseFloat(document.getElementById('calculatedIdealStock').value) || 0;
-
-        document.getElementById('minStock').value = calculatedMinStock.toFixed(2);
-        document.getElementById('idealStock').value = calculatedIdealStock.toFixed(2);
-      }
-    </script>
-  </body>
 </html>

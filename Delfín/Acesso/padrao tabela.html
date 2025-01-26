@@ -89,7 +89,8 @@
                     <span class="ml-1">Lançamentos</span>
                   </a>
                   <ul class="dropdown-menu" aria-labelledby="lancamentosDropdown">
-                    <a class="nav-link pl-lg-2" href="contas-a-receber.html"><span class="ml-1">Contas a Receber</span></a>
+                    <a class="nav-link pl-lg-2" href="contas-a-receber.html"><span class="ml-1">Contas a
+                        Receber</span></a>
                     <a class="nav-link pl-lg-2" href="#"><span class="ml-1">Contas a Pagar</span></a>
                     <a class="nav-link pl-lg-2" href="#"><span class="ml-1">Renegociação</span></a>
                     <a class="nav-link pl-lg-2" href="#"><span class="ml-1">Avulso</span></a>
@@ -827,6 +828,7 @@
                         </tr>
                       </tbody>
                     </table>
+
                   </div>
                 </div>
               </div> <!-- simple table -->
@@ -1021,163 +1023,6 @@
     gtag('config', 'UA-56159088-1');
   </script>
 
-  <script>
-    // Função para calcular o % de Outros Custos
-    function calcularOutrosCustosPercentage() {
-      const custo = parseFloat(document.getElementById('productCost').value) || 0;
-      const outrosCustos = parseFloat(document.getElementById('productOtherCosts').value) || 0;
-
-      if (custo > 0) {
-        const percentual = (outrosCustos / custo) * 100;
-        document.getElementById('productOtherCostsPercentage').value = percentual.toFixed(2);
-      } else {
-        document.getElementById('productOtherCostsPercentage').value = 0;
-      }
-    }
-
-    // Função para calcular a Margem Bruta
-    function calcularMargemBruta(custoFinal, precoVenda) {
-      return ((precoVenda - custoFinal) / precoVenda) * 100;
-    }
-
-    // Função para calcular a Margem Líquida
-    function calcularMargemLiquida(custoFinal, precoVenda) {
-      // Exemplo simples: consideramos que o lucro líquido é baseado na margem bruta
-      const margemBruta = calcularMargemBruta(custoFinal, precoVenda);
-      return margemBruta * (custoFinal / precoVenda); // fórmula simplificada
-    }
-
-    // Função para calcular o Custo Final
-    function calcularCustoFinal() {
-      const custo = parseFloat(document.getElementById('productCost').value) || 0;
-      const outrosCustos = parseFloat(document.getElementById('productOtherCosts').value) || 0;
-
-      const custoFinal = custo + outrosCustos;
-
-      document.getElementById('productFinalCost').value = custoFinal.toFixed(2);
-
-      calcularOutrosCustosPercentage(); // Recalcula a porcentagem dos outros custos
-      calcularVarejo(); // Chama o cálculo do varejo após calcular o custo final
-    }
-
-    // Função para calcular o valor de varejo
-    function calcularVarejo() {
-      const custoFinal = parseFloat(document.getElementById('productFinalCost').value) || 0;
-      const margemBruta = parseFloat(document.getElementById('grossMargin').value) || 100;
-
-      // Calcula o valor de varejo com base na margem bruta
-      const valorVarejo = custoFinal * (1 + (margemBruta / 100));
-
-      document.getElementById('productRetailPrice').value = valorVarejo.toFixed(2);
-
-      // Limpa o valor de lucro e percentual quando o valor de venda for alterado
-      document.getElementById('productProfit').value = '';
-      document.getElementById('productProfitPercentage').value = '';
-
-      // Calcula as margens com base no valor de varejo
-      calcularMargens();
-      calcularLucro(); // Recalcula o lucro assim que o valor de varejo for alterado
-    }
-
-    // Função para recalcular as margens quando o valor de varejo for alterado
-    function calcularMargens() {
-      const custoFinal = parseFloat(document.getElementById('productFinalCost').value) || 0;
-      const valorVarejo = parseFloat(document.getElementById('productRetailPrice').value) || 0;
-
-      if (valorVarejo > 0 && custoFinal > 0) {
-        // Margem Bruta
-        const margemBruta = calcularMargemBruta(custoFinal, valorVarejo);
-        document.getElementById('grossMargin').value = margemBruta.toFixed(2);
-
-        // Margem Líquida
-        const margemLiquida = calcularMargemLiquida(custoFinal, valorVarejo);
-        document.getElementById('netMargin').value = margemLiquida.toFixed(2);
-      }
-    }
-
-    // Função para calcular o Lucro (R$ e %)
-    function calcularLucro() {
-      const custoFinal = parseFloat(document.getElementById('productFinalCost').value) || 0;
-      const valorVarejo = parseFloat(document.getElementById('productRetailPrice').value) || 0;
-
-      if (valorVarejo > 0 && custoFinal > 0) {
-        const lucro = valorVarejo - custoFinal;
-        const lucroPercentual = (lucro / custoFinal) * 100;
-
-        document.getElementById('productProfit').value = lucro.toFixed(2);
-        document.getElementById('productProfitPercentage').value = lucroPercentual.toFixed(2);
-      }
-    }
-
-    // Função para calcular a Custo Final
-    function calcularCustoFinal() {
-      const custo = parseFloat(document.getElementById('productCost').value) || 0;
-      const outrosCustos = parseFloat(document.getElementById('productOtherCosts').value) || 0;
-
-      const custoFinal = custo + outrosCustos;
-
-      document.getElementById('productFinalCost').value = custoFinal.toFixed(2);
-
-      calcularOutrosCustosPercentage(); // Recalcula a porcentagem dos outros custos
-      calcularVarejo(); // Chama o cálculo do varejo após calcular o custo final
-    }
-
-    // Função para calcular a % de outros custos
-    function calcularOutrosCustosPercentage() {
-      const custo = parseFloat(document.getElementById('productCost').value) || 0;
-      const outrosCustos = parseFloat(document.getElementById('productOtherCosts').value) || 0;
-
-      if (custo > 0) {
-        const percentual = (outrosCustos / custo) * 100;
-        document.getElementById('productOtherCostsPercentage').value = percentual.toFixed(2);
-      } else {
-        document.getElementById('productOtherCostsPercentage').value = '0.00';
-      }
-    }
-
-    // Chama as funções de cálculo logo após o carregamento inicial da página ou após o preenchimento do custo
-    window.onload = function () {
-      calcularCustoFinal(); // Garante que o custo final seja calculado e as margens sejam ajustadas.
-      calcularVarejo(); // Garante que o valor de varejo seja calculado com base nas margens e custo final
-      calcularLucro(); // Garante que o lucro seja calculado assim que o valor de varejo e custo final forem preenchidos
-    }
-
-    // Função para calcular os resultados do estoque
-    function calcularResultadosEstoque() {
-      const deliveryTime = parseFloat(document.getElementById('deliveryTime').value) || 0;
-      const salesPeriod = parseFloat(document.getElementById('salesPeriod').value) || 0;
-      const productStock = parseFloat(document.getElementById('productStock').value) || 0;
-
-      if (salesPeriod > 0) {
-        // Simulação de dados para o cálculo
-        const totalSold = Math.round(productStock / 2); // Exemplo: estoque atual dividido por 2
-        const dailySales = totalSold / salesPeriod;
-        const monthlySales = dailySales * 30;
-
-        // Cálculo de estoque mínimo e ideal
-        const minStock = dailySales * deliveryTime;
-        const idealStock = minStock + (dailySales * 7); // Uma semana extra de segurança
-
-        // Atualiza os campos
-        document.getElementById('soldQuantity').value = totalSold.toFixed(2);
-        document.getElementById('monthlySalesAvg').value = monthlySales.toFixed(2);
-        document.getElementById('dailySalesAvg').value = dailySales.toFixed(2);
-        document.getElementById('calculatedMinStock').value = minStock.toFixed(2);
-        document.getElementById('calculatedIdealStock').value = idealStock.toFixed(2);
-      } else {
-        alert('Por favor, insira um período de venda válido.');
-      }
-    }
-
-    // Função para ajustar o estoque mínimo e ideal
-    function ajustarEstoque() {
-      const calculatedMinStock = parseFloat(document.getElementById('calculatedMinStock').value) || 0;
-      const calculatedIdealStock = parseFloat(document.getElementById('calculatedIdealStock').value) || 0;
-
-      document.getElementById('minStock').value = calculatedMinStock.toFixed(2);
-      document.getElementById('idealStock').value = calculatedIdealStock.toFixed(2);
-    }
-  </script>
 </body>
 
 </html>

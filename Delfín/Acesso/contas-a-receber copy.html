@@ -7,7 +7,7 @@
   <meta name="description" content="">
   <meta name="author" content="">
   <link rel="icon" href="favicon.ico">
-  <title>Tiny Dashboard - A Bootstrap Dashboard Template</title>
+  <title>Faccho Dashboard - Análise Geral</title>
   <!-- Simple bar CSS -->
   <link rel="stylesheet" href="css/simplebar.css">
   <!-- Fonts CSS -->
@@ -16,15 +16,17 @@
     rel="stylesheet">
   <!-- Icons CSS -->
   <link rel="stylesheet" href="css/feather.css">
-  <link rel="stylesheet" href="css/dataTables.bootstrap4.css">
+  <link rel="stylesheet" href="css/select2.css">
+  <link rel="stylesheet" href="css/dropzone.css">
+  <link rel="stylesheet" href="css/uppy.min.css">
+  <link rel="stylesheet" href="css/jquery.steps.css">
+  <link rel="stylesheet" href="css/jquery.timepicker.css">
+  <link rel="stylesheet" href="css/quill.snow.css">
   <!-- Date Range Picker CSS -->
   <link rel="stylesheet" href="css/daterangepicker.css">
   <!-- App CSS -->
   <link rel="stylesheet" href="css/app-light.css" id="lightTheme">
   <link rel="stylesheet" href="css/app-dark.css" id="darkTheme" disabled>
-  <link href="https://cdn.jsdelivr.net/npm/bootstrap-icons/font/bootstrap-icons.css" rel="stylesheet">
-  <!-- Bootstrap CSS -->
-  <link rel="stylesheet" href="css/modal.css">
 </head>
 
 <body class="horizontal light  ">
@@ -89,7 +91,8 @@
                     <span class="ml-1">Lançamentos</span>
                   </a>
                   <ul class="dropdown-menu" aria-labelledby="lancamentosDropdown">
-                    <a class="nav-link pl-lg-2" href="contas-a-receber.html"><span class="ml-1">Contas a Receber</span></a>
+                    <a class="nav-link pl-lg-2" href="contas-a-receber.html"><span class="ml-1">Contas a
+                        Receber</span></a>
                     <a class="nav-link pl-lg-2" href="#"><span class="ml-1">Contas a Pagar</span></a>
                     <a class="nav-link pl-lg-2" href="#"><span class="ml-1">Renegociação</span></a>
                     <a class="nav-link pl-lg-2" href="#"><span class="ml-1">Avulso</span></a>
@@ -739,108 +742,276 @@
       <div class="container-fluid">
         <div class="row justify-content-center">
           <div class="col-12">
-            <h2 class="mb-2 page-title">Listagem de Produtos</h2>
-            <p class="card-text">Bem-vindo à tela de Cadastro de Produto! Aqui você poderá registrar todos os itens
-              disponíveis para venda ou gestão no sistema. Preencha as informações de forma clara e detalhada para
-              garantir que o produto seja corretamente registrado, gerenciado e que esteja disponível para venda ou
-              controle de estoque.</p>
-            <!-- Botão para adicionar -->
-            <button type="button" class="btn btn-primary" data-toggle="modal" data-target="#addProductModal"
-              data-whatever="@mdo">Adicionar Produto</button>
-            <div class="row my-4">
-              <!-- Small table -->
-              <div class="col-md-12">
-                <div class="card shadow">
-                  <div class="card-body">
-                    <!-- table -->
-                    <table class="table datatables" id="dataTable-1">
-                      <thead>
-                        <tr>
-                          <!-- <th></th> -->
-                          <th>Código</th>
-                          <th>Referência</th>
-                          <th>Código de Barras</th>
-                          <th>Descrição</th>
-                          <th>Unidade</th>
-                          <th>Estoque</th>
-                          <th>Custo</th>
-                          <th>Venda</th>
-                          <th>Fabricante</th>
-                          <th>Status</th>
-                          <th>Ações</th>
-                        </tr>
-                      </thead>
-                      <tbody>
-                        <tr>
-                          <!-- <td>
-                              <div class="custom-control custom-checkbox">
-                                <input type="checkbox" class="custom-control-input">
-                                <label class="custom-control-label"></label>
-                              </div>
-                            </td> -->
-                          <td>368</td>
-                          <td>1</td>
-                          <td>8949461894984</td>
-                          <td>Produto Teste 1</td>
-                          <td>UN</td>
-                          <td>0</td>
-                          <td>R$ 12,99</td>
-                          <td>R$ 29,99</td>
-                          <td>Fabricante Teste 1</td>
-                          <td>Ativo</td>
-                          <td><button class="btn btn-sm dropdown-toggle more-horizontal" type="button"
-                              data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
-                              <span class="text-muted sr-only">Action</span>
-                            </button>
-                            <div class="dropdown-menu dropdown-menu-right">
-                              <a class="dropdown-item" href="#">Editar</a>
-                              <a class="dropdown-item" href="#">Remover</a>
-                            </div>
-                          </td>
-                        </tr>
-                        <tr>
-                          <!-- <td>
-                              <div class="custom-control custom-checkbox">
-                                <input type="checkbox" class="custom-control-input">
-                                <label class="custom-control-label"></label>
-                              </div>
-                            </td> -->
-                          <td>427</td>
-                          <td>1</td>
-                          <td>6548964631668</td>
-                          <td>Produto Teste 1</td>
-                          <td>UN</td>
-                          <td>1</td>
-                          <td>R$ 49,99</td>
-                          <td>R$ 99,99</td>
-                          <td>Fabricante Teste 2</td>
-                          <td>Ativo</td>
-                          <td><button class="btn btn-sm dropdown-toggle more-horizontal" type="button"
-                              data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
-                              <span class="text-muted sr-only">Action</span>
-                            </button>
-                            <div class="dropdown-menu dropdown-menu-right">
-                              <a class="dropdown-item" href="#">Editar</a>
-                              <a class="dropdown-item" href="#">Remover</a>
-                            </div>
-                          </td>
-                        </tr>
-                      </tbody>
-                    </table>
+            <h2 class="h3 mb-3 page-title">Pedidos</h2>
+            <div class="row mb-4 items-align-center">
+              <div class="col-md">
+                <ul class="nav nav-pills justify-content-start">
+                  <li class="nav-item">
+                    <a class="nav-link active bg-transparent pr-2 pl-0 text-primary" href="#">Todos <span
+                        class="badge badge-pill bg-primary text-white ml-2">164</span></a>
+                  </li>
+                  <li class="nav-item">
+                    <a class="nav-link text-muted px-2" href="#">Pendente <span
+                        class="badge badge-pill bg-white border text-muted ml-2">64</span></a>
+                  </li>
+                  <li class="nav-item">
+                    <a class="nav-link text-muted px-2" href="#">Processamento <span
+                        class="badge badge-pill bg-white border text-muted ml-2">48</span></a>
+                  </li>
+                  <li class="nav-item">
+                    <a class="nav-link text-muted px-2" href="#">Concluído <span
+                        class="badge badge-pill bg-white border text-muted ml-2">52</span></a>
+                  </li>
+                </ul>
+              </div>
+              <div class="col-md-auto ml-auto text-right">
+                <span class="small bg-white border py-1 px-2 rounded mr-2 d-none d-lg-inline">
+                  <a href="#" class="text-muted"><i class="fe fe-x mx-1"></i></a>
+                  <span class="text-muted">Status : <strong>Pendente</strong></span>
+                </span>
+                <span class="small bg-white border py-1 px-2 rounded mr-2 d-none d-lg-inline">
+                  <a href="#" class="text-muted"><i class="fe fe-x mx-1"></i></a>
+                  <span class="text-muted">14 de abril de 2020 - 13 de maio de 2020</span>
+                </span>
+                <button type="button" class="btn" data-toggle="modal" data-target=".modal-slide"><span
+                    class="fe fe-filter fe-16 text-muted"></span></button>
+                <button type="button" class="btn"><span class="fe fe-refresh-ccw fe-16 text-muted"></span></button>
+              </div>
+            </div>
+            <!-- Slide Modal -->
+            <div class="modal fade modal-slide" tabindex="-1" role="dialog" aria-labelledby="defaultModalLabel"
+              aria-hidden="true">
+              <div class="modal-dialog" role="document">
+                <div class="modal-content">
+                  <div class="modal-header">
+                    <h5 class="modal-title" id="defaultModalLabel">Filtros</h5>
+                    <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                      <i class="fe fe-x fe-12"></i>
+                    </button>
+                  </div>
+                  <div class="modal-body">
+                    <div class="p-2">
+                      <div class="form-group my-4">
+                        <p class="mb-2"><strong>Filtrar por Tipo de Parcela</strong></p>
+                        <label for="multi-select2" class="sr-only"></label>
+                        <select class="form-control select2-multi" id="multi-select2">
+                          <option value="vencida">Vencida</option>
+                          <option value="avencer">A Vencer</option>
+                          <option value="quitada">Quitada</option>
+                          <option value="todas">Todas</option>
+                        </select>
+                      </div> <!-- form-group -->
+
+                      <!--<div class="form-group my-4">
+                          <p class="mb-2"><strong>Regions</strong></p>
+                          <label for="multi-select2" class="sr-only"></label>
+                          <select class="form-control select2-multi" id="multi-select2">
+                            <optgroup label="Mountain Time Zone">
+                              <option value="AZ">Arizona</option>
+                              <option value="CO">Colorado</option>
+                              <option value="ID">Idaho</option>
+                              <option value="MT">Montana</option>
+                              <option value="NE">Nebraska</option>
+                              <option value="NM">New Mexico</option>
+                              <option value="ND">North Dakota</option>
+                              <option value="UT">Utah</option>
+                              <option value="WY">Wyoming</option>
+                            </optgroup>
+                            <optgroup label="Central Time Zone">
+                              <option value="AL">Alabama</option>
+                              <option value="AR">Arkansas</option>
+                              <option value="IL">Illinois</option>
+                              <option value="IA">Iowa</option>
+                              <option value="KS">Kansas</option>
+                              <option value="KY">Kentucky</option>
+                              <option value="LA">Louisiana</option>
+                              <option value="MN">Minnesota</option>
+                              <option value="MS">Mississippi</option>
+                              <option value="MO">Missouri</option>
+                              <option value="OK">Oklahoma</option>
+                              <option value="SD">South Dakota</option>
+                              <option value="TX">Texas</option>
+                              <option value="TN">Tennessee</option>
+                              <option value="WI">Wisconsin</option>
+                            </optgroup>
+                          </select>
+                        </div> --> <!-- form-group -->
+                      <div class="form-group my-4">
+                        <p class="mb-2">
+                          <strong>Pagamento</strong>
+                        </p>
+                        <div class="custom-control custom-checkbox">
+                          <input type="checkbox" class="custom-control-input" id="customCheck1">
+                          <label class="custom-control-label" for="customCheck1">Paypal</label>
+                        </div>
+                        <div class="custom-control custom-checkbox">
+                          <input type="checkbox" class="custom-control-input" id="customCheck2">
+                          <label class="custom-control-label" for="customCheck2">Cartão de crédito</label>
+                        </div>
+                        <div class="custom-control custom-checkbox">
+                          <input type="checkbox" class="custom-control-input" id="customCheck1-1" checked>
+                          <label class="custom-control-label" for="customCheck1">Transferência bancária</label>
+                        </div>
+                      </div> <!-- form-group -->
+                      <div class="form-group my-4">
+                        <p class="mb-2">
+                          <strong>Tipos</strong>
+                        </p>
+                        <div class="custom-control custom-radio">
+                          <input type="radio" id="customRadio1" name="customRadio" class="custom-control-input">
+                          <label class="custom-control-label" for="customRadio1">Usuários finais</label>
+                        </div>
+                        <div class="custom-control custom-radio">
+                          <input type="radio" id="customRadio2" name="customRadio" class="custom-control-input" checked>
+                          <label class="custom-control-label" for="customRadio2">Vendas por atacado</label>
+                        </div>
+                      </div> <!-- form-group -->
+                      <div class="form-group my-4">
+                        <p class="mb-2">
+                          <strong>Concluído</strong>
+                        </p>
+                        <div class="custom-control custom-switch">
+                          <input type="checkbox" class="custom-control-input" id="customSwitch1">
+                          <label class="custom-control-label" for="customSwitch1">Incluir</label>
+                        </div>
+                      </div> <!-- form-group -->
+                    </div>
+                  </div>
+                  <div class="modal-footer">
+                    <button type="button" class="btn mb-2 btn-primary btn-block">Aplicar</button>
+                    <button type="button" class="btn mb-2 btn-secondary btn-block">Resetar</button>
                   </div>
                 </div>
-              </div> <!-- simple table -->
-            </div> <!-- end section -->
-          </div> <!-- .col-12 -->
+              </div>
+            </div>
+            <table class="table border table-hover bg-white">
+              <thead>
+                <tr role="row">
+                  <th>
+                    <div class="custom-control custom-checkbox">
+                      <input type="checkbox" class="custom-control-input" id="all">
+                      <label class="custom-control-label" for="all"></label>
+                    </div>
+                  </th>
+                  <th>Sequência</th>
+                  <th>Data de Emissão</th>
+                  <th>Nome</th>
+                  <th>Telefone</th>
+                  <th>Vencimento</th>
+                  <th>Total</th>
+                  <th>Pagamento</th>
+                  <th>Status</th>
+                  <th>Ação</th>
+                </tr>
+              </thead>
+              <tbody>
+                <tr>
+                  <td class="align-center">
+                    <div class="custom-control custom-checkbox">
+                      <input type="checkbox" class="custom-control-input">
+                      <label class="custom-control-label"></label>
+                    </div>
+                  </td>
+                  <td>1331</td>
+                  <td>26-12-2020 01:32:21</td>
+                  <td>Kasimir Lindsey</td>
+                  <td>(85) 92061-0374</td>
+                  <td>01/01/2000</td>
+                  <td>R$ 3,64</td>
+                  <td> Paypal</td>
+                  <td><span class="dot dot-lg bg-success mr-2"></span></td>
+                  <td>
+                    <div class="dropdown">
+                      <button class="btn btn-sm dropdown-toggle more-vertical" type="button" data-toggle="dropdown"
+                        aria-haspopup="true" aria-expanded="false">
+                        <span class="text-muted sr-only">Action</span>
+                      </button>
+                      <div class="dropdown-menu dropdown-menu-right">
+                        <a class="dropdown-item" href="#">Editar</a>
+                        <a class="dropdown-item" href="#">Remover</a>
+                        <a class="dropdown-item" href="#">Atribuir</a>
+                      </div>
+                    </div>
+                  </td>
+                </tr>
+                <tr>
+                  <td class="align-center">
+                    <div class="custom-control custom-checkbox">
+                      <input type="checkbox" class="custom-control-input">
+                      <label class="custom-control-label"></label>
+                    </div>
+                  </td>
+                  <td>1156</td>
+                  <td>21-04-2020 00:38:38</td>
+                  <td>Melinda Levy</td>
+                  <td>(34) 93770-2859</td>
+                  <td>01/01/1900</td>
+                  <td>R$ 4,18</td>
+                  <td> Paypal</td>
+                  <td><span class="dot dot-lg bg-warning mr-2"></span></td>
+                  <td>
+                    <div class="dropdown">
+                      <button class="btn btn-sm dropdown-toggle more-vertical" type="button" data-toggle="dropdown"
+                        aria-haspopup="true" aria-expanded="false">
+                        <span class="text-muted sr-only">Action</span>
+                      </button>
+                      <div class="dropdown-menu dropdown-menu-right">
+                        <a class="dropdown-item" href="#">Editar</a>
+                        <a class="dropdown-item" href="#">Remover</a>
+                        <a class="dropdown-item" href="#">Atribuir</a>
+                      </div>
+                    </div>
+                  </td>
+                </tr>
+                <tr>
+                  <td>
+                    <div class="custom-control custom-checkbox">
+                      <input type="checkbox" class="custom-control-input">
+                      <label class="custom-control-label"></label>
+                    </div>
+                  </td>
+                  <td>1038</td>
+                  <td>25-06-2019 19:13:36</td>
+                  <td>Aubrey Sweeney</td>
+                  <td>(92) 92679-3951</td>
+                  <td>12/12/2012</td>
+                  <td>R$ 4,98</td>
+                  <td>Cartão de crédito </td>
+                  <td><span class="dot dot-lg bg-primary mr-2"></span></td>
+                  <td>
+                    <div class="dropdown">
+                      <button class="btn btn-sm dropdown-toggle more-vertical" type="button" data-toggle="dropdown"
+                        aria-haspopup="true" aria-expanded="false">
+                        <span class="text-muted sr-only">Action</span>
+                      </button>
+                      <div class="dropdown-menu dropdown-menu-right">
+                        <a class="dropdown-item" href="#">Editar</a>
+                        <a class="dropdown-item" href="#">Remover</a>
+                        <a class="dropdown-item" href="#">Atribuir</a>
+                      </div>
+                    </div>
+                  </td>
+                </tr>
+              </tbody>
+            </table>
+            <nav aria-label="Table Paging" class="my-3">
+              <ul class="pagination justify-content-end mb-0">
+                <li class="page-item"><a class="page-link" href="#">Previous</a></li>
+                <li class="page-item active"><a class="page-link" href="#">1</a></li>
+                <li class="page-item"><a class="page-link" href="#">2</a></li>
+                <li class="page-item"><a class="page-link" href="#">3</a></li>
+                <li class="page-item"><a class="page-link" href="#">Next</a></li>
+              </ul>
+            </nav>
+          </div>
         </div> <!-- .row -->
       </div> <!-- .container-fluid -->
-
       <div class="modal fade modal-notif modal-slide" tabindex="-1" role="dialog" aria-labelledby="defaultModalLabel"
         aria-hidden="true">
         <div class="modal-dialog modal-sm" role="document">
           <div class="modal-content">
             <div class="modal-header">
-              <h5 class="modal-title" id="defaultModalLabel">Notificações</h5>
+              <h5 class="modal-title" id="defaultModalLabel">Notifications</h5>
               <button type="button" class="close" data-dismiss="modal" aria-label="Close">
                 <span aria-hidden="true">&times;</span>
               </button>
@@ -853,9 +1024,9 @@
                       <span class="fe fe-box fe-24"></span>
                     </div>
                     <div class="col">
-                      <small><strong>O pacote foi carregado com sucesso</strong></small>
-                      <div class="my-0 text-muted small">O pacote é compactado e carregado</div>
-                      <small class="badge badge-pill badge-light text-muted">1 minutos atrás</small>
+                      <small><strong>Package has uploaded successfull</strong></small>
+                      <div class="my-0 text-muted small">Package is zipped and uploaded</div>
+                      <small class="badge badge-pill badge-light text-muted">1m ago</small>
                     </div>
                   </div>
                 </div>
@@ -865,9 +1036,9 @@
                       <span class="fe fe-download fe-24"></span>
                     </div>
                     <div class="col">
-                      <small><strong>Os widgets foram atualizados com sucesso</strong></small>
-                      <div class="my-0 text-muted small">Basta criar um novo layout Índice, formulário, tabela</div>
-                      <small class="badge badge-pill badge-light text-muted">2 minutos atrás</small>
+                      <small><strong>Widgets are updated successfull</strong></small>
+                      <div class="my-0 text-muted small">Just create new layout Index, form, table</div>
+                      <small class="badge badge-pill badge-light text-muted">2m ago</small>
                     </div>
                   </div>
                 </div>
@@ -877,9 +1048,9 @@
                       <span class="fe fe-inbox fe-24"></span>
                     </div>
                     <div class="col">
-                      <small><strong>Notificações foram enviadas</strong></small>
+                      <small><strong>Notifications have been sent</strong></small>
                       <div class="my-0 text-muted small">Fusce dapibus, tellus ac cursus commodo</div>
-                      <small class="badge badge-pill badge-light text-muted">30 minutos atrás</small>
+                      <small class="badge badge-pill badge-light text-muted">30m ago</small>
                     </div>
                   </div> <!-- / .row -->
                 </div>
@@ -889,16 +1060,16 @@
                       <span class="fe fe-link fe-24"></span>
                     </div>
                     <div class="col">
-                      <small><strong>O link foi anexado ao menu</strong></small>
-                      <div class="my-0 text-muted small">Novo layout foi anexado ao menu</div>
-                      <small class="badge badge-pill badge-light text-muted">1 hora atrás</small>
+                      <small><strong>Link was attached to menu</strong></small>
+                      <div class="my-0 text-muted small">New layout has been attached to the menu</div>
+                      <small class="badge badge-pill badge-light text-muted">1h ago</small>
                     </div>
                   </div>
                 </div> <!-- / .row -->
               </div> <!-- / .list-group -->
             </div>
             <div class="modal-footer">
-              <button type="button" class="btn btn-secondary btn-block" data-dismiss="modal">Limpar tudo</button>
+              <button type="button" class="btn btn-secondary btn-block" data-dismiss="modal">Clear All</button>
             </div>
           </div>
         </div>
@@ -908,7 +1079,7 @@
         <div class="modal-dialog" role="document">
           <div class="modal-content">
             <div class="modal-header">
-              <h5 class="modal-title" id="defaultModalLabel">Atalhos</h5>
+              <h5 class="modal-title" id="defaultModalLabel">Shortcuts</h5>
               <button type="button" class="close" data-dismiss="modal" aria-label="Close">
                 <span aria-hidden="true">&times;</span>
               </button>
@@ -919,13 +1090,13 @@
                   <div class="squircle bg-success justify-content-center">
                     <i class="fe fe-cpu fe-32 align-self-center text-white"></i>
                   </div>
-                  <p>Área de controle</p>
+                  <p>Control area</p>
                 </div>
                 <div class="col-6 text-center">
                   <div class="squircle bg-primary justify-content-center">
                     <i class="fe fe-activity fe-32 align-self-center text-white"></i>
                   </div>
-                  <p>Atividade</p>
+                  <p>Activity</p>
                 </div>
               </div>
               <div class="row align-items-center">
@@ -939,7 +1110,7 @@
                   <div class="squircle bg-primary justify-content-center">
                     <i class="fe fe-upload-cloud fe-32 align-self-center text-white"></i>
                   </div>
-                  <p>Carregar</p>
+                  <p>Upload</p>
                 </div>
               </div>
               <div class="row align-items-center">
@@ -947,13 +1118,13 @@
                   <div class="squircle bg-primary justify-content-center">
                     <i class="fe fe-users fe-32 align-self-center text-white"></i>
                   </div>
-                  <p>Usuários</p>
+                  <p>Users</p>
                 </div>
                 <div class="col-6 text-center">
                   <div class="squircle bg-primary justify-content-center">
                     <i class="fe fe-settings fe-32 align-self-center text-white"></i>
                   </div>
-                  <p>Configurações</p>
+                  <p>Settings</p>
                 </div>
               </div>
             </div>
@@ -971,43 +1142,222 @@
   <script src='js/jquery.stickOnScroll.js'></script>
   <script src="js/tinycolor-min.js"></script>
   <script src="js/config.js"></script>
-  <script src='js/jquery.dataTables.min.js'></script>
-  <script src='js/dataTables.bootstrap4.min.js'></script>
-  <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha3/dist/js/bootstrap.bundle.min.js"></script>
+  <script src="js/d3.min.js"></script>
+  <script src="js/topojson.min.js"></script>
+  <script src="js/datamaps.all.min.js"></script>
+  <script src="js/datamaps-zoomto.js"></script>
+  <script src="js/datamaps.custom.js"></script>
+  <script src="js/Chart.min.js"></script>
   <script>
-    $('#dataTable-1').DataTable({
-      autoWidth: true,
-      "lengthMenu": [
-        [16, 32, 64, -1],
-        [16, 32, 64, "Todos"]
-      ],
-      "language": {
-        "decimal": "",
-        "emptyTable": "Nenhum dado disponível na tabela",
-        "info": "Mostrando _START_ até _END_ de _TOTAL_ registros",
-        "infoEmpty": "Mostrando 0 até 0 de 0 registros",
-        "infoFiltered": "(filtrado de _MAX_ registros no total)",
-        "infoPostFix": "",
-        "thousands": ",",
-        "lengthMenu": "Mostrar _MENU_ registros",
-        "loadingRecords": "Carregando...",
-        "processing": "Processando...",
-        "search": "Pesquisar:",
-        "zeroRecords": "Nenhum registro correspondente encontrado",
-        "paginate": {
-          "first": "Primeiro",
-          "last": "Último",
-          "next": "Próximo",
-          "previous": "Anterior"
-        },
-        "aria": {
-          "sortAscending": ": ativar para ordenar a coluna de forma ascendente",
-          "sortDescending": ": ativar para ordenar a coluna de forma descendente"
-        }
-      }
-    });
+    /* defind global options */
+    Chart.defaults.global.defaultFontFamily = base.defaultFontFamily;
+    Chart.defaults.global.defaultFontColor = colors.mutedColor;
   </script>
+  <script src="js/gauge.min.js"></script>
+  <script src="js/jquery.sparkline.min.js"></script>
+  <script src="js/apexcharts.min.js"></script>
+  <script src="js/apexcharts.custom.js"></script>
+  <script src='js/jquery.mask.min.js'></script>
+  <script src='js/select2.min.js'></script>
+  <script src='js/jquery.steps.min.js'></script>
+  <script src='js/jquery.validate.min.js'></script>
+  <script src='js/jquery.timepicker.js'></script>
+  <script src='js/dropzone.min.js'></script>
+  <script src='js/uppy.min.js'></script>
+  <script src='js/quill.min.js'></script>
+  <script>
+    $('.select2').select2(
+      {
+        theme: 'bootstrap4',
+      });
+    $('.select2-multi').select2(
+      {
+        multiple: true,
+        theme: 'bootstrap4',
+      });
+    $('.drgpicker').daterangepicker(
+      {
+        singleDatePicker: true,
+        timePicker: false,
+        showDropdowns: true,
+        locale:
+        {
+          format: 'MM/DD/YYYY'
+        }
+      });
+    $('.time-input').timepicker(
+      {
+        'scrollDefault': 'now',
+        'zindex': '9999' /* fix modal open */
+      });
+    /** date range picker */
+    if ($('.datetimes').length) {
+      $('.datetimes').daterangepicker(
+        {
+          timePicker: true,
+          startDate: moment().startOf('hour'),
+          endDate: moment().startOf('hour').add(32, 'hour'),
+          locale:
+          {
+            format: 'M/DD hh:mm A'
+          }
+        });
+    }
+    var start = moment().subtract(29, 'days');
+    var end = moment();
 
+    function cb(start, end) {
+      $('#reportrange span').html(start.format('MMMM D, YYYY') + ' - ' + end.format('MMMM D, YYYY'));
+    }
+    $('#reportrange').daterangepicker(
+      {
+        startDate: start,
+        endDate: end,
+        ranges:
+        {
+          'Today': [moment(), moment()],
+          'Yesterday': [moment().subtract(1, 'days'), moment().subtract(1, 'days')],
+          'Last 7 Days': [moment().subtract(6, 'days'), moment()],
+          'Last 30 Days': [moment().subtract(29, 'days'), moment()],
+          'This Month': [moment().startOf('month'), moment().endOf('month')],
+          'Last Month': [moment().subtract(1, 'month').startOf('month'), moment().subtract(1, 'month').endOf('month')]
+        }
+      }, cb);
+    cb(start, end);
+    $('.input-placeholder').mask("00/00/0000",
+      {
+        placeholder: "__/__/____"
+      });
+    $('.input-zip').mask('00000-000',
+      {
+        placeholder: "____-___"
+      });
+    $('.input-money').mask("#.##0,00",
+      {
+        reverse: true
+      });
+    $('.input-phoneus').mask('(000) 000-0000');
+    $('.input-mixed').mask('AAA 000-S0S');
+    $('.input-ip').mask('0ZZ.0ZZ.0ZZ.0ZZ',
+      {
+        translation:
+        {
+          'Z':
+          {
+            pattern: /[0-9]/,
+            optional: true
+          }
+        },
+        placeholder: "___.___.___.___"
+      });
+    // editor
+    var editor = document.getElementById('editor');
+    if (editor) {
+      var toolbarOptions = [
+        [
+          {
+            'font': []
+          }],
+        [
+          {
+            'header': [1, 2, 3, 4, 5, 6, false]
+          }],
+        ['bold', 'italic', 'underline', 'strike'],
+        ['blockquote', 'code-block'],
+        [
+          {
+            'header': 1
+          },
+          {
+            'header': 2
+          }],
+        [
+          {
+            'list': 'ordered'
+          },
+          {
+            'list': 'bullet'
+          }],
+        [
+          {
+            'script': 'sub'
+          },
+          {
+            'script': 'super'
+          }],
+        [
+          {
+            'indent': '-1'
+          },
+          {
+            'indent': '+1'
+          }], // outdent/indent
+        [
+          {
+            'direction': 'rtl'
+          }], // text direction
+        [
+          {
+            'color': []
+          },
+          {
+            'background': []
+          }], // dropdown with defaults from theme
+        [
+          {
+            'align': []
+          }],
+        ['clean'] // remove formatting button
+      ];
+      var quill = new Quill(editor,
+        {
+          modules:
+          {
+            toolbar: toolbarOptions
+          },
+          theme: 'snow'
+        });
+    }
+    // Example starter JavaScript for disabling form submissions if there are invalid fields
+    (function () {
+      'use strict';
+      window.addEventListener('load', function () {
+        // Fetch all the forms we want to apply custom Bootstrap validation styles to
+        var forms = document.getElementsByClassName('needs-validation');
+        // Loop over them and prevent submission
+        var validation = Array.prototype.filter.call(forms, function (form) {
+          form.addEventListener('submit', function (event) {
+            if (form.checkValidity() === false) {
+              event.preventDefault();
+              event.stopPropagation();
+            }
+            form.classList.add('was-validated');
+          }, false);
+        });
+      }, false);
+    })();
+  </script>
+  <script>
+    var uptarg = document.getElementById('drag-drop-area');
+    if (uptarg) {
+      var uppy = Uppy.Core().use(Uppy.Dashboard,
+        {
+          inline: true,
+          target: uptarg,
+          proudlyDisplayPoweredByUppy: false,
+          theme: 'dark',
+          width: 770,
+          height: 210,
+          plugins: ['Webcam']
+        }).use(Uppy.Tus,
+          {
+            endpoint: 'https://master.tus.io/files/'
+          });
+      uppy.on('complete', (result) => {
+        console.log('Carregamento concluído! Carregamos esses arquivos:', result.successful)
+      });
+    }
+  </script>
   <script src="js/apps.js"></script>
   <!-- Global site tag (gtag.js) - Google Analytics -->
   <script async src="https://www.googletagmanager.com/gtag/js?id=UA-56159088-1"></script>
@@ -1019,164 +1369,6 @@
     }
     gtag('js', new Date());
     gtag('config', 'UA-56159088-1');
-  </script>
-
-  <script>
-    // Função para calcular o % de Outros Custos
-    function calcularOutrosCustosPercentage() {
-      const custo = parseFloat(document.getElementById('productCost').value) || 0;
-      const outrosCustos = parseFloat(document.getElementById('productOtherCosts').value) || 0;
-
-      if (custo > 0) {
-        const percentual = (outrosCustos / custo) * 100;
-        document.getElementById('productOtherCostsPercentage').value = percentual.toFixed(2);
-      } else {
-        document.getElementById('productOtherCostsPercentage').value = 0;
-      }
-    }
-
-    // Função para calcular a Margem Bruta
-    function calcularMargemBruta(custoFinal, precoVenda) {
-      return ((precoVenda - custoFinal) / precoVenda) * 100;
-    }
-
-    // Função para calcular a Margem Líquida
-    function calcularMargemLiquida(custoFinal, precoVenda) {
-      // Exemplo simples: consideramos que o lucro líquido é baseado na margem bruta
-      const margemBruta = calcularMargemBruta(custoFinal, precoVenda);
-      return margemBruta * (custoFinal / precoVenda); // fórmula simplificada
-    }
-
-    // Função para calcular o Custo Final
-    function calcularCustoFinal() {
-      const custo = parseFloat(document.getElementById('productCost').value) || 0;
-      const outrosCustos = parseFloat(document.getElementById('productOtherCosts').value) || 0;
-
-      const custoFinal = custo + outrosCustos;
-
-      document.getElementById('productFinalCost').value = custoFinal.toFixed(2);
-
-      calcularOutrosCustosPercentage(); // Recalcula a porcentagem dos outros custos
-      calcularVarejo(); // Chama o cálculo do varejo após calcular o custo final
-    }
-
-    // Função para calcular o valor de varejo
-    function calcularVarejo() {
-      const custoFinal = parseFloat(document.getElementById('productFinalCost').value) || 0;
-      const margemBruta = parseFloat(document.getElementById('grossMargin').value) || 100;
-
-      // Calcula o valor de varejo com base na margem bruta
-      const valorVarejo = custoFinal * (1 + (margemBruta / 100));
-
-      document.getElementById('productRetailPrice').value = valorVarejo.toFixed(2);
-
-      // Limpa o valor de lucro e percentual quando o valor de venda for alterado
-      document.getElementById('productProfit').value = '';
-      document.getElementById('productProfitPercentage').value = '';
-
-      // Calcula as margens com base no valor de varejo
-      calcularMargens();
-      calcularLucro(); // Recalcula o lucro assim que o valor de varejo for alterado
-    }
-
-    // Função para recalcular as margens quando o valor de varejo for alterado
-    function calcularMargens() {
-      const custoFinal = parseFloat(document.getElementById('productFinalCost').value) || 0;
-      const valorVarejo = parseFloat(document.getElementById('productRetailPrice').value) || 0;
-
-      if (valorVarejo > 0 && custoFinal > 0) {
-        // Margem Bruta
-        const margemBruta = calcularMargemBruta(custoFinal, valorVarejo);
-        document.getElementById('grossMargin').value = margemBruta.toFixed(2);
-
-        // Margem Líquida
-        const margemLiquida = calcularMargemLiquida(custoFinal, valorVarejo);
-        document.getElementById('netMargin').value = margemLiquida.toFixed(2);
-      }
-    }
-
-    // Função para calcular o Lucro (R$ e %)
-    function calcularLucro() {
-      const custoFinal = parseFloat(document.getElementById('productFinalCost').value) || 0;
-      const valorVarejo = parseFloat(document.getElementById('productRetailPrice').value) || 0;
-
-      if (valorVarejo > 0 && custoFinal > 0) {
-        const lucro = valorVarejo - custoFinal;
-        const lucroPercentual = (lucro / custoFinal) * 100;
-
-        document.getElementById('productProfit').value = lucro.toFixed(2);
-        document.getElementById('productProfitPercentage').value = lucroPercentual.toFixed(2);
-      }
-    }
-
-    // Função para calcular a Custo Final
-    function calcularCustoFinal() {
-      const custo = parseFloat(document.getElementById('productCost').value) || 0;
-      const outrosCustos = parseFloat(document.getElementById('productOtherCosts').value) || 0;
-
-      const custoFinal = custo + outrosCustos;
-
-      document.getElementById('productFinalCost').value = custoFinal.toFixed(2);
-
-      calcularOutrosCustosPercentage(); // Recalcula a porcentagem dos outros custos
-      calcularVarejo(); // Chama o cálculo do varejo após calcular o custo final
-    }
-
-    // Função para calcular a % de outros custos
-    function calcularOutrosCustosPercentage() {
-      const custo = parseFloat(document.getElementById('productCost').value) || 0;
-      const outrosCustos = parseFloat(document.getElementById('productOtherCosts').value) || 0;
-
-      if (custo > 0) {
-        const percentual = (outrosCustos / custo) * 100;
-        document.getElementById('productOtherCostsPercentage').value = percentual.toFixed(2);
-      } else {
-        document.getElementById('productOtherCostsPercentage').value = '0.00';
-      }
-    }
-
-    // Chama as funções de cálculo logo após o carregamento inicial da página ou após o preenchimento do custo
-    window.onload = function () {
-      calcularCustoFinal(); // Garante que o custo final seja calculado e as margens sejam ajustadas.
-      calcularVarejo(); // Garante que o valor de varejo seja calculado com base nas margens e custo final
-      calcularLucro(); // Garante que o lucro seja calculado assim que o valor de varejo e custo final forem preenchidos
-    }
-
-    // Função para calcular os resultados do estoque
-    function calcularResultadosEstoque() {
-      const deliveryTime = parseFloat(document.getElementById('deliveryTime').value) || 0;
-      const salesPeriod = parseFloat(document.getElementById('salesPeriod').value) || 0;
-      const productStock = parseFloat(document.getElementById('productStock').value) || 0;
-
-      if (salesPeriod > 0) {
-        // Simulação de dados para o cálculo
-        const totalSold = Math.round(productStock / 2); // Exemplo: estoque atual dividido por 2
-        const dailySales = totalSold / salesPeriod;
-        const monthlySales = dailySales * 30;
-
-        // Cálculo de estoque mínimo e ideal
-        const minStock = dailySales * deliveryTime;
-        const idealStock = minStock + (dailySales * 7); // Uma semana extra de segurança
-
-        // Atualiza os campos
-        document.getElementById('soldQuantity').value = totalSold.toFixed(2);
-        document.getElementById('monthlySalesAvg').value = monthlySales.toFixed(2);
-        document.getElementById('dailySalesAvg').value = dailySales.toFixed(2);
-        document.getElementById('calculatedMinStock').value = minStock.toFixed(2);
-        document.getElementById('calculatedIdealStock').value = idealStock.toFixed(2);
-      } else {
-        alert('Por favor, insira um período de venda válido.');
-      }
-    }
-
-    // Função para ajustar o estoque mínimo e ideal
-    function ajustarEstoque() {
-      const calculatedMinStock = parseFloat(document.getElementById('calculatedMinStock').value) || 0;
-      const calculatedIdealStock = parseFloat(document.getElementById('calculatedIdealStock').value) || 0;
-
-      document.getElementById('minStock').value = calculatedMinStock.toFixed(2);
-      document.getElementById('idealStock').value = calculatedIdealStock.toFixed(2);
-    }
   </script>
 </body>
 
